@@ -1,0 +1,53 @@
+{
+  "benchmark": "redis_cache_impact",
+  "question": "高频问题缓存的收益量化",
+  "redis_url": "redis://localhost:6379/0",
+  "num_queries": 10,
+  "rerank_enabled": true,
+  "results": {
+    "off_round1": {
+      "mode": "off",
+      "round": 1,
+      "avg_ms": 700.7,
+      "p95_ms": 805.5,
+      "embedding_calls": 10,
+      "rerank_calls": 10,
+      "cache_hit": 0,
+      "cache_miss": 0
+    },
+    "off_round2": {
+      "mode": "off",
+      "round": 2,
+      "avg_ms": 709.6,
+      "p95_ms": 833.1,
+      "embedding_calls": 10,
+      "rerank_calls": 10,
+      "cache_hit": 0,
+      "cache_miss": 0
+    },
+    "on_round1": {
+      "mode": "on",
+      "round": 1,
+      "avg_ms": 3734.4,
+      "p95_ms": 30554.0,
+      "embedding_calls": 10,
+      "rerank_calls": 10,
+      "cache_hit": 0,
+      "cache_miss": 40
+    },
+    "on_round2": {
+      "mode": "on",
+      "round": 2,
+      "avg_ms": 47.3,
+      "p95_ms": 286.8,
+      "embedding_calls": 1,
+      "rerank_calls": 0,
+      "cache_hit": 29,
+      "cache_miss": 2
+    }
+  },
+  "hit_rate_round2": 0.9355,
+  "speedup_round2": 15.0,
+  "insight": "热查询轮：平均延迟 709.6ms → 47.3ms（15.0x），P95 833.1ms → 286.8ms；embedding 回源 10 → 1 次，rerank 回源 10 → 0 次，命中率 93.5%。缓存对象是纯函数型中间产物（query 向量 / 检索结果 / 精排排序），key 含 tenant + knowledge_version，个性化结果不进共享缓存；Redis 故障自动熔断回源（不影响可用性）。",
+  "timestamp": "2026-09-20T20:33:44"
+}

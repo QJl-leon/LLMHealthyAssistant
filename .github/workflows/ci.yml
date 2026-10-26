@@ -1,0 +1,105 @@
+# CI 门禁（B5 · #11 完整实现）— lint + 双端测试 + 评测回归
+#
+# 中间件 service container：PostgreSQL + Milvus + Redis
+#   - 依赖 DB 的行为切片（s8 指标数值与库一致）与记忆/成本集成测试真实执行
+#   - 检索层指标：配置 SILICONFLOW_API_KEY secret 后真实执行并参与门禁；
+#     未配置时索引重建容错跳过，检索层显式标 unexecuted（不静默放行）
+# 触发：push / pull request
+name: CI
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+
+    services:
+      postgres:
+        image: postgres:16-alpine
+        env:
+          POSTGRES_USER: lha
+          POSTGRES_PASSWORD: lha_dev
+          POSTGRES_DB: lha
+        ports:
+          - 5432:5432
+        options: >-
+          --health-cmd "pg_isready -U lha -d lha"
+          --health-interval 5s --health-timeout 5s --health-retries 12
+
+      milvus:
+        image: milvusdb/milvus:v2.5.12
+        ports:
+          - 19530:19530
+          - 9091:9091
+        env:
+          ETCD_USE_EMBED: "true"
+          ETCD_DATA_DIR: /var/lib/milvus/etcd/
+          COMMON_STORAGETYPE: local
+        options: >-
+          --health-cmd "curl -f http://localhost:9091/healthz"
+          --health-interval 10s --health-timeout 5s --health-retries 15
+
+      redis:
+        image: redis:7-alpine
+        ports:
+          - 6379:6379
+        options: >-
+          --health-cmd "redis-cli ping"
+          --health-interval 5s --health-timeout 3s --health-retries 10
+
+    env:
+      DATABASE_URL: postgresql://lha:lha_dev@localhost:5432/lha?sslmode=disable
+      MILVUS_HOST: localhost
+      MILVUS_PORT: "19530"
+      REDIS_URL: redis://localhost:6379/0
+      EMBEDDING_MODEL: BAAI/bge-m3
+      EMBEDDING_DIM: "1024"
+      # 检索层真实执行的前提：仓库 Settings → Secrets 配置 SILICONFLOW_API_KEY
+      SILICONFLOW_API_KEY: ${{ secrets.SILICONFLOW_API_KEY }}
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-go@v5
+        with:
+          go-version: "1.23"
+
+      - uses: astral-sh/setup-uv@v5
+
+      - name: Go build
+        run: cd go-backend && go build ./...
+
+      - name: Go test
+        run: cd go-backend && go test ./...
+
+      - name: Python deps (dev)
+        run: cd python-ai && uv sync --extra dev
+
+      - name: 健康域数据初始化（建表 + 语料 + 版本发布）
+        run: |
+          cd python-ai
+          uv run python -m app.factory.cli init
+          uv run python -m app.factory.cli seed
+          uv run python -m app.factory.cli version publish kv_20260915_001
+
+      - name: Milvus 索引重建（需 SILICONFLOW_API_KEY；缺失时容错，检索层标 unexecuted）
+        id: index
+        continue-on-error: true
+        run: |
+          cd python-ai
+          uv run python -m app.retrieval.index_builder --rebuild --version kv_20260915_001
+
+      - name: Python 守门测试（含 PG/Milvus 集成用例）
+        run: cd python-ai && uv run pytest tests/ -q
+
+      - name: 评测回归（行为切片 + 检索层指标门禁，指标退化即红）
+        run: cd python-ai && uv run python -m app.eval.run --ci
+
+      - name: 索引重建结果说明
+        if: always()
+        run: |
+          if [ "${{ steps.index.outcome }}" != "success" ]; then
+            echo "::warning::索引重建未执行（通常因 SILICONFLOW_API_KEY secret 未配置）——检索层指标将在评测报告中显式标为 unexecuted，不静默放行"
+          fi

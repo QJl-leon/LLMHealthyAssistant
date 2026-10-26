@@ -1,0 +1,4 @@
+[
+  {"name":"baseline_synthetic_v1", "weight":1, "expected":"published",
+   "images":[{"path":"../fixtures/baseline_synthetic.png", "position":"lab_sheet"}]}
+]

@@ -1,0 +1,5 @@
+[
+  {"name":"valid_single", "weight":8, "expected":"published", "images":[{"path":"fixtures/valid-deidentified.png", "position":"lab_sheet"}]},
+  {"name":"quality_gate", "weight":1, "expected":"awaiting_images", "images":[{"path":"fixtures/quality-gate.png", "position":"lab_sheet"}]},
+  {"name":"add_images", "weight":1, "expected":"published", "images":[{"path":"fixtures/quality-gate.png", "position":"lab_sheet"}], "new_images":[{"path":"fixtures/valid-deidentified.png", "position":"lab_sheet"}]}
+]

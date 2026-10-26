@@ -1,0 +1,48 @@
+server {
+    listen 443 ssl;
+    listen [::]:443 ssl;
+    server_name __SERVER_NAME__;
+
+    ssl_certificate /etc/nginx/tls/lha/fullchain.pem;
+    ssl_certificate_key /etc/nginx/tls/lha/privkey.pem;
+    ssl_protocols TLSv1.2 TLSv1.3;
+    ssl_session_cache shared:LHA_TLS:10m;
+    ssl_session_timeout 1d;
+    server_tokens off;
+    access_log /var/log/nginx/lha-observation.log lha_observation;
+
+    root /var/www/lha;
+    index index.html;
+    client_max_body_size 50m;
+    add_header X-Content-Type-Options nosniff always;
+    add_header Referrer-Policy strict-origin-when-cross-origin always;
+
+    # Preserve the URI and stream SSE events without buffering.
+    location ~ ^/(api(?:/|$)|uploads(?:/|$)|oauth(?:/|$)|healthz$) {
+        proxy_pass http://127.0.0.1:8080;
+        proxy_http_version 1.1;
+        proxy_set_header Host $host;
+        proxy_set_header X-Real-IP $remote_addr;
+        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+        proxy_set_header X-Forwarded-Proto $scheme;
+        proxy_set_header Connection "";
+        proxy_buffering off;
+        proxy_cache off;
+        proxy_read_timeout 3600s;
+        proxy_send_timeout 3600s;
+    }
+
+    location ~ ^/(metrics|debug|internal)(/|$) { return 404; }
+
+    location /assets/ {
+        try_files $uri =404;
+        expires 1y;
+    }
+
+    location / {
+        try_files $uri $uri/ /index.html;
+        add_header Cache-Control "no-cache";
+        add_header X-Content-Type-Options nosniff always;
+        add_header Referrer-Policy strict-origin-when-cross-origin always;
+    }
+}

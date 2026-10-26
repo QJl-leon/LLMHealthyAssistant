@@ -1,0 +1,13 @@
+[Unit]
+Description=LHA local minio
+After=network.target docker.service
+
+[Service]
+Type=simple
+User=ubuntu
+WorkingDirectory=/home/ubuntu/RAG-job/LLMHealthyAssistant
+ExecStart=/home/ubuntu/RAG-job/LLMHealthyAssistant/python-ai/.venv/bin/python /home/ubuntu/RAG-job/LLMHealthyAssistant/scripts/local/run-minio.py
+Restart=on-failure
+RestartSec=5
+StandardOutput=append:/home/ubuntu/RAG-job/LLMHealthyAssistant/.run/minio-systemd.log
+StandardError=append:/home/ubuntu/RAG-job/LLMHealthyAssistant/.run/minio-systemd.log

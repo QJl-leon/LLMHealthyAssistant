@@ -1,0 +1,19 @@
+{
+  "benchmark": "embedding_selection",
+  "num_docs": 92,
+  "num_queries": 8,
+  "results": [
+    {
+      "model": "BAAI/bge-m3",
+      "dim": 1024,
+      "total_docs": 92,
+      "embed_seconds": 1.36,
+      "recall@10": 0.708,
+      "mrr": 0.812,
+      "ndcg@10": 0.71,
+      "hit@1": 0.75,
+      "note": "基线：多语言多粒度，中文 RAG 标配"
+    }
+  ],
+  "timestamp": "2026-09-15T18:03:48"
+}

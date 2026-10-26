@@ -1,0 +1,94 @@
+from google.protobuf import descriptor as _descriptor
+from google.protobuf import descriptor_pool as _descriptor_pool
+from google.protobuf import runtime_version as _runtime_version
+from google.protobuf import symbol_database as _symbol_database
+from google.protobuf.internal import builder as _builder
+_runtime_version.ValidateProtobufRuntimeVersion(_runtime_version.Domain.PUBLIC, 7, 35, 1, '', 'research/v1/research.proto')
+_sym_db = _symbol_database.Default()
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x1aresearch/v1/research.proto\x12\x0bresearch.v1"0\n\x0fChatHistoryItem\x12\x0c\n\x04role\x18\x01 \x01(\t\x12\x0f\n\x07content\x18\x02 \x01(\t"n\n\x0bChatRequest\x12\x0f\n\x07user_id\x18\x01 \x01(\t\x12\r\n\x05query\x18\x02 \x01(\t\x12\x10\n\x08trace_id\x18\x03 \x01(\t\x12-\n\x07history\x18\x04 \x03(\x0b2\x1c.research.v1.ChatHistoryItem"]\n\x0cChatResponse\x12\x0f\n\x07refused\x18\x01 \x01(\x08\x12\x0e\n\x06answer\x18\x02 \x01(\t\x12,\n\x08evidence\x18\x03 \x03(\x0b2\x1a.research.v1.EvidenceFound"6\n\x12GetTaskCostRequest\x12\x0f\n\x07task_id\x18\x01 \x01(\t\x12\x0f\n\x07user_id\x18\x02 \x01(\t"\x95\x01\n\x08CostItem\x12\x11\n\tcall_type\x18\x01 \x01(\t\x12\r\n\x05model\x18\x02 \x01(\t\x12\r\n\x05calls\x18\x03 \x01(\x05\x12\x0e\n\x06tokens\x18\x04 \x01(\x03\x12\x15\n\rprompt_tokens\x18\x05 \x01(\x03\x12\x19\n\x11completion_tokens\x18\x06 \x01(\x03\x12\x16\n\x0eavg_latency_ms\x18\x07 \x01(\x05"v\n\x13GetTaskCostResponse\x12\x0f\n\x07task_id\x18\x01 \x01(\t\x12\x14\n\x0ctotal_tokens\x18\x02 \x01(\x03\x12\x12\n\ncall_count\x18\x03 \x01(\x05\x12$\n\x05items\x18\x04 \x03(\x0b2\x15.research.v1.CostItem"\xb3\x01\n\x11SubmitTaskRequest\x12\x0f\n\x07task_id\x18\x01 \x01(\t\x12\x11\n\ttenant_id\x18\x02 \x01(\t\x12\x0f\n\x07user_id\x18\x03 \x01(\t\x12\x16\n\x0eclient_task_id\x18\x04 \x01(\t\x12\'\n\x06images\x18\x05 \x03(\x0b2\x17.research.v1.ImageAsset\x12\x13\n\x0breport_date\x18\x06 \x01(\t\x12\x13\n\x0binstitution\x18\x07 \x01(\t"B\n\nImageAsset\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\x10\n\x08position\x18\x02 \x01(\t\x12\x15\n\rpresigned_url\x18\x03 \x01(\t"5\n\x12SubmitTaskResponse\x12\x0f\n\x07task_id\x18\x01 \x01(\t\x12\x0e\n\x06status\x18\x02 \x01(\t"6\n\x11StreamTaskRequest\x12\x0f\n\x07task_id\x18\x01 \x01(\t\x12\x10\n\x08trace_id\x18\x02 \x01(\t"\xcb\x03\n\tTaskEvent\x12\x0f\n\x07task_id\x18\x01 \x01(\t\x12\x10\n\x08trace_id\x18\x02 \x01(\t\x12\x0b\n\x03seq\x18\x03 \x01(\x03\x120\n\x0cstage_change\x18\x04 \x01(\x0b2\x18.research.v1.StageChangeH\x00\x12/\n\x0bobservation\x18\x05 \x01(\x0b2\x18.research.v1.ObservationH\x00\x124\n\x0eevidence_found\x18\x06 \x01(\x0b2\x1a.research.v1.EvidenceFoundH\x00\x120\n\x0creport_delta\x18\x07 \x01(\x0b2\x18.research.v1.ReportDeltaH\x00\x120\n\x0cmissing_info\x18\x08 \x01(\x0b2\x18.research.v1.MissingInfoH\x00\x126\n\x0fmemory_proposal\x18\t \x01(\x0b2\x1b.research.v1.MemoryProposalH\x00\x12)\n\x06result\x18\n \x01(\x0b2\x17.research.v1.TaskResultH\x00\x12#\n\x05error\x18\x0b \x01(\x0b2\x12.research.v1.ErrorH\x00B\t\n\x07payload"<\n\x0bStageChange\x12\x10\n\x08previous\x18\x01 \x01(\t\x12\n\n\x02to\x18\x02 \x01(\t\x12\x0f\n\x07message\x18\x03 \x01(\t"R\n\x0bObservation\x12\x11\n\timage_key\x18\x01 \x01(\t\x12\x0e\n\x06region\x18\x02 \x01(\t\x12\x0c\n\x04text\x18\x03 \x01(\t\x12\x12\n\nconfidence\x18\x04 \x01(\x02"\x9b\x01\n\rEvidenceFound\x12\x13\n\x0bevidence_id\x18\x01 \x01(\t\x12\x13\n\x0bsource_name\x18\x02 \x01(\t\x12\x14\n\x0csource_level\x18\x03 \x01(\x05\x12\r\n\x05quote\x18\x04 \x01(\t\x12\x0c\n\x04page\x18\x05 \x01(\x05\x12\x19\n\x11knowledge_version\x18\x06 \x01(\t\x12\x12\n\nsource_url\x18\x07 \x01(\t"\x8e\x01\n\x0bReportDelta\x12\x0f\n\x07section\x18\x01 \x01(\t\x12\x0f\n\x07content\x18\x02 \x01(\t\x12(\n\x07metrics\x18\x03 \x03(\x0b2\x17.research.v1.MetricItem\x123\n\rmetric_trends\x18\x04 \x03(\x0b2\x1c.research.v1.MetricTrendItem"\xd5\x01\n\nMetricItem\x12\x13\n\x0bmetric_code\x18\x01 \x01(\t\x12\x13\n\x0bmetric_name\x18\x02 \x01(\t\x12\x10\n\x08category\x18\x03 \x01(\t\x12\x11\n\tvalue_num\x18\x04 \x01(\x01\x12\x12\n\nvalue_text\x18\x05 \x01(\t\x12\x0c\n\x04unit\x18\x06 \x01(\t\x12\x0f\n\x07ref_low\x18\x07 \x01(\x01\x12\x10\n\x08ref_high\x18\x08 \x01(\x01\x12\x10\n\x08ref_text\x18\t \x01(\t\x12\x0c\n\x04flag\x18\n \x01(\t\x12\x13\n\x0bmeasured_at\x18\x0b \x01(\t"8\n\x0bMetricPoint\x12\x0c\n\x04date\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\x01\x12\x0c\n\x04flag\x18\x03 \x01(\t"\xbe\x01\n\x0fMetricTrendItem\x12\x13\n\x0bmetric_code\x18\x01 \x01(\t\x12\x13\n\x0bmetric_name\x18\x02 \x01(\t\x12\x0c\n\x04unit\x18\x03 \x01(\t\x12(\n\x06points\x18\x04 \x03(\x0b2\x18.research.v1.MetricPoint\x12\x13\n\x0bfirst_value\x18\x05 \x01(\x01\x12\x12\n\nlast_value\x18\x06 \x01(\x01\x12\r\n\x05delta\x18\x07 \x01(\x01\x12\x11\n\tdirection\x18\x08 \x01(\t".\n\x0bMissingInfo\x12\r\n\x05items\x18\x01 \x03(\t\x12\x10\n\x08guidance\x18\x02 \x01(\t"i\n\x0eMemoryProposal\x12\x14\n\x0ccandidate_id\x18\x01 \x01(\t\x12\x0c\n\x04kind\x18\x02 \x01(\t\x12\x0f\n\x07content\x18\x03 \x01(\t\x12\x0e\n\x06source\x18\x04 \x01(\t\x12\x12\n\nconfidence\x18\x05 \x01(\x02"\xa3\x01\n\nTaskResult\x12\x16\n\x0ereport_version\x18\x01 \x01(\t\x12\x0e\n\x06status\x18\x02 \x01(\t\x12\x0e\n\x06reason\x18\x03 \x01(\t\x12(\n\x07metrics\x18\x04 \x03(\x0b2\x17.research.v1.MetricItem\x123\n\rmetric_trends\x18\x05 \x03(\x0b2\x1c.research.v1.MetricTrendItem"?\n\x05Error\x12\x12\n\nerror_code\x18\x01 \x01(\t\x12\x0f\n\x07message\x18\x02 \x01(\t\x12\x11\n\tretryable\x18\x03 \x01(\x08"\x9c\x01\n\x11ResumeTaskRequest\x12\x0f\n\x07task_id\x18\x01 \x01(\t\x12\x10\n\x08trace_id\x18\x02 \x01(\t\x12\x0e\n\x06action\x18\x03 \x01(\t\x12+\n\nnew_images\x18\x04 \x03(\x0b2\x17.research.v1.ImageAsset\x12\x14\n\x0ccandidate_id\x18\x05 \x01(\t\x12\x11\n\tconfirmed\x18\x06 \x01(\x08"5\n\x12ResumeTaskResponse\x12\x0f\n\x07task_id\x18\x01 \x01(\t\x12\x0e\n\x06status\x18\x02 \x01(\t"4\n\x11CancelTaskRequest\x12\x0f\n\x07task_id\x18\x01 \x01(\t\x12\x0e\n\x06reason\x18\x02 \x01(\t"5\n\x12CancelTaskResponse\x12\x0f\n\x07task_id\x18\x01 \x01(\t\x12\x0e\n\x06status\x18\x02 \x01(\t"\xb4\x01\n\nMemoryItem\x12\n\n\x02id\x18\x01 \x01(\t\x12\x0c\n\x04kind\x18\x02 \x01(\t\x12\x0f\n\x07content\x18\x03 \x01(\t\x12\x14\n\x0cmetric_codes\x18\x04 \x03(\t\x12\x0e\n\x06source\x18\x05 \x01(\t\x12\x12\n\nconfidence\x18\x06 \x01(\x02\x12\x0f\n\x07version\x18\x07 \x01(\x05\x12\x1c\n\x14pending_confirmation\x18\x08 \x01(\x08\x12\x12\n\ncreated_at\x18\t \x01(\t"$\n\x11ListMemoryRequest\x12\x0f\n\x07user_id\x18\x01 \x01(\t"<\n\x12ListMemoryResponse\x12&\n\x05items\x18\x01 \x03(\x0b2\x17.research.v1.MemoryItem"k\n\x13CreateMemoryRequest\x12\x0f\n\x07user_id\x18\x01 \x01(\t\x12\x0c\n\x04kind\x18\x02 \x01(\t\x12\x0f\n\x07content\x18\x03 \x01(\t\x12\x14\n\x0cmetric_codes\x18\x04 \x03(\t\x12\x0e\n\x06source\x18\x05 \x01(\t"M\n\x13UpdateMemoryRequest\x12\x0f\n\x07user_id\x18\x01 \x01(\t\x12\x10\n\x08entry_id\x18\x02 \x01(\t\x12\x13\n\x0bnew_content\x18\x03 \x01(\t"8\n\x13DeleteMemoryRequest\x12\x0f\n\x07user_id\x18\x01 \x01(\t\x12\x10\n\x08entry_id\x18\x02 \x01(\t")\n\x16DeleteAllMemoryRequest\x12\x0f\n\x07user_id\x18\x01 \x01(\t"9\n\x14DeleteMemoryResponse\x12\n\n\x02ok\x18\x01 \x01(\x08\x12\x15\n\rdeleted_count\x18\x02 \x01(\x05"9\n\x14ConfirmMemoryRequest\x12\x0f\n\x07user_id\x18\x01 \x01(\t\x12\x10\n\x08entry_id\x18\x02 \x01(\t"8\n\x16ListMemoryAuditRequest\x12\x0f\n\x07user_id\x18\x01 \x01(\t\x12\r\n\x05limit\x18\x02 \x01(\x05"u\n\x0fMemoryAuditItem\x12\n\n\x02id\x18\x01 \x01(\t\x12\x0f\n\x07user_id\x18\x02 \x01(\t\x12\x0e\n\x06action\x18\x03 \x01(\t\x12\x11\n\ttarget_id\x18\x04 \x01(\t\x12\x0e\n\x06detail\x18\x05 \x01(\t\x12\x12\n\ncreated_at\x18\x06 \x01(\t"F\n\x17ListMemoryAuditResponse\x12+\n\x05items\x18\x01 \x03(\x0b2\x1c.research.v1.MemoryAuditItem2\xd5\x03\n\x0fResearchService\x12M\n\nSubmitTask\x12\x1e.research.v1.SubmitTaskRequest\x1a\x1f.research.v1.SubmitTaskResponse\x12F\n\nStreamTask\x12\x1e.research.v1.StreamTaskRequest\x1a\x16.research.v1.TaskEvent0\x01\x12M\n\nResumeTask\x12\x1e.research.v1.ResumeTaskRequest\x1a\x1f.research.v1.ResumeTaskResponse\x12M\n\nCancelTask\x12\x1e.research.v1.CancelTaskRequest\x1a\x1f.research.v1.CancelTaskResponse\x12P\n\x0bGetTaskCost\x12\x1f.research.v1.GetTaskCostRequest\x1a .research.v1.GetTaskCostResponse\x12;\n\x04Chat\x12\x18.research.v1.ChatRequest\x1a\x19.research.v1.ChatResponse2\xcf\x04\n\rMemoryService\x12M\n\nListMemory\x12\x1e.research.v1.ListMemoryRequest\x1a\x1f.research.v1.ListMemoryResponse\x12I\n\x0cCreateMemory\x12 .research.v1.CreateMemoryRequest\x1a\x17.research.v1.MemoryItem\x12I\n\x0cUpdateMemory\x12 .research.v1.UpdateMemoryRequest\x1a\x17.research.v1.MemoryItem\x12S\n\x0cDeleteMemory\x12 .research.v1.DeleteMemoryRequest\x1a!.research.v1.DeleteMemoryResponse\x12Y\n\x0fDeleteAllMemory\x12#.research.v1.DeleteAllMemoryRequest\x1a!.research.v1.DeleteMemoryResponse\x12K\n\rConfirmMemory\x12!.research.v1.ConfirmMemoryRequest\x1a\x17.research.v1.MemoryItem\x12\\\n\x0fListMemoryAudit\x12#.research.v1.ListMemoryAuditRequest\x1a$.research.v1.ListMemoryAuditResponseBKZIllm-healthy-assistant/go-backend/internal/aiclient/research/v1;researchv1b\x06proto3')
+_globals = globals()
+_builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
+_builder.BuildTopDescriptorsAndMessages(DESCRIPTOR, 'research.v1.research_pb2', _globals)
+if not _descriptor._USE_C_DESCRIPTORS:
+    _globals['DESCRIPTOR']._loaded_options = None
+    _globals['DESCRIPTOR']._serialized_options = b'ZIllm-healthy-assistant/go-backend/internal/aiclient/research/v1;researchv1'
+    _globals['_CHATHISTORYITEM']._serialized_start = 43
+    _globals['_CHATHISTORYITEM']._serialized_end = 91
+    _globals['_CHATREQUEST']._serialized_start = 93
+    _globals['_CHATREQUEST']._serialized_end = 203
+    _globals['_CHATRESPONSE']._serialized_start = 205
+    _globals['_CHATRESPONSE']._serialized_end = 298
+    _globals['_GETTASKCOSTREQUEST']._serialized_start = 300
+    _globals['_GETTASKCOSTREQUEST']._serialized_end = 354
+    _globals['_COSTITEM']._serialized_start = 357
+    _globals['_COSTITEM']._serialized_end = 506
+    _globals['_GETTASKCOSTRESPONSE']._serialized_start = 508
+    _globals['_GETTASKCOSTRESPONSE']._serialized_end = 626
+    _globals['_SUBMITTASKREQUEST']._serialized_start = 629
+    _globals['_SUBMITTASKREQUEST']._serialized_end = 808
+    _globals['_IMAGEASSET']._serialized_start = 810
+    _globals['_IMAGEASSET']._serialized_end = 876
+    _globals['_SUBMITTASKRESPONSE']._serialized_start = 878
+    _globals['_SUBMITTASKRESPONSE']._serialized_end = 931
+    _globals['_STREAMTASKREQUEST']._serialized_start = 933
+    _globals['_STREAMTASKREQUEST']._serialized_end = 987
+    _globals['_TASKEVENT']._serialized_start = 990
+    _globals['_TASKEVENT']._serialized_end = 1449
+    _globals['_STAGECHANGE']._serialized_start = 1451
+    _globals['_STAGECHANGE']._serialized_end = 1511
+    _globals['_OBSERVATION']._serialized_start = 1513
+    _globals['_OBSERVATION']._serialized_end = 1595
+    _globals['_EVIDENCEFOUND']._serialized_start = 1598
+    _globals['_EVIDENCEFOUND']._serialized_end = 1753
+    _globals['_REPORTDELTA']._serialized_start = 1756
+    _globals['_REPORTDELTA']._serialized_end = 1898
+    _globals['_METRICITEM']._serialized_start = 1901
+    _globals['_METRICITEM']._serialized_end = 2114
+    _globals['_METRICPOINT']._serialized_start = 2116
+    _globals['_METRICPOINT']._serialized_end = 2172
+    _globals['_METRICTRENDITEM']._serialized_start = 2175
+    _globals['_METRICTRENDITEM']._serialized_end = 2365
+    _globals['_MISSINGINFO']._serialized_start = 2367
+    _globals['_MISSINGINFO']._serialized_end = 2413
+    _globals['_MEMORYPROPOSAL']._serialized_start = 2415
+    _globals['_MEMORYPROPOSAL']._serialized_end = 2520
+    _globals['_TASKRESULT']._serialized_start = 2523
+    _globals['_TASKRESULT']._serialized_end = 2686
+    _globals['_ERROR']._serialized_start = 2688
+    _globals['_ERROR']._serialized_end = 2751
+    _globals['_RESUMETASKREQUEST']._serialized_start = 2754
+    _globals['_RESUMETASKREQUEST']._serialized_end = 2910
+    _globals['_RESUMETASKRESPONSE']._serialized_start = 2912
+    _globals['_RESUMETASKRESPONSE']._serialized_end = 2965
+    _globals['_CANCELTASKREQUEST']._serialized_start = 2967
+    _globals['_CANCELTASKREQUEST']._serialized_end = 3019
+    _globals['_CANCELTASKRESPONSE']._serialized_start = 3021
+    _globals['_CANCELTASKRESPONSE']._serialized_end = 3074
+    _globals['_MEMORYITEM']._serialized_start = 3077
+    _globals['_MEMORYITEM']._serialized_end = 3257
+    _globals['_LISTMEMORYREQUEST']._serialized_start = 3259
+    _globals['_LISTMEMORYREQUEST']._serialized_end = 3295
+    _globals['_LISTMEMORYRESPONSE']._serialized_start = 3297
+    _globals['_LISTMEMORYRESPONSE']._serialized_end = 3357
+    _globals['_CREATEMEMORYREQUEST']._serialized_start = 3359
+    _globals['_CREATEMEMORYREQUEST']._serialized_end = 3466
+    _globals['_UPDATEMEMORYREQUEST']._serialized_start = 3468
+    _globals['_UPDATEMEMORYREQUEST']._serialized_end = 3545
+    _globals['_DELETEMEMORYREQUEST']._serialized_start = 3547
+    _globals['_DELETEMEMORYREQUEST']._serialized_end = 3603
+    _globals['_DELETEALLMEMORYREQUEST']._serialized_start = 3605
+    _globals['_DELETEALLMEMORYREQUEST']._serialized_end = 3646
+    _globals['_DELETEMEMORYRESPONSE']._serialized_start = 3648
+    _globals['_DELETEMEMORYRESPONSE']._serialized_end = 3705
+    _globals['_CONFIRMMEMORYREQUEST']._serialized_start = 3707
+    _globals['_CONFIRMMEMORYREQUEST']._serialized_end = 3764
+    _globals['_LISTMEMORYAUDITREQUEST']._serialized_start = 3766
+    _globals['_LISTMEMORYAUDITREQUEST']._serialized_end = 3822
+    _globals['_MEMORYAUDITITEM']._serialized_start = 3824
+    _globals['_MEMORYAUDITITEM']._serialized_end = 3941
+    _globals['_LISTMEMORYAUDITRESPONSE']._serialized_start = 3943
+    _globals['_LISTMEMORYAUDITRESPONSE']._serialized_end = 4013
+    _globals['_RESEARCHSERVICE']._serialized_start = 4016
+    _globals['_RESEARCHSERVICE']._serialized_end = 4485
+    _globals['_MEMORYSERVICE']._serialized_start = 4488
+    _globals['_MEMORYSERVICE']._serialized_end = 5079

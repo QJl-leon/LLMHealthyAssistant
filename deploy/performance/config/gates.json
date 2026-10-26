@@ -1,0 +1,10 @@
+{
+  "sse_owner_isolation_verified": false,
+  "report_owner_isolation_verified": false,
+  "real_report_chain_verified": true,
+  "note": "qwen3-vl-plus real chain verified locally and on Mac (one warmup and five healthy sequential measurements). Ownership/deployment/isolation gates remain incomplete; formal load stays disabled.",
+  "real_report_chain_evidence": "线上测试部署/mac-qwen3-baseline.md",
+  "degraded_report_chain_verified": true,
+  "testing_paused": true,
+  "testing_pause_reason": "用户要求暂停线上测试并生成总结报告"
+}

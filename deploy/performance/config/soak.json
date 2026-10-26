@@ -1,0 +1,7 @@
+{
+  "mode": "arrival", "environment": "isolated", "arrival_per_minute": 1,
+  "duration_seconds": 14400, "max_tasks": 240, "task_timeout_seconds": 300,
+  "max_inflight": 4, "samples": "samples.json", "sse_reconnects": 1,
+  "max_total_tokens": 1000000, "max_transitions": 4,
+  "auto_confirm_publish": true, "max_publish_confirmations": 1
+}

@@ -1,0 +1,27 @@
+{
+  "benchmark": "memory_on_off",
+  "question": "记忆治理的价值（开/关对照，健康档案场景）",
+  "trials": 3,
+  "memory_on": {
+    "injection_text": "关注成分: 长期服用他汀、既往高血脂",
+    "profile_hit_rate": 1.0,
+    "hits": [
+      true,
+      true,
+      true
+    ]
+  },
+  "memory_off": {
+    "injection_text": "",
+    "profile_hit_rate": 0.333,
+    "hits": [
+      true,
+      false,
+      false
+    ]
+  },
+  "written_ok": true,
+  "storage_encrypted": true,
+  "insight": "同一用户第二次会话：记忆开时注入'既往高血脂 / 长期服用他汀'，报告 related_to_you 档案标注命中率 100%；记忆关（冷启动）命中率 33%——说明记忆写入门禁（用户确认）+ 检索注入让系统能记住并个性化回答，且记忆以 AES-256-GCM 密文存储（DB 原始行为 hex 密文，无明文），检索到的文档永不写入记忆（记忆库与知识库物理分离）防投毒。",
+  "timestamp": "2026-09-15T18:03:11"
+}

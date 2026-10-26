@@ -1,0 +1,225 @@
+{
+  "benchmark": "bm25_like_vs_fulltext",
+  "method": "同一查询集 + 真实 Milvus evidence_text（健康知识）；A=旧 LIKE(空格拆词)，B=LIKE+2-gram，C=Milvus BM25 Function",
+  "num_queries": 9,
+  "like_old": {
+    "recall@10": 0.111,
+    "mrr": 0.111,
+    "hit@1": 0.111,
+    "ndcg@10": 0.111
+  },
+  "like_bigram": {
+    "recall@10": 0.561,
+    "mrr": 0.809,
+    "hit@1": 0.778,
+    "ndcg@10": 0.693
+  },
+  "fulltext": {
+    "recall@10": 0.704,
+    "mrr": 0.944,
+    "hit@1": 0.889,
+    "ndcg@10": 0.838
+  },
+  "per_query": [
+    {
+      "query": "血脂高的人该怎么运动",
+      "rel": 23,
+      "like_old": {
+        "recall@10": 0.0,
+        "mrr": 0.0,
+        "hit@1": 0.0,
+        "ndcg@10": 0.0
+      },
+      "like_bigram": {
+        "recall@10": 0.391,
+        "mrr": 1.0,
+        "hit@1": 1.0,
+        "ndcg@10": 0.934
+      },
+      "fulltext": {
+        "recall@10": 0.348,
+        "mrr": 1.0,
+        "hit@1": 1.0,
+        "ndcg@10": 0.836
+      }
+    },
+    {
+      "query": "血糖偏高的运动建议",
+      "rel": 10,
+      "like_old": {
+        "recall@10": 0.0,
+        "mrr": 0.0,
+        "hit@1": 0.0,
+        "ndcg@10": 0.0
+      },
+      "like_bigram": {
+        "recall@10": 0.7,
+        "mrr": 1.0,
+        "hit@1": 1.0,
+        "ndcg@10": 0.801
+      },
+      "fulltext": {
+        "recall@10": 0.9,
+        "mrr": 1.0,
+        "hit@1": 1.0,
+        "ndcg@10": 0.861
+      }
+    },
+    {
+      "query": "血压高适合什么运动",
+      "rel": 22,
+      "like_old": {
+        "recall@10": 0.0,
+        "mrr": 0.0,
+        "hit@1": 0.0,
+        "ndcg@10": 0.0
+      },
+      "like_bigram": {
+        "recall@10": 0.364,
+        "mrr": 1.0,
+        "hit@1": 1.0,
+        "ndcg@10": 0.855
+      },
+      "fulltext": {
+        "recall@10": 0.409,
+        "mrr": 1.0,
+        "hit@1": 1.0,
+        "ndcg@10": 0.922
+      }
+    },
+    {
+      "query": "尿酸高能不能运动",
+      "rel": 5,
+      "like_old": {
+        "recall@10": 0.0,
+        "mrr": 0.0,
+        "hit@1": 0.0,
+        "ndcg@10": 0.0
+      },
+      "like_bigram": {
+        "recall@10": 1.0,
+        "mrr": 1.0,
+        "hit@1": 1.0,
+        "ndcg@10": 0.982
+      },
+      "fulltext": {
+        "recall@10": 1.0,
+        "mrr": 1.0,
+        "hit@1": 1.0,
+        "ndcg@10": 0.982
+      }
+    },
+    {
+      "query": "脂肪肝运动能改善吗",
+      "rel": 4,
+      "like_old": {
+        "recall@10": 0.0,
+        "mrr": 0.0,
+        "hit@1": 0.0,
+        "ndcg@10": 0.0
+      },
+      "like_bigram": {
+        "recall@10": 0.5,
+        "mrr": 1.0,
+        "hit@1": 1.0,
+        "ndcg@10": 0.541
+      },
+      "fulltext": {
+        "recall@10": 0.5,
+        "mrr": 0.5,
+        "hit@1": 0.0,
+        "ndcg@10": 0.397
+      }
+    },
+    {
+      "query": "超重怎么运动减重",
+      "rel": 22,
+      "like_old": {
+        "recall@10": 0.0,
+        "mrr": 0.0,
+        "hit@1": 0.0,
+        "ndcg@10": 0.0
+      },
+      "like_bigram": {
+        "recall@10": 0.091,
+        "mrr": 0.25,
+        "hit@1": 0.0,
+        "ndcg@10": 0.161
+      },
+      "fulltext": {
+        "recall@10": 0.182,
+        "mrr": 1.0,
+        "hit@1": 1.0,
+        "ndcg@10": 0.542
+      }
+    },
+    {
+      "query": "低密度脂蛋白胆固醇参考区间",
+      "rel": 1,
+      "like_old": {
+        "recall@10": 1.0,
+        "mrr": 1.0,
+        "hit@1": 1.0,
+        "ndcg@10": 1.0
+      },
+      "like_bigram": {
+        "recall@10": 1.0,
+        "mrr": 1.0,
+        "hit@1": 1.0,
+        "ndcg@10": 1.0
+      },
+      "fulltext": {
+        "recall@10": 1.0,
+        "mrr": 1.0,
+        "hit@1": 1.0,
+        "ndcg@10": 1.0
+      }
+    },
+    {
+      "query": "他汀和运动注意事项",
+      "rel": 2,
+      "like_old": {
+        "recall@10": 0.0,
+        "mrr": 0.0,
+        "hit@1": 0.0,
+        "ndcg@10": 0.0
+      },
+      "like_bigram": {
+        "recall@10": 0.0,
+        "mrr": 0.028,
+        "hit@1": 0.0,
+        "ndcg@10": 0.0
+      },
+      "fulltext": {
+        "recall@10": 1.0,
+        "mrr": 1.0,
+        "hit@1": 1.0,
+        "ndcg@10": 1.0
+      }
+    },
+    {
+      "query": "高尿酸血症运动禁忌",
+      "rel": 3,
+      "like_old": {
+        "recall@10": 0.0,
+        "mrr": 0.0,
+        "hit@1": 0.0,
+        "ndcg@10": 0.0
+      },
+      "like_bigram": {
+        "recall@10": 1.0,
+        "mrr": 1.0,
+        "hit@1": 1.0,
+        "ndcg@10": 0.967
+      },
+      "fulltext": {
+        "recall@10": 1.0,
+        "mrr": 1.0,
+        "hit@1": 1.0,
+        "ndcg@10": 1.0
+      }
+    }
+  ],
+  "insight": "① 旧实现（空格拆词）对中文无空格查询退化出超长关键词，LIKE 全灭（MRR 0.111）——这是当时必须升级的直接证据；② 即使把 LIKE 做到子串匹配范式上限（2-gram 切词），仍缺 TF-IDF 加权：专名命中但名称相近行污染 top-K，MRR 0.809 / Recall@10 0.561；③ Milvus 全文检索 BM25（服务端 jieba 分词 + TF-IDF）MRR 0.944 / Recall@10 0.704 / Hit@1 0.889。",
+  "timestamp": "2026-10-08T22:57:23"
+}

@@ -1,0 +1,110 @@
+%PDF-1.4
+1 0 obj
+<< /Type /Catalog /Pages 2 0 R >>
+endobj
+2 0 obj
+<< /Type /Pages /Kids [3 0 R] /Count 1 >>
+endobj
+3 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595 842] /Resources << /Font << /F1 4 0 R >> >> /Contents 5 0 R >>
+endobj
+4 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica >>
+endobj
+5 0 obj
+<< /Length 2602 >>
+stream
+0.86 0.86 0.86 rg 0 0 595 842 re f
+0 0 0 rg
+0 0 0 RG
+BT /F1 13 Tf 40 795 Td (SYNTHETIC PERFORMANCE TEST - NO PATIENT DATA) Tj ET
+BT /F1 18 Tf 40 755 Td (Health Examination / Laboratory Report) Tj ET
+BT /F1 12 Tf 40 720 Td (Institution: SYNTHETIC TEST CENTER \(fictional\)) Tj ET
+BT /F1 12 Tf 40 695 Td (Date: 2026-09-15     Sample: BASELINE-001) Tj ET
+35 604 205 46 re S
+BT /F1 11 Tf 40 622 Td (Test item) Tj ET
+240 604 60 46 re S
+BT /F1 11 Tf 245 622 Td (Result) Tj ET
+300 604 75 46 re S
+BT /F1 11 Tf 305 622 Td (Unit) Tj ET
+375 604 95 46 re S
+BT /F1 11 Tf 380 622 Td (Reference) Tj ET
+470 604 90 46 re S
+BT /F1 11 Tf 475 622 Td (Flag) Tj ET
+35 558 205 46 re S
+BT /F1 11 Tf 40 576 Td (Fasting glucose \(GLU\)) Tj ET
+240 558 60 46 re S
+BT /F1 11 Tf 245 576 Td (6.5) Tj ET
+300 558 75 46 re S
+BT /F1 11 Tf 305 576 Td (mmol/L) Tj ET
+375 558 95 46 re S
+BT /F1 11 Tf 380 576 Td (3.9-6.1) Tj ET
+470 558 90 46 re S
+BT /F1 11 Tf 475 576 Td (HIGH) Tj ET
+35 512 205 46 re S
+BT /F1 11 Tf 40 530 Td (Total cholesterol \(TC\)) Tj ET
+240 512 60 46 re S
+BT /F1 11 Tf 245 530 Td (6.2) Tj ET
+300 512 75 46 re S
+BT /F1 11 Tf 305 530 Td (mmol/L) Tj ET
+375 512 95 46 re S
+BT /F1 11 Tf 380 530 Td (3.1-5.2) Tj ET
+470 512 90 46 re S
+BT /F1 11 Tf 475 530 Td (HIGH) Tj ET
+35 466 205 46 re S
+BT /F1 11 Tf 40 484 Td (LDL cholesterol) Tj ET
+240 466 60 46 re S
+BT /F1 11 Tf 245 484 Td (3.7) Tj ET
+300 466 75 46 re S
+BT /F1 11 Tf 305 484 Td (mmol/L) Tj ET
+375 466 95 46 re S
+BT /F1 11 Tf 380 484 Td (0-3.4) Tj ET
+470 466 90 46 re S
+BT /F1 11 Tf 475 484 Td (HIGH) Tj ET
+35 420 205 46 re S
+BT /F1 11 Tf 40 438 Td (Triglycerides \(TG\)) Tj ET
+240 420 60 46 re S
+BT /F1 11 Tf 245 438 Td (2.0) Tj ET
+300 420 75 46 re S
+BT /F1 11 Tf 305 438 Td (mmol/L) Tj ET
+375 420 95 46 re S
+BT /F1 11 Tf 380 438 Td (0.3-1.7) Tj ET
+470 420 90 46 re S
+BT /F1 11 Tf 475 438 Td (HIGH) Tj ET
+35 374 205 46 re S
+BT /F1 11 Tf 40 392 Td (HDL cholesterol) Tj ET
+240 374 60 46 re S
+BT /F1 11 Tf 245 392 Td (1.2) Tj ET
+300 374 75 46 re S
+BT /F1 11 Tf 305 392 Td (mmol/L) Tj ET
+375 374 95 46 re S
+BT /F1 11 Tf 380 392 Td (1.0-1.9) Tj ET
+470 374 90 46 re S
+BT /F1 11 Tf 475 392 Td (NORMAL) Tj ET
+35 328 205 46 re S
+BT /F1 11 Tf 40 346 Td (ALT) Tj ET
+240 328 60 46 re S
+BT /F1 11 Tf 245 346 Td (28) Tj ET
+300 328 75 46 re S
+BT /F1 11 Tf 305 346 Td (U/L) Tj ET
+375 328 95 46 re S
+BT /F1 11 Tf 380 346 Td (9-50) Tj ET
+470 328 90 46 re S
+BT /F1 11 Tf 475 346 Td (NORMAL) Tj ET
+BT /F1 12 Tf 40 270 Td (All values are fabricated. This is not a real patient record.) Tj ET
+BT /F1 11 Tf 40 245 Td (For OCR, retrieval and report-generation performance testing only.) Tj ET
+endstream
+endobj
+xref
+0 6
+0000000000 65535 f 
+0000000009 00000 n 
+0000000058 00000 n 
+0000000115 00000 n 
+0000000241 00000 n 
+0000000311 00000 n 
+trailer
+<< /Size 6 /Root 1 0 R >>
+startxref
+2965
+%%EOF

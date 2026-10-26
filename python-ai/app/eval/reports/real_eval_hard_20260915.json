@@ -1,0 +1,74 @@
+{
+  "benchmark": "hard_negative_retrieval_eval",
+  "method": "易混淆指标对（名称相近），BM25 排序下目标是否先于干扰项",
+  "num_pairs": 5,
+  "bm25": {
+    "hit@1": 0.8,
+    "mrr": 0.9,
+    "found_rate": 1.0,
+    "confusion_rate": 0.0
+  },
+  "per_pair": [
+    {
+      "target": "低密度脂蛋白胆固醇",
+      "distractors": [
+        "高密度脂蛋白胆固醇"
+      ],
+      "bm25": {
+        "target_rank": 0,
+        "found": true,
+        "confused": false,
+        "hit1": true
+      }
+    },
+    {
+      "target": "空腹血糖",
+      "distractors": [
+        "糖化血红蛋白"
+      ],
+      "bm25": {
+        "target_rank": 0,
+        "found": true,
+        "confused": false,
+        "hit1": true
+      }
+    },
+    {
+      "target": "收缩压",
+      "distractors": [
+        "舒张压"
+      ],
+      "bm25": {
+        "target_rank": 0,
+        "found": true,
+        "confused": false,
+        "hit1": true
+      }
+    },
+    {
+      "target": "总胆固醇",
+      "distractors": [
+        "甘油三酯"
+      ],
+      "bm25": {
+        "target_rank": 0,
+        "found": true,
+        "confused": false,
+        "hit1": true
+      }
+    },
+    {
+      "target": "体重指数",
+      "distractors": [
+        "肌酸激酶"
+      ],
+      "bm25": {
+        "target_rank": 1,
+        "found": true,
+        "confused": false,
+        "hit1": false
+      }
+    }
+  ],
+  "timestamp": "2026-09-15T18:02:50"
+}

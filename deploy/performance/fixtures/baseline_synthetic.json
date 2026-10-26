@@ -1,0 +1,10 @@
+{
+  "fixture": "baseline_synthetic_v1",
+  "synthetic": true,
+  "patient_data": false,
+  "language": "English",
+  "metrics": 6,
+  "sha256": "3ca172f041e1019ca8c34315ebeab2683c99b5b70f63933d9d1a9dfcab3fd774",
+  "generator": "deploy/performance/make_baseline_fixture.py",
+  "background_note": "Gray scan background; no application quality thresholds changed."
+}

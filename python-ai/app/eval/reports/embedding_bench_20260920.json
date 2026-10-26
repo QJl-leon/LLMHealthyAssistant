@@ -1,0 +1,41 @@
+{
+  "benchmark": "embedding_selection",
+  "num_docs": 92,
+  "num_queries": 8,
+  "results": [
+    {
+      "model": "Qwen/Qwen3-Embedding-0.6B",
+      "dim": 1024,
+      "total_docs": 92,
+      "embed_seconds": 1.21,
+      "recall@10": 0.75,
+      "mrr": 0.576,
+      "ndcg@10": 0.618,
+      "hit@1": 0.5,
+      "note": "轻量小模型，省成本/低延迟"
+    },
+    {
+      "model": "BAAI/bge-m3",
+      "dim": 1024,
+      "total_docs": 92,
+      "embed_seconds": 1.28,
+      "recall@10": 0.708,
+      "mrr": 0.812,
+      "ndcg@10": 0.712,
+      "hit@1": 0.75,
+      "note": "基线：多语言多粒度，中文 RAG 标配"
+    },
+    {
+      "model": "BAAI/bge-large-zh-v1.5",
+      "dim": 1024,
+      "total_docs": 92,
+      "embed_seconds": 1.24,
+      "recall@10": 0.656,
+      "mrr": 0.792,
+      "ndcg@10": 0.649,
+      "hit@1": 0.75,
+      "note": "中文专用大模型"
+    }
+  ],
+  "timestamp": "2026-09-20T16:33:19"
+}

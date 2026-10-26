@@ -1,0 +1,13 @@
+[Unit]
+Description=LHA local go
+After=network.target docker.service
+
+[Service]
+Type=simple
+User=ubuntu
+WorkingDirectory=/home/ubuntu/RAG-job/LLMHealthyAssistant/go-backend
+ExecStart=/home/ubuntu/RAG-job/LLMHealthyAssistant/.run/lha-go
+Restart=on-failure
+RestartSec=5
+StandardOutput=append:/home/ubuntu/RAG-job/LLMHealthyAssistant/.run/go-systemd.log
+StandardError=append:/home/ubuntu/RAG-job/LLMHealthyAssistant/.run/go-systemd.log

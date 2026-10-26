@@ -1,0 +1,15 @@
+{
+  "poll_seconds": 15,
+  "metrics_unavailable_seconds": 30,
+  "memory_available_min_bytes": 1073741824,
+  "memory_hold_seconds": 60,
+  "disk_free_min_bytes": 2147483648,
+  "queue_max": 10,
+  "queue_hold_seconds": 60,
+  "consecutive_failures": 3,
+  "error_window_size": 20,
+  "error_rate_max": 0.05,
+  "cpu_max_percent": 95,
+  "cpu_hold_seconds": 180,
+  "queue_growth_seconds": 300
+}

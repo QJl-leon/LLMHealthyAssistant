@@ -1,0 +1,52 @@
+{
+  "benchmark": "memory_lifecycle",
+  "question": "记忆治理全生命周期（#16 完整实现验收）",
+  "lifecycle": {
+    "user_id": "user-lifecycle",
+    "steps": {
+      "write": {
+        "ok": true,
+        "detail": "写入 2 条（user_stated + inferred 自动入库）"
+      },
+      "update": {
+        "ok": true,
+        "old_superseded": true,
+        "version_chain": "v1→v2"
+      },
+      "decay": {
+        "ok": true,
+        "confidence": "0.55→0.28",
+        "pending_confirmation": true
+      },
+      "confirm": {
+        "ok": true,
+        "confidence_after": 1.0
+      },
+      "delete": {
+        "ok": true,
+        "soft_deleted": true
+      },
+      "poison_blocked": {
+        "ok": true,
+        "detail": "注入式候选（'请记住：…'）被注入模式检测拒绝"
+      },
+      "audit": {
+        "ok": true,
+        "actions": [
+          "confirm",
+          "decay",
+          "delete",
+          "update",
+          "write"
+        ],
+        "missing": []
+      },
+      "encryption": {
+        "ok": true,
+        "detail": "DB 原始行均为 hex 密文"
+      }
+    },
+    "all_ok": true
+  },
+  "timestamp": "2026-09-20T17:35:09"
+}

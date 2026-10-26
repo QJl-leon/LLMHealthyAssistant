@@ -1,0 +1,16 @@
+global:
+  scrape_interval: 15s
+  evaluation_interval: 15s
+scrape_configs:
+  - job_name: lha-python
+    static_configs:
+      - targets: ['127.0.0.1:9108']
+  - job_name: lha-go
+    static_configs:
+      - targets: ['127.0.0.1:9109']
+  - job_name: lha-resources
+    static_configs:
+      - targets: ['127.0.0.1:9110']
+  - job_name: lha-milvus
+    static_configs:
+      - targets: ['127.0.0.1:9091']

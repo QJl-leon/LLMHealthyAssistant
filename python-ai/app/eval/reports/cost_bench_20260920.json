@@ -1,0 +1,99 @@
+{
+  "benchmark": "cost_budget",
+  "question": "动态证据预算 vs 固定 20×200；token 成本聚合落库与三维度查询",
+  "evidence_count": 62,
+  "fixed_baseline": {
+    "mode": "fixed_20x200",
+    "tokens": 4042,
+    "items": 20,
+    "avg_item_chars": 200
+  },
+  "dynamic": [
+    {
+      "mode": "dynamic_window_8000",
+      "window": 8000,
+      "tokens": 315,
+      "items": 2,
+      "per_item_chars": 200,
+      "budget_reason": "预算 452 tokens，默认单条 200 字符 → 2 条"
+    },
+    {
+      "mode": "dynamic_window_16000",
+      "window": 16000,
+      "tokens": 4135,
+      "items": 20,
+      "per_item_chars": 200,
+      "budget_reason": "预算 4452 tokens，默认单条 200 字符 → 20 条"
+    },
+    {
+      "mode": "dynamic_window_64000",
+      "window": 64000,
+      "tokens": 17127,
+      "items": 62,
+      "per_item_chars": 400,
+      "budget_reason": "预算宽裕（28452 tokens ≥ 全部 62 条），单条放宽到 400 字符"
+    },
+    {
+      "mode": "dynamic_window_128000",
+      "window": 128000,
+      "tokens": 17127,
+      "items": 62,
+      "per_item_chars": 400,
+      "budget_reason": "预算宽裕（60452 tokens ≥ 全部 62 条），单条放宽到 400 字符"
+    }
+  ],
+  "cost_aggregation_demo": {
+    "ok": true,
+    "task_total_tokens": 14700,
+    "task_call_count": 4,
+    "task_items": [
+      {
+        "call_type": "llm",
+        "model": "deepseek-chat",
+        "calls": 1,
+        "tokens": 6600,
+        "prompt_tokens": 5200,
+        "completion_tokens": 1400,
+        "avg_latency_ms": 6500
+      },
+      {
+        "call_type": "rerank",
+        "model": "bge-reranker-v2-m3",
+        "calls": 1,
+        "tokens": 3600,
+        "prompt_tokens": 0,
+        "completion_tokens": 0,
+        "avg_latency_ms": 450
+      },
+      {
+        "call_type": "vlm",
+        "model": "qwen-vl-max",
+        "calls": 1,
+        "tokens": 2400,
+        "prompt_tokens": 1800,
+        "completion_tokens": 600,
+        "avg_latency_ms": 3200
+      },
+      {
+        "call_type": "embedding",
+        "model": "bge-m3",
+        "calls": 1,
+        "tokens": 2100,
+        "prompt_tokens": 0,
+        "completion_tokens": 0,
+        "avg_latency_ms": 800
+      }
+    ],
+    "user_total_tokens": 14700,
+    "model_summary_rows": 4
+  },
+  "conclusions": {
+    "tiny_window_shrinks_coverage": true,
+    "small_window_not_worse": true,
+    "large_window_more_coverage": true,
+    "per_item_relaxed_when_ample": true,
+    "cost_aggregation_ok": true
+  },
+  "insight": "动态预算按模型窗口自适应：8K 极小窗口证据收缩到 2 条（防超窗）；16K 与固定持平（未退化）；64K/128K 大窗口覆盖 20→62 条（突破写死的 20 条上限），且预算宽裕时单条长度 200→400 字符自动放宽。成本侧：LLM/Embedding/Rerank/VLM 每次调用落 token_usage 表，支持任务/用户/模型三维度聚合；限额 = 任务预算（超限降级）+ 用户日配额（超限拒绝）。",
+  "timestamp": "2026-09-20T20:28:21"
+}

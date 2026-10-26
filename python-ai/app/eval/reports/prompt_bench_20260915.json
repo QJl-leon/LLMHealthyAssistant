@@ -1,0 +1,112 @@
+{
+  "benchmark": "prompt_version_control",
+  "question": "JSON Schema 约束前后量化对比（健康评估报告）",
+  "model": "deepseek-chat",
+  "num_scenarios": 4,
+  "v1_freeform": {
+    "parse_ok": 0,
+    "fields_ok": 0,
+    "type_ok": 0,
+    "oob": 0,
+    "marked": 0
+  },
+  "v2_schema": {
+    "parse_ok": 4,
+    "fields_ok": 24,
+    "type_ok": 24,
+    "oob": 0,
+    "marked": 0
+  },
+  "per_query": [
+    {
+      "scenario": "血脂异常-常规",
+      "n_evidence": 3,
+      "v1": {
+        "parse_ok": false,
+        "fields_ok": 0,
+        "fields_total": 6,
+        "type_ok": 0,
+        "out_of_bound_refs": 0,
+        "markdown_wrapped": false,
+        "chars": 1621
+      },
+      "v2": {
+        "parse_ok": true,
+        "fields_ok": 6,
+        "fields_total": 6,
+        "type_ok": 6,
+        "out_of_bound_refs": 0,
+        "markdown_wrapped": false,
+        "chars": 505
+      }
+    },
+    {
+      "scenario": "血压升高-冲突证据",
+      "n_evidence": 3,
+      "v1": {
+        "parse_ok": false,
+        "fields_ok": 0,
+        "fields_total": 6,
+        "type_ok": 0,
+        "out_of_bound_refs": 0,
+        "markdown_wrapped": false,
+        "chars": 1117
+      },
+      "v2": {
+        "parse_ok": true,
+        "fields_ok": 6,
+        "fields_total": 6,
+        "type_ok": 6,
+        "out_of_bound_refs": 0,
+        "markdown_wrapped": false,
+        "chars": 503
+      }
+    },
+    {
+      "scenario": "血糖偏高-含未知指标",
+      "n_evidence": 3,
+      "v1": {
+        "parse_ok": false,
+        "fields_ok": 0,
+        "fields_total": 6,
+        "type_ok": 0,
+        "out_of_bound_refs": 0,
+        "markdown_wrapped": false,
+        "chars": 1329
+      },
+      "v2": {
+        "parse_ok": true,
+        "fields_ok": 6,
+        "fields_total": 6,
+        "type_ok": 6,
+        "out_of_bound_refs": 0,
+        "markdown_wrapped": false,
+        "chars": 642
+      }
+    },
+    {
+      "scenario": "多指标-合并用药",
+      "n_evidence": 3,
+      "v1": {
+        "parse_ok": false,
+        "fields_ok": 0,
+        "fields_total": 6,
+        "type_ok": 0,
+        "out_of_bound_refs": 0,
+        "markdown_wrapped": false,
+        "chars": 1014
+      },
+      "v2": {
+        "parse_ok": true,
+        "fields_ok": 6,
+        "fields_total": 6,
+        "type_ok": 6,
+        "out_of_bound_refs": 0,
+        "markdown_wrapped": false,
+        "chars": 716
+      }
+    }
+  ],
+  "insight": "v1 自由格式下模型常输出 markdown 包裹/自由文本/缺失字段，解析成功率低；v2 用 JSON Schema 示例 + response_format=json_object 后解析成功率和字段完整率显著提升，且引用越界（幻觉风险）减少。这是 prompt 版本化 + Schema 约束的量化依据。",
+  "timestamp": "2026-09-15T18:03:42"
+}

@@ -1,0 +1,137 @@
+{
+  "mode": "real",
+  "results": [
+    {
+      "M": 8,
+      "efConstruction": 100,
+      "search_ef": 32,
+      "recall@10": 0.4133,
+      "p95_latency_ms": 2.08
+    },
+    {
+      "M": 8,
+      "efConstruction": 100,
+      "search_ef": 64,
+      "recall@10": 0.6033,
+      "p95_latency_ms": 2.01
+    },
+    {
+      "M": 8,
+      "efConstruction": 100,
+      "search_ef": 128,
+      "recall@10": 0.7933,
+      "p95_latency_ms": 2.24
+    },
+    {
+      "M": 8,
+      "efConstruction": 200,
+      "search_ef": 32,
+      "recall@10": 0.3467,
+      "p95_latency_ms": 2.18
+    },
+    {
+      "M": 8,
+      "efConstruction": 200,
+      "search_ef": 64,
+      "recall@10": 0.53,
+      "p95_latency_ms": 2.14
+    },
+    {
+      "M": 8,
+      "efConstruction": 200,
+      "search_ef": 128,
+      "recall@10": 0.7033,
+      "p95_latency_ms": 2.61
+    },
+    {
+      "M": 16,
+      "efConstruction": 100,
+      "search_ef": 32,
+      "recall@10": 0.64,
+      "p95_latency_ms": 2.38
+    },
+    {
+      "M": 16,
+      "efConstruction": 100,
+      "search_ef": 64,
+      "recall@10": 0.8167,
+      "p95_latency_ms": 2.3
+    },
+    {
+      "M": 16,
+      "efConstruction": 100,
+      "search_ef": 128,
+      "recall@10": 0.9333,
+      "p95_latency_ms": 2.7
+    },
+    {
+      "M": 16,
+      "efConstruction": 200,
+      "search_ef": 32,
+      "recall@10": 0.62,
+      "p95_latency_ms": 2.61
+    },
+    {
+      "M": 16,
+      "efConstruction": 200,
+      "search_ef": 64,
+      "recall@10": 0.82,
+      "p95_latency_ms": 2.32
+    },
+    {
+      "M": 16,
+      "efConstruction": 200,
+      "search_ef": 128,
+      "recall@10": 0.9467,
+      "p95_latency_ms": 2.64
+    },
+    {
+      "M": 32,
+      "efConstruction": 100,
+      "search_ef": 32,
+      "recall@10": 0.7467,
+      "p95_latency_ms": 2.45
+    },
+    {
+      "M": 32,
+      "efConstruction": 100,
+      "search_ef": 64,
+      "recall@10": 0.8833,
+      "p95_latency_ms": 2.66
+    },
+    {
+      "M": 32,
+      "efConstruction": 100,
+      "search_ef": 128,
+      "recall@10": 0.97,
+      "p95_latency_ms": 3.06
+    },
+    {
+      "M": 32,
+      "efConstruction": 200,
+      "search_ef": 32,
+      "recall@10": 0.7567,
+      "p95_latency_ms": 2.54
+    },
+    {
+      "M": 32,
+      "efConstruction": 200,
+      "search_ef": 64,
+      "recall@10": 0.9067,
+      "p95_latency_ms": 2.66
+    },
+    {
+      "M": 32,
+      "efConstruction": 200,
+      "search_ef": 128,
+      "recall@10": 0.9767,
+      "p95_latency_ms": 3.09
+    }
+  ],
+  "dim": 1024,
+  "num_vectors": 5250,
+  "num_queries": 30,
+  "topk": 10,
+  "data_source": "Milvus evidence_text 真实向量派生扩充",
+  "timestamp": "2026-09-20T14:28:34"
+}

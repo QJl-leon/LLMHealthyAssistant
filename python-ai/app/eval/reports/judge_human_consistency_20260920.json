@@ -1,0 +1,32 @@
+{
+  "benchmark": "judge_human_consistency",
+  "review_file": "/tmp/pytest-of-root/pytest-13/test_full_agreement_trustworth0/review.md",
+  "level": "claim",
+  "rated_claims": 3,
+  "full_agree": 3,
+  "half_agree": 0,
+  "disagree": 0,
+  "agreement_rate": 1.0,
+  "judge_trustworthy": true,
+  "per_claim": [
+    {
+      "claim_ref": "1.1",
+      "claim": "LDL-C 4.2 偏高",
+      "judge": "有依据",
+      "human": "有依据"
+    },
+    {
+      "claim_ref": "1.2",
+      "claim": "建议每周 150 分钟有氧",
+      "judge": "有依据",
+      "human": "有依据"
+    },
+    {
+      "claim_ref": "2.1",
+      "claim": "血糖 6.8 属空腹血糖受损",
+      "judge": "有依据",
+      "human": "有依据"
+    }
+  ],
+  "timestamp": "2026-09-20T23:02:10"
+}

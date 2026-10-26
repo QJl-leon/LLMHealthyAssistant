@@ -1,0 +1,18 @@
+# Request P95 in seconds, grouped by normalized route; SSE is full stream lifetime.
+histogram_quantile(0.95, sum by (le, route) (rate(lha_http_request_seconds_bucket[5m])))
+# Completed HTTP requests per second (not report task throughput).
+sum by (route, status) (rate(lha_http_request_seconds_count[5m]))
+# Inclusive stage P95; do not add nested stage times together.
+histogram_quantile(0.95, sum by (le, stage) (rate(lha_stage_seconds_bucket[5m])))
+# Executor submit-to-start wait P95.
+histogram_quantile(0.95, sum by (le) (rate(lha_executor_queue_seconds_bucket[5m])))
+lha_executor_queued
+lha_executor_busy / lha_executor_workers
+lha_grpc_active
+lha_go_db_in_use / lha_go_db_max_open
+rate(lha_go_db_wait_seconds_total[5m])
+lha_host_memory_available_bytes
+rate(lha_service_process{measure="cpu_seconds"}[5m])
+lha_service_process{measure="rss_bytes"}
+lha_dependency_up
+up

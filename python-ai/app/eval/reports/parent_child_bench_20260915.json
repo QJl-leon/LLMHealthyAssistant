@@ -1,0 +1,585 @@
+{
+  "benchmark": "parent_child_chunk",
+  "question": "子块检索 vs 子块检索+父块扩展（证据主题完整性）",
+  "num_queries": 30,
+  "num_parents": 14,
+  "num_children": 163,
+  "chunk_size": 200,
+  "overlap": 50,
+  "parent_min_chars": 400,
+  "child_only": {
+    "subject_rate": 0.3443,
+    "value_rate": 0.2591,
+    "doc_hit": 1.0,
+    "n_target": 3.4667,
+    "chars": 108.19
+  },
+  "parent_expanded": {
+    "subject_rate": 1.0,
+    "value_rate": 0.5667,
+    "doc_hit": 1.0,
+    "n_target": 3.4667,
+    "chars": 1752.25
+  },
+  "by_position": {
+    "head": {
+      "n": 14,
+      "child_subject_rate": 0.363,
+      "parent_subject_rate": 1.0
+    },
+    "mid": {
+      "n": 8,
+      "child_subject_rate": 0.387,
+      "parent_subject_rate": 1.0
+    },
+    "tail": {
+      "n": 8,
+      "child_subject_rate": 0.269,
+      "parent_subject_rate": 1.0
+    }
+  },
+  "per_query": [
+    {
+      "query": "脂肪肝管理主题 18 studies",
+      "bucket": "head",
+      "child": {
+        "subject_rate": 0.3333333333333333,
+        "value_rate": 0.0,
+        "doc_hit": 1.0,
+        "n_target": 3.0,
+        "chars": 106.2
+      },
+      "parent": {
+        "subject_rate": 1.0,
+        "value_rate": 0.0,
+        "doc_hit": 1.0,
+        "n_target": 3.0,
+        "chars": 2143.9
+      }
+    },
+    {
+      "query": "脂肪肝管理主题 A total of",
+      "bucket": "mid",
+      "child": {
+        "subject_rate": 0.5,
+        "value_rate": 0.0,
+        "doc_hit": 1.0,
+        "n_target": 2.0,
+        "chars": 99.9
+      },
+      "parent": {
+        "subject_rate": 1.0,
+        "value_rate": 0.0,
+        "doc_hit": 1.0,
+        "n_target": 2.0,
+        "chars": 1694.5
+      }
+    },
+    {
+      "query": "脂肪肝管理主题 The effect",
+      "bucket": "tail",
+      "child": {
+        "subject_rate": 0.5,
+        "value_rate": 0.0,
+        "doc_hit": 1.0,
+        "n_target": 2.0,
+        "chars": 73.6
+      },
+      "parent": {
+        "subject_rate": 1.0,
+        "value_rate": 0.0,
+        "doc_hit": 1.0,
+        "n_target": 2.0,
+        "chars": 1984.8
+      }
+    },
+    {
+      "query": "血糖管理主题 Twenty-nin",
+      "bucket": "head",
+      "child": {
+        "subject_rate": 0.3333333333333333,
+        "value_rate": 0.3333333333333333,
+        "doc_hit": 1.0,
+        "n_target": 3.0,
+        "chars": 75.6
+      },
+      "parent": {
+        "subject_rate": 1.0,
+        "value_rate": 1.0,
+        "doc_hit": 1.0,
+        "n_target": 3.0,
+        "chars": 1685.4
+      }
+    },
+    {
+      "query": "血糖管理主题 该指南共76条推荐意",
+      "bucket": "mid",
+      "child": {
+        "subject_rate": 0.2,
+        "value_rate": 0.6,
+        "doc_hit": 1.0,
+        "n_target": 5.0,
+        "chars": 119.2
+      },
+      "parent": {
+        "subject_rate": 1.0,
+        "value_rate": 1.0,
+        "doc_hit": 1.0,
+        "n_target": 5.0,
+        "chars": 1876.3
+      }
+    },
+    {
+      "query": "血糖管理主题 规律运动可增加胰岛素",
+      "bucket": "tail",
+      "child": {
+        "subject_rate": 0.2,
+        "value_rate": 0.8,
+        "doc_hit": 1.0,
+        "n_target": 5.0,
+        "chars": 153.9
+      },
+      "parent": {
+        "subject_rate": 1.0,
+        "value_rate": 1.0,
+        "doc_hit": 1.0,
+        "n_target": 5.0,
+        "chars": 2417.8
+      }
+    },
+    {
+      "query": "血脂管理主题 Nineteen s",
+      "bucket": "head",
+      "child": {
+        "subject_rate": 0.5,
+        "value_rate": 0.0,
+        "doc_hit": 1.0,
+        "n_target": 2.0,
+        "chars": 79.4
+      },
+      "parent": {
+        "subject_rate": 1.0,
+        "value_rate": 0.0,
+        "doc_hit": 1.0,
+        "n_target": 2.0,
+        "chars": 1437.4
+      }
+    },
+    {
+      "query": "血脂管理主题 强调健康的生活方式是",
+      "bucket": "mid",
+      "child": {
+        "subject_rate": 0.5,
+        "value_rate": 0.0,
+        "doc_hit": 1.0,
+        "n_target": 2.0,
+        "chars": 104.1
+      },
+      "parent": {
+        "subject_rate": 1.0,
+        "value_rate": 0.0,
+        "doc_hit": 1.0,
+        "n_target": 2.0,
+        "chars": 1461.2
+      }
+    },
+    {
+      "query": "血脂管理主题 Six studie",
+      "bucket": "tail",
+      "child": {
+        "subject_rate": 0.3333333333333333,
+        "value_rate": 0.0,
+        "doc_hit": 1.0,
+        "n_target": 3.0,
+        "chars": 86.4
+      },
+      "parent": {
+        "subject_rate": 1.0,
+        "value_rate": 0.0,
+        "doc_hit": 1.0,
+        "n_target": 3.0,
+        "chars": 1633.1
+      }
+    },
+    {
+      "query": "血压管理主题 研究显示，每人每日摄",
+      "bucket": "head",
+      "child": {
+        "subject_rate": 0.16666666666666666,
+        "value_rate": 0.5,
+        "doc_hit": 1.0,
+        "n_target": 6.0,
+        "chars": 132.9
+      },
+      "parent": {
+        "subject_rate": 1.0,
+        "value_rate": 1.0,
+        "doc_hit": 1.0,
+        "n_target": 6.0,
+        "chars": 1888.5
+      }
+    },
+    {
+      "query": "血压管理主题 坚持有规律的运动，保",
+      "bucket": "mid",
+      "child": {
+        "subject_rate": 0.1111111111111111,
+        "value_rate": 0.5555555555555556,
+        "doc_hit": 1.0,
+        "n_target": 9.0,
+        "chars": 150.2
+      },
+      "parent": {
+        "subject_rate": 1.0,
+        "value_rate": 1.0,
+        "doc_hit": 1.0,
+        "n_target": 9.0,
+        "chars": 2036.9
+      }
+    },
+    {
+      "query": "血压管理主题 Fifteen st",
+      "bucket": "tail",
+      "child": {
+        "subject_rate": 0.0,
+        "value_rate": 0.25,
+        "doc_hit": 1.0,
+        "n_target": 4.0,
+        "chars": 83.4
+      },
+      "parent": {
+        "subject_rate": 1.0,
+        "value_rate": 1.0,
+        "doc_hit": 1.0,
+        "n_target": 4.0,
+        "chars": 2184.5
+      }
+    },
+    {
+      "query": "体重管理主题 A total of",
+      "bucket": "head",
+      "child": {
+        "subject_rate": 0.5,
+        "value_rate": 0.0,
+        "doc_hit": 1.0,
+        "n_target": 2.0,
+        "chars": 108.7
+      },
+      "parent": {
+        "subject_rate": 1.0,
+        "value_rate": 0.0,
+        "doc_hit": 1.0,
+        "n_target": 2.0,
+        "chars": 2086.3
+      }
+    },
+    {
+      "query": "体重管理主题 Sixteen st",
+      "bucket": "mid",
+      "child": {
+        "subject_rate": 1.0,
+        "value_rate": 0.0,
+        "doc_hit": 1.0,
+        "n_target": 1.0,
+        "chars": 85.2
+      },
+      "parent": {
+        "subject_rate": 1.0,
+        "value_rate": 0.0,
+        "doc_hit": 1.0,
+        "n_target": 1.0,
+        "chars": 1601.6
+      }
+    },
+    {
+      "query": "体重管理主题 Overall 22",
+      "bucket": "tail",
+      "child": {
+        "subject_rate": 0.3333333333333333,
+        "value_rate": 0.0,
+        "doc_hit": 1.0,
+        "n_target": 3.0,
+        "chars": 109.9
+      },
+      "parent": {
+        "subject_rate": 1.0,
+        "value_rate": 0.0,
+        "doc_hit": 1.0,
+        "n_target": 3.0,
+        "chars": 1945.8
+      }
+    },
+    {
+      "query": "运动管理主题 运动处方遵循FITT",
+      "bucket": "head",
+      "child": {
+        "subject_rate": 0.5,
+        "value_rate": 1.0,
+        "doc_hit": 1.0,
+        "n_target": 2.0,
+        "chars": 150.5
+      },
+      "parent": {
+        "subject_rate": 1.0,
+        "value_rate": 1.0,
+        "doc_hit": 1.0,
+        "n_target": 2.0,
+        "chars": 2678.0
+      }
+    },
+    {
+      "query": "运动管理主题 Adults sho",
+      "bucket": "mid",
+      "child": {
+        "subject_rate": 0.2,
+        "value_rate": 0.2,
+        "doc_hit": 1.0,
+        "n_target": 5.0,
+        "chars": 110.2
+      },
+      "parent": {
+        "subject_rate": 1.0,
+        "value_rate": 1.0,
+        "doc_hit": 1.0,
+        "n_target": 5.0,
+        "chars": 2517.5
+      }
+    },
+    {
+      "query": "运动管理主题 Adults sho",
+      "bucket": "tail",
+      "child": {
+        "subject_rate": 0.2,
+        "value_rate": 0.2,
+        "doc_hit": 1.0,
+        "n_target": 5.0,
+        "chars": 110.2
+      },
+      "parent": {
+        "subject_rate": 1.0,
+        "value_rate": 1.0,
+        "doc_hit": 1.0,
+        "n_target": 5.0,
+        "chars": 2517.5
+      }
+    },
+    {
+      "query": "膳食管理主题 坚持谷类为主的平衡膳",
+      "bucket": "head",
+      "child": {
+        "subject_rate": 0.25,
+        "value_rate": 0.0,
+        "doc_hit": 1.0,
+        "n_target": 4.0,
+        "chars": 117.6
+      },
+      "parent": {
+        "subject_rate": 1.0,
+        "value_rate": 0.0,
+        "doc_hit": 1.0,
+        "n_target": 4.0,
+        "chars": 1456.6
+      }
+    },
+    {
+      "query": "膳食管理主题 鱼、禽、蛋类和瘦肉摄",
+      "bucket": "mid",
+      "child": {
+        "subject_rate": 0.25,
+        "value_rate": 0.0,
+        "doc_hit": 1.0,
+        "n_target": 4.0,
+        "chars": 98.9
+      },
+      "parent": {
+        "subject_rate": 1.0,
+        "value_rate": 0.0,
+        "doc_hit": 1.0,
+        "n_target": 4.0,
+        "chars": 1428.6
+      }
+    },
+    {
+      "query": "膳食管理主题 合理安排一日三餐，定",
+      "bucket": "tail",
+      "child": {
+        "subject_rate": 0.25,
+        "value_rate": 0.0,
+        "doc_hit": 1.0,
+        "n_target": 4.0,
+        "chars": 101.2
+      },
+      "parent": {
+        "subject_rate": 1.0,
+        "value_rate": 0.0,
+        "doc_hit": 1.0,
+        "n_target": 4.0,
+        "chars": 1651.6
+      }
+    },
+    {
+      "query": "尿酸管理主题 因尿酸盐在血液中的饱",
+      "bucket": "head",
+      "child": {
+        "subject_rate": 0.16666666666666666,
+        "value_rate": 0.16666666666666666,
+        "doc_hit": 1.0,
+        "n_target": 6.0,
+        "chars": 157.5
+      },
+      "parent": {
+        "subject_rate": 1.0,
+        "value_rate": 1.0,
+        "doc_hit": 1.0,
+        "n_target": 6.0,
+        "chars": 1400.6
+      }
+    },
+    {
+      "query": "尿酸管理主题 The cohort",
+      "bucket": "mid",
+      "child": {
+        "subject_rate": 0.3333333333333333,
+        "value_rate": 0.0,
+        "doc_hit": 1.0,
+        "n_target": 3.0,
+        "chars": 85.1
+      },
+      "parent": {
+        "subject_rate": 1.0,
+        "value_rate": 1.0,
+        "doc_hit": 1.0,
+        "n_target": 3.0,
+        "chars": 2260.0
+      }
+    },
+    {
+      "query": "尿酸管理主题 Since obes",
+      "bucket": "tail",
+      "child": {
+        "subject_rate": 0.3333333333333333,
+        "value_rate": 0.3333333333333333,
+        "doc_hit": 1.0,
+        "n_target": 3.0,
+        "chars": 78.0
+      },
+      "parent": {
+        "subject_rate": 1.0,
+        "value_rate": 1.0,
+        "doc_hit": 1.0,
+        "n_target": 3.0,
+        "chars": 1750.6
+      }
+    },
+    {
+      "query": "Ⅲ度肥胖合并不受控高血压与严重冠状动脉疾病管理主题 病历案例 CASE_",
+      "bucket": "head",
+      "child": {
+        "subject_rate": 0.3333333333333333,
+        "value_rate": 0.6666666666666666,
+        "doc_hit": 1.0,
+        "n_target": 3.0,
+        "chars": 117.7
+      },
+      "parent": {
+        "subject_rate": 1.0,
+        "value_rate": 1.0,
+        "doc_hit": 1.0,
+        "n_target": 3.0,
+        "chars": 605.7
+      }
+    },
+    {
+      "query": "中度高胆固醇血症（低危，未经药物治疗）管理主题 病历案例 CASE_",
+      "bucket": "head",
+      "child": {
+        "subject_rate": 0.5,
+        "value_rate": 0.5,
+        "doc_hit": 1.0,
+        "n_target": 2.0,
+        "chars": 97.0
+      },
+      "parent": {
+        "subject_rate": 1.0,
+        "value_rate": 1.0,
+        "doc_hit": 1.0,
+        "n_target": 2.0,
+        "chars": 1081.4
+      }
+    },
+    {
+      "query": "非酒精性脂肪性肝病（NAFLD）合并不良生活方式相关血脂异常管理主题 病历案例 CASE_",
+      "bucket": "head",
+      "child": {
+        "subject_rate": 0.3333333333333333,
+        "value_rate": 1.0,
+        "doc_hit": 1.0,
+        "n_target": 3.0,
+        "chars": 114.4
+      },
+      "parent": {
+        "subject_rate": 1.0,
+        "value_rate": 1.0,
+        "doc_hit": 1.0,
+        "n_target": 3.0,
+        "chars": 1682.2
+      }
+    },
+    {
+      "query": "糖尿病前期、Ⅲ度肥胖、2级高血压（代谢综合征）管理主题 病历案例 CASE_",
+      "bucket": "head",
+      "child": {
+        "subject_rate": 0.3333333333333333,
+        "value_rate": 0.3333333333333333,
+        "doc_hit": 1.0,
+        "n_target": 3.0,
+        "chars": 113.9
+      },
+      "parent": {
+        "subject_rate": 1.0,
+        "value_rate": 1.0,
+        "doc_hit": 1.0,
+        "n_target": 3.0,
+        "chars": 1027.4
+      }
+    },
+    {
+      "query": "新诊断2型糖尿病（药物初治）伴肥胖、血脂异常与高血压管理主题 病历案例 CASE_",
+      "bucket": "head",
+      "child": {
+        "subject_rate": 0.3333333333333333,
+        "value_rate": 0.3333333333333333,
+        "doc_hit": 1.0,
+        "n_target": 3.0,
+        "chars": 126.4
+      },
+      "parent": {
+        "subject_rate": 1.0,
+        "value_rate": 1.0,
+        "doc_hit": 1.0,
+        "n_target": 3.0,
+        "chars": 1116.7
+      }
+    },
+    {
+      "query": "重度2型糖尿病伴高甘油三酯血症管理主题 病历案例 CASE_",
+      "bucket": "head",
+      "child": {
+        "subject_rate": 0.5,
+        "value_rate": 0.0,
+        "doc_hit": 1.0,
+        "n_target": 2.0,
+        "chars": 98.5
+      },
+      "parent": {
+        "subject_rate": 1.0,
+        "value_rate": 0.0,
+        "doc_hit": 1.0,
+        "n_target": 2.0,
+        "chars": 1315.1
+      }
+    }
+  ],
+  "insight": "长文档（主题标识只在首行出现）被定长窗口切开后，后续子块**丢失主语**：目标证据含主题标识的比例，子块直出仅 34.4%，父子扩展后 100.0%；目标文档命中率两者相同（100.0%）——扩展不改变召回范围，改变的是**送进精排/LLM 的证据质量**（是否带主语与完整字段），这正是'证据可追溯 + 不张冠李戴'的前提。代价：平均证据长度 108 字 → 1752 字，生产上只对命中的目标证据做一次父块替换，token 增量可控。",
+  "timestamp": "2026-09-15T18:01:46"
+}

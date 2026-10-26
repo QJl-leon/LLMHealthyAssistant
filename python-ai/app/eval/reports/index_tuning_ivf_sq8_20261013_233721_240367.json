@@ -1,0 +1,67 @@
+{
+  "mode": "real",
+  "index_type": "IVF_SQ8",
+  "metric_type": "COSINE",
+  "nlist": 128,
+  "nprobes": [
+    4,
+    8,
+    16,
+    32,
+    64
+  ],
+  "results": [
+    {
+      "index_type": "IVF_SQ8",
+      "nlist": 128,
+      "nprobe": 4,
+      "recall@10": 0.14,
+      "p95_latency_ms": 5.79
+    },
+    {
+      "index_type": "IVF_SQ8",
+      "nlist": 128,
+      "nprobe": 8,
+      "recall@10": 0.2633,
+      "p95_latency_ms": 3.93
+    },
+    {
+      "index_type": "IVF_SQ8",
+      "nlist": 128,
+      "nprobe": 16,
+      "recall@10": 0.4033,
+      "p95_latency_ms": 2.96
+    },
+    {
+      "index_type": "IVF_SQ8",
+      "nlist": 128,
+      "nprobe": 32,
+      "recall@10": 0.4933,
+      "p95_latency_ms": 3.76
+    },
+    {
+      "index_type": "IVF_SQ8",
+      "nlist": 128,
+      "nprobe": 64,
+      "recall@10": 0.77,
+      "p95_latency_ms": 4.44
+    }
+  ],
+  "baseline": {
+    "index_type": "FLAT",
+    "recall@10": 1.0,
+    "p95_latency_ms": 7.7
+  },
+  "dim": 1024,
+  "num_seed_vectors": 150,
+  "num_vectors": 5250,
+  "num_queries": 30,
+  "copies_per_seed": 35,
+  "corpus_seed": 42,
+  "perturb_std": 0.15,
+  "warmup_queries_per_config": 30,
+  "p95_method": "nearest_rank",
+  "topk": 10,
+  "data_source": "Milvus evidence_text 真实向量派生扩充",
+  "timestamp": "2026-10-13T23:37:21"
+}

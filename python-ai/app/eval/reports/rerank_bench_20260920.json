@@ -1,0 +1,290 @@
+{
+  "benchmark": "rerank_impact",
+  "rerank_model": "BAAI/bge-reranker-v2-m3",
+  "candidate_top_k": 100,
+  "final_top_k": 10,
+  "insight": "Rerank 收益与粗排质量负相关（实验验证）: 对意译语义查询（字面不含主题词），BM25 词匹配粗排失败——相关文档排在 top10 之外，Cross-Encoder 语义精排后明显提升；对粗排已准的查询（如'血压''体重'），rerank 持平无提升。结论: 精排是粗排质量不足时的必要补强，RRF 只做排名混合，语义精排由 Cross-Encoder 完成。",
+  "bm25_only": {
+    "num_queries": 6,
+    "metrics": {
+      "recall@10": {
+        "pre": 0.526,
+        "post": 0.43,
+        "delta": -0.096
+      },
+      "precision@10": {
+        "pre": 0.633,
+        "post": 0.583,
+        "delta": -0.05
+      },
+      "mrr": {
+        "pre": 0.889,
+        "post": 0.833,
+        "delta": -0.056
+      },
+      "hit@1": {
+        "pre": 0.833,
+        "post": 0.667,
+        "delta": -0.166
+      },
+      "ndcg@10": {
+        "pre": 0.768,
+        "post": 0.689,
+        "delta": -0.079
+      }
+    }
+  },
+  "rrf_fusion": {
+    "num_queries": 6,
+    "metrics": {
+      "recall@10": {
+        "pre": 0.526,
+        "post": 0.43,
+        "delta": -0.096
+      },
+      "precision@10": {
+        "pre": 0.633,
+        "post": 0.583,
+        "delta": -0.05
+      },
+      "mrr": {
+        "pre": 0.889,
+        "post": 0.833,
+        "delta": -0.056
+      },
+      "hit@1": {
+        "pre": 0.833,
+        "post": 0.667,
+        "delta": -0.166
+      },
+      "ndcg@10": {
+        "pre": 0.768,
+        "post": 0.689,
+        "delta": -0.079
+      }
+    }
+  },
+  "per_query": {
+    "bm25_only": [
+      {
+        "query": "体检报告血脂那几个箭头怎么办",
+        "n_rel": 23,
+        "pre": {
+          "recall@10": 0.348,
+          "precision@10": 0.8,
+          "mrr": 0.333,
+          "hit@1": 0.0,
+          "ndcg@10": 0.641
+        },
+        "post": {
+          "recall@10": 0.391,
+          "precision@10": 0.9,
+          "mrr": 1.0,
+          "hit@1": 1.0,
+          "ndcg@10": 0.934
+        }
+      },
+      {
+        "query": "血糖高的人怎样锻炼比较好",
+        "n_rel": 10,
+        "pre": {
+          "recall@10": 0.7,
+          "precision@10": 0.7,
+          "mrr": 1.0,
+          "hit@1": 1.0,
+          "ndcg@10": 0.747
+        },
+        "post": {
+          "recall@10": 0.7,
+          "precision@10": 0.7,
+          "mrr": 1.0,
+          "hit@1": 1.0,
+          "ndcg@10": 0.772
+        }
+      },
+      {
+        "query": "血压有点高适合什么运动",
+        "n_rel": 22,
+        "pre": {
+          "recall@10": 0.318,
+          "precision@10": 0.7,
+          "mrr": 1.0,
+          "hit@1": 1.0,
+          "ndcg@10": 0.792
+        },
+        "post": {
+          "recall@10": 0.364,
+          "precision@10": 0.8,
+          "mrr": 1.0,
+          "hit@1": 1.0,
+          "ndcg@10": 0.848
+        }
+      },
+      {
+        "query": "尿酸偏高平时能不能运动",
+        "n_rel": 5,
+        "pre": {
+          "recall@10": 1.0,
+          "precision@10": 0.5,
+          "mrr": 1.0,
+          "hit@1": 1.0,
+          "ndcg@10": 0.971
+        },
+        "post": {
+          "recall@10": 0.4,
+          "precision@10": 0.2,
+          "mrr": 1.0,
+          "hit@1": 1.0,
+          "ndcg@10": 0.553
+        }
+      },
+      {
+        "query": "体检查出脂肪肝怎么运动",
+        "n_rel": 4,
+        "pre": {
+          "recall@10": 0.5,
+          "precision@10": 0.2,
+          "mrr": 1.0,
+          "hit@1": 1.0,
+          "ndcg@10": 0.541
+        },
+        "post": {
+          "recall@10": 0.5,
+          "precision@10": 0.2,
+          "mrr": 0.5,
+          "hit@1": 0.0,
+          "ndcg@10": 0.414
+        }
+      },
+      {
+        "query": "体重超标想减重怎么安排运动",
+        "n_rel": 31,
+        "pre": {
+          "recall@10": 0.29,
+          "precision@10": 0.9,
+          "mrr": 1.0,
+          "hit@1": 1.0,
+          "ndcg@10": 0.915
+        },
+        "post": {
+          "recall@10": 0.226,
+          "precision@10": 0.7,
+          "mrr": 0.5,
+          "hit@1": 0.0,
+          "ndcg@10": 0.616
+        }
+      }
+    ],
+    "rrf_fusion": [
+      {
+        "query": "体检报告血脂那几个箭头怎么办",
+        "n_rel": 23,
+        "pre": {
+          "recall@10": 0.348,
+          "precision@10": 0.8,
+          "mrr": 0.333,
+          "hit@1": 0.0,
+          "ndcg@10": 0.641
+        },
+        "post": {
+          "recall@10": 0.391,
+          "precision@10": 0.9,
+          "mrr": 1.0,
+          "hit@1": 1.0,
+          "ndcg@10": 0.934
+        }
+      },
+      {
+        "query": "血糖高的人怎样锻炼比较好",
+        "n_rel": 10,
+        "pre": {
+          "recall@10": 0.7,
+          "precision@10": 0.7,
+          "mrr": 1.0,
+          "hit@1": 1.0,
+          "ndcg@10": 0.747
+        },
+        "post": {
+          "recall@10": 0.7,
+          "precision@10": 0.7,
+          "mrr": 1.0,
+          "hit@1": 1.0,
+          "ndcg@10": 0.772
+        }
+      },
+      {
+        "query": "血压有点高适合什么运动",
+        "n_rel": 22,
+        "pre": {
+          "recall@10": 0.318,
+          "precision@10": 0.7,
+          "mrr": 1.0,
+          "hit@1": 1.0,
+          "ndcg@10": 0.792
+        },
+        "post": {
+          "recall@10": 0.364,
+          "precision@10": 0.8,
+          "mrr": 1.0,
+          "hit@1": 1.0,
+          "ndcg@10": 0.848
+        }
+      },
+      {
+        "query": "尿酸偏高平时能不能运动",
+        "n_rel": 5,
+        "pre": {
+          "recall@10": 1.0,
+          "precision@10": 0.5,
+          "mrr": 1.0,
+          "hit@1": 1.0,
+          "ndcg@10": 0.971
+        },
+        "post": {
+          "recall@10": 0.4,
+          "precision@10": 0.2,
+          "mrr": 1.0,
+          "hit@1": 1.0,
+          "ndcg@10": 0.553
+        }
+      },
+      {
+        "query": "体检查出脂肪肝怎么运动",
+        "n_rel": 4,
+        "pre": {
+          "recall@10": 0.5,
+          "precision@10": 0.2,
+          "mrr": 1.0,
+          "hit@1": 1.0,
+          "ndcg@10": 0.541
+        },
+        "post": {
+          "recall@10": 0.5,
+          "precision@10": 0.2,
+          "mrr": 0.5,
+          "hit@1": 0.0,
+          "ndcg@10": 0.414
+        }
+      },
+      {
+        "query": "体重超标想减重怎么安排运动",
+        "n_rel": 31,
+        "pre": {
+          "recall@10": 0.29,
+          "precision@10": 0.9,
+          "mrr": 1.0,
+          "hit@1": 1.0,
+          "ndcg@10": 0.915
+        },
+        "post": {
+          "recall@10": 0.226,
+          "precision@10": 0.7,
+          "mrr": 0.5,
+          "hit@1": 0.0,
+          "ndcg@10": 0.616
+        }
+      }
+    ]
+  },
+  "timestamp": "2026-09-20T16:47:05"
+}

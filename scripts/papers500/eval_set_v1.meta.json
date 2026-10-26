@@ -1,0 +1,20 @@
+{
+  "schema_version": 1,
+  "knowledge_version": "kv_20260928_001",
+  "papers": 500,
+  "human_questions": 31,
+  "human_query_variants": 62,
+  "coverage_queries": 500,
+  "coverage_depth": {
+    "early": 251,
+    "late": 249
+  },
+  "human_anchors_in_export": 28,
+  "inputs": {
+    "papers": "/home/ubuntu/RAG-job/实验2_解析结果/parsed_papers.jsonl",
+    "papers_sha256": "724917370f30f8459375503d7d2fcd093f7e332f3de606b78fa18c9b476a6707",
+    "human": "/home/ubuntu/RAG-job/LLMHealthyAssistant/python-ai/app/eval/datasets/paper_chunk_v1.jsonl",
+    "human_sha256": "f0012e3daefeaee9f337ad3aaa10e29a9cddece3a618a6bf00a1999dd62ce216"
+  },
+  "test_set_sha256": "9ff2ff3d2910f66414f10f0f5dea8483232c77d8cc0027f40bb0e6d9237bcff7"
+}

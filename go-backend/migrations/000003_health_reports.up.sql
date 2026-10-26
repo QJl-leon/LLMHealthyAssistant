@@ -1,0 +1,19 @@
+-- 000003_health_reports.up.sql
+-- 体检报告相关表：由 Python 侧 python-ai/app/factory/repository.py 的 init_tables() 管理，
+-- Go 侧不再重复建表（避免双写同一张表的 DDL 冲突）。
+--
+-- Python init_tables() 已建的体检域表：
+--   metric_catalog   — 指标目录（指标编码 / 中文名 / 单位 / 参考区间 / 解读提示）
+--   health_reports   — 体检报告元数据（user_id, report_date, institution, report_type, ...）
+--   health_metrics   — 体检指标明细（report_id, metric_code, value_num, ref_low/high, flag, ...）
+--   health_guidelines— 健康指南（论文 / 指南库，evidence_level）
+--   medical_cases    — 病历案例（年龄/性别/主诉/检查/指标/干预/结局）
+--
+-- Go 侧对体检结果的消费方式：
+--   1. 经 POST /internal/reports 接收 Python 提交的 sections + metrics + metric_trends，
+--      连同报告一起写入 reports.content（JSONB），读取时经 GET /api/v1/reports/:id 返回；
+--   2. Go 不直读 health_reports / health_metrics，指标历史趋势由 Python 侧计算后透传。
+--
+-- 因此本迁移在 Go 侧无 DDL 变更（占位，保持版本序列连续）。
+
+-- 无操作：体检报告表由 Python 侧 init_tables() 管理。

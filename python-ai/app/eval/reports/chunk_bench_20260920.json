@@ -1,0 +1,35 @@
+{
+  "benchmark": "chunk_strategy",
+  "strategies": {
+    "baseline": {
+      "num_chunks": 1,
+      "num_queries": 30,
+      "recall@5": 0.1,
+      "mrr": 0.1,
+      "hit@1": 0.1
+    },
+    "semantic_window": {
+      "num_chunks": 19,
+      "num_queries": 30,
+      "recall@5": 1.0,
+      "mrr": 0.906,
+      "hit@1": 0.833
+    },
+    "semantic_split": {
+      "num_chunks": 23,
+      "num_queries": 30,
+      "recall@5": 1.0,
+      "mrr": 0.906,
+      "hit@1": 0.833
+    },
+    "structured_row": {
+      "num_chunks": 30,
+      "num_queries": 30,
+      "recall@5": 1.0,
+      "mrr": 0.908,
+      "hit@1": 0.833
+    }
+  },
+  "chunk_max": 400,
+  "timestamp": "2026-09-20T03:15:45"
+}

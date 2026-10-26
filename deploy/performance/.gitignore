@@ -1,0 +1,8 @@
+client.env
+config/samples.json
+fixtures/*
+!fixtures/baseline_synthetic.png
+!fixtures/baseline_synthetic.pdf
+!fixtures/baseline_synthetic.json
+results/
+*.tar.gz

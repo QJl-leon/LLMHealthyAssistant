@@ -1,0 +1,326 @@
+{
+  "benchmark": "query_hyde_impact",
+  "question": "HyDE 在本场景的收益与代价",
+  "isolated_variable": "Dense 通道（BM25 仍用原 query）；关闭 Redis 缓存",
+  "num_queries": 13,
+  "multi_n": 3,
+  "raw": {
+    "recall@10": 0.592,
+    "mrr": 0.949,
+    "hit@1": 0.923,
+    "ndcg@10": 0.749,
+    "avg_latency_ms": 253.2,
+    "llm_tokens": 0
+  },
+  "hyde": {
+    "recall@10": 0.577,
+    "mrr": 0.878,
+    "hit@1": 0.846,
+    "ndcg@10": 0.755,
+    "avg_latency_ms": 1731.8,
+    "llm_tokens": 3774
+  },
+  "multi_hyde": {
+    "recall@10": 0.618,
+    "mrr": 0.933,
+    "hit@1": 0.923,
+    "ndcg@10": 0.792,
+    "avg_latency_ms": 4317.7,
+    "llm_tokens": 11255
+  },
+  "delta": {
+    "hyde_mrr": -0.071,
+    "hyde_recall@10": -0.015,
+    "multi_hyde_mrr": -0.016
+  },
+  "per_query": [
+    {
+      "query": "血脂高的人该怎么锻炼",
+      "rel": 21,
+      "raw": {
+        "recall@10": 0.238,
+        "mrr": 0.333,
+        "hit@1": 0.0,
+        "ndcg@10": 0.426
+      },
+      "hyde": {
+        "recall@10": 0.429,
+        "mrr": 1.0,
+        "hit@1": 1.0,
+        "ndcg@10": 0.931
+      },
+      "multi_hyde": {
+        "recall@10": 0.333,
+        "mrr": 1.0,
+        "hit@1": 1.0,
+        "ndcg@10": 0.767
+      }
+    },
+    {
+      "query": "血糖偏高怎么运动",
+      "rel": 9,
+      "raw": {
+        "recall@10": 0.556,
+        "mrr": 1.0,
+        "hit@1": 1.0,
+        "ndcg@10": 0.686
+      },
+      "hyde": {
+        "recall@10": 0.667,
+        "mrr": 1.0,
+        "hit@1": 1.0,
+        "ndcg@10": 0.764
+      },
+      "multi_hyde": {
+        "recall@10": 0.667,
+        "mrr": 1.0,
+        "hit@1": 1.0,
+        "ndcg@10": 0.777
+      }
+    },
+    {
+      "query": "血压有点高适合什么运动",
+      "rel": 19,
+      "raw": {
+        "recall@10": 0.316,
+        "mrr": 1.0,
+        "hit@1": 1.0,
+        "ndcg@10": 0.672
+      },
+      "hyde": {
+        "recall@10": 0.368,
+        "mrr": 1.0,
+        "hit@1": 1.0,
+        "ndcg@10": 0.739
+      },
+      "multi_hyde": {
+        "recall@10": 0.368,
+        "mrr": 1.0,
+        "hit@1": 1.0,
+        "ndcg@10": 0.801
+      }
+    },
+    {
+      "query": "尿酸偏高能不能运动",
+      "rel": 5,
+      "raw": {
+        "recall@10": 0.8,
+        "mrr": 1.0,
+        "hit@1": 1.0,
+        "ndcg@10": 0.869
+      },
+      "hyde": {
+        "recall@10": 0.8,
+        "mrr": 1.0,
+        "hit@1": 1.0,
+        "ndcg@10": 0.869
+      },
+      "multi_hyde": {
+        "recall@10": 1.0,
+        "mrr": 1.0,
+        "hit@1": 1.0,
+        "ndcg@10": 0.971
+      }
+    },
+    {
+      "query": "脂肪肝靠运动能改善吗",
+      "rel": 4,
+      "raw": {
+        "recall@10": 0.5,
+        "mrr": 1.0,
+        "hit@1": 1.0,
+        "ndcg@10": 0.586
+      },
+      "hyde": {
+        "recall@10": 0.0,
+        "mrr": 0.083,
+        "hit@1": 0.0,
+        "ndcg@10": 0.0
+      },
+      "multi_hyde": {
+        "recall@10": 0.25,
+        "mrr": 0.125,
+        "hit@1": 0.0,
+        "ndcg@10": 0.123
+      }
+    },
+    {
+      "query": "体重超标怎么减重",
+      "rel": 27,
+      "raw": {
+        "recall@10": 0.259,
+        "mrr": 1.0,
+        "hit@1": 1.0,
+        "ndcg@10": 0.786
+      },
+      "hyde": {
+        "recall@10": 0.259,
+        "mrr": 1.0,
+        "hit@1": 1.0,
+        "ndcg@10": 0.778
+      },
+      "multi_hyde": {
+        "recall@10": 0.222,
+        "mrr": 1.0,
+        "hit@1": 1.0,
+        "ndcg@10": 0.691
+      }
+    },
+    {
+      "query": "血脂异常的运动建议",
+      "rel": 21,
+      "raw": {
+        "recall@10": 0.286,
+        "mrr": 1.0,
+        "hit@1": 1.0,
+        "ndcg@10": 0.679
+      },
+      "hyde": {
+        "recall@10": 0.238,
+        "mrr": 0.333,
+        "hit@1": 0.0,
+        "ndcg@10": 0.427
+      },
+      "multi_hyde": {
+        "recall@10": 0.333,
+        "mrr": 1.0,
+        "hit@1": 1.0,
+        "ndcg@10": 0.779
+      }
+    },
+    {
+      "query": "血糖控制怎么运动",
+      "rel": 9,
+      "raw": {
+        "recall@10": 0.556,
+        "mrr": 1.0,
+        "hit@1": 1.0,
+        "ndcg@10": 0.676
+      },
+      "hyde": {
+        "recall@10": 0.556,
+        "mrr": 1.0,
+        "hit@1": 1.0,
+        "ndcg@10": 0.673
+      },
+      "multi_hyde": {
+        "recall@10": 0.667,
+        "mrr": 1.0,
+        "hit@1": 1.0,
+        "ndcg@10": 0.747
+      }
+    },
+    {
+      "query": "高血压运动注意事项",
+      "rel": 18,
+      "raw": {
+        "recall@10": 0.389,
+        "mrr": 1.0,
+        "hit@1": 1.0,
+        "ndcg@10": 0.735
+      },
+      "hyde": {
+        "recall@10": 0.389,
+        "mrr": 1.0,
+        "hit@1": 1.0,
+        "ndcg@10": 0.791
+      },
+      "multi_hyde": {
+        "recall@10": 0.389,
+        "mrr": 1.0,
+        "hit@1": 1.0,
+        "ndcg@10": 0.797
+      }
+    },
+    {
+      "query": "高尿酸怎么运动",
+      "rel": 5,
+      "raw": {
+        "recall@10": 0.8,
+        "mrr": 1.0,
+        "hit@1": 1.0,
+        "ndcg@10": 0.694
+      },
+      "hyde": {
+        "recall@10": 0.8,
+        "mrr": 1.0,
+        "hit@1": 1.0,
+        "ndcg@10": 0.844
+      },
+      "multi_hyde": {
+        "recall@10": 0.8,
+        "mrr": 1.0,
+        "hit@1": 1.0,
+        "ndcg@10": 0.844
+      }
+    },
+    {
+      "query": "低密度脂蛋白胆固醇参考区间是多少",
+      "rel": 1,
+      "raw": {
+        "recall@10": 1.0,
+        "mrr": 1.0,
+        "hit@1": 1.0,
+        "ndcg@10": 1.0
+      },
+      "hyde": {
+        "recall@10": 1.0,
+        "mrr": 1.0,
+        "hit@1": 1.0,
+        "ndcg@10": 1.0
+      },
+      "multi_hyde": {
+        "recall@10": 1.0,
+        "mrr": 1.0,
+        "hit@1": 1.0,
+        "ndcg@10": 1.0
+      }
+    },
+    {
+      "query": "他汀用药和运动注意事项",
+      "rel": 2,
+      "raw": {
+        "recall@10": 1.0,
+        "mrr": 1.0,
+        "hit@1": 1.0,
+        "ndcg@10": 1.0
+      },
+      "hyde": {
+        "recall@10": 1.0,
+        "mrr": 1.0,
+        "hit@1": 1.0,
+        "ndcg@10": 1.0
+      },
+      "multi_hyde": {
+        "recall@10": 1.0,
+        "mrr": 1.0,
+        "hit@1": 1.0,
+        "ndcg@10": 1.0
+      }
+    },
+    {
+      "query": "高尿酸血症运动禁忌",
+      "rel": 3,
+      "raw": {
+        "recall@10": 1.0,
+        "mrr": 1.0,
+        "hit@1": 1.0,
+        "ndcg@10": 0.933
+      },
+      "hyde": {
+        "recall@10": 1.0,
+        "mrr": 1.0,
+        "hit@1": 1.0,
+        "ndcg@10": 1.0
+      },
+      "multi_hyde": {
+        "recall@10": 1.0,
+        "mrr": 1.0,
+        "hit@1": 1.0,
+        "ndcg@10": 1.0
+      }
+    }
+  ],
+  "insight": "结论（真实数据，Dense-only，关闭缓存）：① HyDE 把**首条精度**拉满：Hit@1 0.923 → 0.846、MRR 0.949 → 0.878；② 但**牺牲召回广度与排序质量**：Recall@10 0.592 → 0.577、NDCG@10 0.749 → 0.755——假设文档带来语义漂移，把相关但形态不同的证据挤出 top10；③ multi-HyDE 不划算：NDCG 进一步降到 0.792，延迟 4317.7ms、11255 tokens（多视角平均模糊了区分度）；④ 关键工程判断：本项目**已有 Cross-Encoder 精排**，「把最相关排第一」这一收益已由精排实现，HyDE 与之重叠，却额外付出更高延迟（253.2ms → 1731.8ms）。因此生产默认关闭（HYDE_ENABLED=false），仅在「无精排链路」或「超短查询」场景作为可选增强。",
+  "timestamp": "2026-09-20T15:23:52"
+}

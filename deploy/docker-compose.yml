@@ -1,0 +1,141 @@
+# 个人健康顾问助手 —— 基础设施
+# 启动: docker compose -f deploy/docker-compose.yml up -d
+# 停止并清数据: docker compose -f deploy/docker-compose.yml down -v
+# 带观测: docker compose -f deploy/docker-compose.yml --profile obs up -d
+
+services:
+  # ── PostgreSQL 16 ──────────────────────────────────────────
+  postgres:
+    image: postgres:16-alpine
+    container_name: lha-postgres
+    restart: unless-stopped
+    ports:
+      - "127.0.0.1:5432:5432"
+    environment:
+      POSTGRES_USER: lha
+      POSTGRES_PASSWORD: lha_dev
+      POSTGRES_DB: lha
+    volumes:
+      - pg_data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U lha"]
+      interval: 5s
+      timeout: 3s
+      retries: 5
+    deploy:
+      resources:
+        limits:
+          memory: 512M
+
+  # ── Milvus 2.5 (standalone, embedded etcd + local storage) ─
+  milvus:
+    image: milvusdb/milvus:v2.5.4
+    container_name: lha-milvus
+    restart: unless-stopped
+    ports:
+      - "127.0.0.1:19530:19530"
+      - "127.0.0.1:9091:9091"
+    command: ["milvus", "run", "standalone"]
+    environment:
+      ETCD_USE_EMBED: "true"
+      # 嵌入式 etcd 数据目录必须落到持久卷，否则容器重建即清空全部集合元数据
+      # （默认相对路径 default.etcd 在容器层，2026-09-23 曾因此丢失全部索引元数据）
+      ETCD_DATA_DIR: /var/lib/milvus/etcd
+      COMMON_STORAGETYPE: "local"
+    volumes:
+      - milvus_data:/var/lib/milvus
+    healthcheck:
+      test: ["CMD", "curl", "-sf", "http://localhost:9091/healthz"]
+      interval: 10s
+      timeout: 5s
+      retries: 12
+    # 六个论文实验集合同时恢复及构建 HNSW 时，原 4G 上限触发过 OOM。
+    # 实验集合平时卸载，只在查询/评测时按需 load。
+    memswap_limit: 7G
+    deploy:
+      resources:
+        limits:
+          memory: 6G
+
+  # ── Redis 7 ────────────────────────────────────────────────
+  redis:
+    image: redis:7-alpine
+    container_name: lha-redis
+    restart: unless-stopped
+    # 仅淘汰带 TTL 的缓存；为快照和运行开销保留内存
+    command: ["redis-server", "--maxmemory", "768mb", "--maxmemory-policy", "volatile-lru"]
+    memswap_limit: 3G
+    ports:
+      - "127.0.0.1:6379:6379"
+    volumes:
+      - redis_data:/data
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 5s
+      timeout: 3s
+      retries: 5
+    deploy:
+      resources:
+        limits:
+          memory: 2G
+
+  # ── MinIO (业务侧：原图 + 解析产物) ────────────────────────
+  minio:
+    image: minio/minio:latest
+    container_name: lha-minio
+    command: server /data --console-address ":9001"
+    ports:
+      - "127.0.0.1:9000:9000"
+      - "127.0.0.1:9001:9001"
+    environment:
+      MINIO_ROOT_USER: minioadmin
+      MINIO_ROOT_PASSWORD: minioadmin_dev
+    volumes:
+      - minio_data:/data
+    healthcheck:
+      test: ["CMD", "curl", "-sf", "http://localhost:9000/minio/health/live"]
+      interval: 10s
+      timeout: 3s
+      retries: 5
+    deploy:
+      resources:
+        limits:
+          memory: 512M
+
+  # ── OpenTelemetry Collector ────────────────────────────────
+  otel-collector:
+    image: otel/opentelemetry-collector-contrib:latest
+    container_name: lha-otel-collector
+    restart: unless-stopped
+    command: ["--config", "/etc/otel-collector-config.yaml"]
+    ports:
+      - "127.0.0.1:4317:4317"   # OTLP gRPC
+      - "127.0.0.1:4318:4318"   # OTLP HTTP
+    volumes:
+      - ./otel-collector-config.yaml:/etc/otel-collector-config.yaml:ro
+    deploy:
+      resources:
+        limits:
+          memory: 512M
+
+  # ── Jaeger (profile=obs 才启动) ────────────────────────────
+  jaeger:
+    image: jaegertracing/all-in-one:latest
+    container_name: lha-jaeger
+    ports:
+      - "127.0.0.1:16686:16686"
+      - "127.0.0.1:16687:16687"
+    environment:
+      COLLECTOR_OTLP_ENABLED: "true"
+    profiles:
+      - obs
+    deploy:
+      resources:
+        limits:
+          memory: 256M
+
+volumes:
+  pg_data:
+  milvus_data:
+  redis_data:
+  minio_data:

@@ -1,0 +1,12 @@
+{
+  "judge_mode": "rule",
+  "faithfulness": 0.6666666666666666,
+  "answer_relevancy": 1.0,
+  "context_precision@3": 0.6666666666666666,
+  "context_recall@3": 1.0,
+  "context_precision@5": 0.6666666666666666,
+  "context_recall@5": 1.0,
+  "citation_accuracy": 1.0,
+  "unknown_rate": 0.0,
+  "demo": true
+}

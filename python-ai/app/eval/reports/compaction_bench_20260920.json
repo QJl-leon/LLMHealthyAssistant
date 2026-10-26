@@ -1,0 +1,55 @@
+{
+  "benchmark": "compaction",
+  "question": "纯结构化上下文压缩：token 显著下降且引用完整率 100%、不引入新数字、任务成功率不降",
+  "method": "真实语料（guidelines 49 + cases 13）× 3 规模；cited 模式压缩；无 LLM",
+  "results": [
+    {
+      "scenario": "1x_全量证据",
+      "evidence_count": 62,
+      "tokens_before": 13431,
+      "tokens_after": 1862,
+      "token_reduction": 0.8614,
+      "citation_completeness": 1.0,
+      "cited_count": 8,
+      "kept_count": 8,
+      "dropped_count": 54,
+      "task_success_before": true,
+      "task_success_after": true,
+      "new_numbers_introduced": [],
+      "no_new_numbers": true
+    },
+    {
+      "scenario": "2x_双倍累积",
+      "evidence_count": 124,
+      "tokens_before": 27008,
+      "tokens_after": 1863,
+      "token_reduction": 0.931,
+      "citation_completeness": 1.0,
+      "cited_count": 8,
+      "kept_count": 8,
+      "dropped_count": 116,
+      "task_success_before": true,
+      "task_success_after": true,
+      "new_numbers_introduced": [],
+      "no_new_numbers": true
+    },
+    {
+      "scenario": "3x_三倍累积",
+      "evidence_count": 186,
+      "tokens_before": 40610,
+      "tokens_after": 1863,
+      "token_reduction": 0.9541,
+      "citation_completeness": 1.0,
+      "cited_count": 8,
+      "kept_count": 8,
+      "dropped_count": 178,
+      "task_success_before": true,
+      "task_success_after": true,
+      "new_numbers_introduced": [],
+      "no_new_numbers": true
+    }
+  ],
+  "all_ok": true,
+  "insight": "压缩策略为纯结构化（零 LLM）：证据层只留被引用 + 计数摘要，观察层同名同值合并/同名异值保留冲突，讨论层只留结论+evidence_id；数字/单位/参考区间/evidence_id/source_url 原样保留。触发参考 Claude Code auto-compact：按 token 预算（COMPACTION_TRIGGER_TOKENS）接近上限时自动触发，压缩后无缝继续。",
+  "timestamp": "2026-09-20T20:00:54"
+}

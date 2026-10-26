@@ -1,0 +1,13 @@
+[Unit]
+Description=LHA local web
+After=network.target docker.service
+
+[Service]
+Type=simple
+User=ubuntu
+WorkingDirectory=/home/ubuntu/RAG-job/LLMHealthyAssistant/web
+ExecStart=/home/ubuntu/RAG-job/.tools/node-v22.12.0-linux-x64/bin/node /home/ubuntu/RAG-job/LLMHealthyAssistant/web/node_modules/vite/bin/vite.js --host
+Restart=on-failure
+RestartSec=5
+StandardOutput=append:/home/ubuntu/RAG-job/LLMHealthyAssistant/.run/web-systemd.log
+StandardError=append:/home/ubuntu/RAG-job/LLMHealthyAssistant/.run/web-systemd.log

@@ -1,0 +1,6 @@
+{
+  "mode": "smoke", "environment": "production", "concurrency": 1,
+  "duration_seconds": 60, "max_tasks": 1, "task_timeout_seconds": 45,
+  "max_inflight": 1, "samples": [], "sse_reconnects": 0,
+  "max_total_tokens": 1
+}

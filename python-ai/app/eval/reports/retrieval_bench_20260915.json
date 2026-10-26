@@ -1,0 +1,301 @@
+{
+  "benchmark": "retrieval_quality",
+  "mode": "real",
+  "corpus_source": "PG 健康知识库（metric_catalog/health_guidelines/medical_cases）",
+  "num_docs": 92,
+  "num_queries": 8,
+  "aggregated": {
+    "recall@1": 0.4583,
+    "precision@1": 0.875,
+    "ndcg@1": 0.875,
+    "recall@3": 0.625,
+    "precision@3": 0.625,
+    "ndcg@3": 0.875,
+    "recall@5": 0.7396,
+    "precision@5": 0.525,
+    "ndcg@5": 0.8586,
+    "mrr": 0.875,
+    "hit@1": 0.875,
+    "empty_recall_rate": 0.0,
+    "channel_coverage": 1.0
+  },
+  "per_query": [
+    {
+      "query": "血脂异常 有氧运动 干预 循证",
+      "topics": [
+        "血脂异常"
+      ],
+      "banks": [
+        "case"
+      ],
+      "ranked_top": [
+        "5e032635-7d2f-4ed3-b3f4-c8496fd55f0f",
+        "0d2dff6f-078b-47ca-aa1e-13d39b66f757",
+        "a2d0287b-183b-4d8d-85cb-d07f5d9cda40",
+        "6987c751-129d-4c39-be94-65a89597489f",
+        "m_APOA1"
+      ],
+      "relevant_count": 4,
+      "relevant_ids": [
+        "0d2dff6f-078b-47ca-aa1e-13d39b66f757",
+        "5e032635-7d2f-4ed3-b3f4-c8496fd55f0f",
+        "6987c751-129d-4c39-be94-65a89597489f",
+        "a2d0287b-183b-4d8d-85cb-d07f5d9cda40"
+      ],
+      "recall@1": 0.25,
+      "precision@1": 1.0,
+      "ndcg@1": 1.0,
+      "recall@3": 0.75,
+      "precision@3": 1.0,
+      "ndcg@3": 1.0,
+      "recall@5": 1.0,
+      "precision@5": 0.8,
+      "ndcg@5": 1.0,
+      "mrr": 1.0,
+      "hit@1": 1.0
+    },
+    {
+      "query": "低密度脂蛋白胆固醇 参考区间",
+      "topics": [
+        "低密度脂蛋白胆固醇"
+      ],
+      "banks": [
+        "metric_catalog",
+        "case"
+      ],
+      "ranked_top": [
+        "m_LDL_C",
+        "m_HDL_C",
+        "m_APOA1",
+        "m_APOB",
+        "9dcec38b-58c6-4542-8a71-2c0ba39519a6"
+      ],
+      "relevant_count": 1,
+      "relevant_ids": [
+        "m_LDL_C"
+      ],
+      "recall@1": 1.0,
+      "precision@1": 1.0,
+      "ndcg@1": 1.0,
+      "recall@3": 1.0,
+      "precision@3": 0.333,
+      "ndcg@3": 1.0,
+      "recall@5": 1.0,
+      "precision@5": 0.2,
+      "ndcg@5": 1.0,
+      "mrr": 1.0,
+      "hit@1": 1.0
+    },
+    {
+      "query": "血糖控制 运动 胰岛素敏感性",
+      "topics": [
+        "胰岛素敏感性"
+      ],
+      "banks": [
+        "guideline"
+      ],
+      "ranked_top": [
+        "c527dde8-a7c1-46d1-80a2-eea0f675bc0d",
+        "15bff833-09d7-4b89-be14-fd201eb91df3",
+        "m_GLU_FAST",
+        "30c3099d-aca3-4c71-88dc-59431a348bc4",
+        "869d7eb1-37f4-40de-a7ce-b35c78439cc7"
+      ],
+      "relevant_count": 1,
+      "relevant_ids": [
+        "c527dde8-a7c1-46d1-80a2-eea0f675bc0d"
+      ],
+      "recall@1": 1.0,
+      "precision@1": 1.0,
+      "ndcg@1": 1.0,
+      "recall@3": 1.0,
+      "precision@3": 0.333,
+      "ndcg@3": 1.0,
+      "recall@5": 1.0,
+      "precision@5": 0.2,
+      "ndcg@5": 1.0,
+      "mrr": 1.0,
+      "hit@1": 1.0
+    },
+    {
+      "query": "高血压 运动 降压 强度",
+      "topics": [
+        "高血压"
+      ],
+      "banks": [
+        "guideline",
+        "case"
+      ],
+      "ranked_top": [
+        "9649a3eb-10e9-4d9d-9e75-87c989df9275",
+        "092dcadd-b91a-4cc6-a592-a22a066cfa4d",
+        "e6188e45-cda5-4c51-98d6-ddea01140795",
+        "69a90c4e-6f29-4e33-94fb-1c30e032a2ce",
+        "m_DBP"
+      ],
+      "relevant_count": 12,
+      "relevant_ids": [
+        "092dcadd-b91a-4cc6-a592-a22a066cfa4d",
+        "0d121bf0-6a8b-4192-b812-5cf153cf3827",
+        "0d2dff6f-078b-47ca-aa1e-13d39b66f757",
+        "24026fc6-f055-4beb-a3c7-ea4c71ea05c3",
+        "26822a20-8fd6-4088-8363-cd5f706225c0",
+        "69a90c4e-6f29-4e33-94fb-1c30e032a2ce",
+        "929ca5f0-ee7c-4b6f-88d7-2133dd010bd7",
+        "9649a3eb-10e9-4d9d-9e75-87c989df9275",
+        "b5fe8672-9df5-4a65-9c05-51f7378c9100",
+        "e6188e45-cda5-4c51-98d6-ddea01140795"
+      ],
+      "recall@1": 0.083,
+      "precision@1": 1.0,
+      "ndcg@1": 1.0,
+      "recall@3": 0.25,
+      "precision@3": 1.0,
+      "ndcg@3": 1.0,
+      "recall@5": 0.417,
+      "precision@5": 1.0,
+      "ndcg@5": 1.0,
+      "mrr": 1.0,
+      "hit@1": 1.0
+    },
+    {
+      "query": "脂肪肝 运动 谷丙转氨酶 干预",
+      "topics": [
+        "谷丙转氨酶"
+      ],
+      "banks": [
+        "guideline",
+        "case",
+        "metric_catalog"
+      ],
+      "ranked_top": [
+        "5e032635-7d2f-4ed3-b3f4-c8496fd55f0f",
+        "6461fe6f-2a5e-4843-92a7-4e676e9e8d65",
+        "bde81314-a09a-4b81-a6e3-81a13d6f2441",
+        "41bfd4fb-1f61-4aaa-9b00-34774694372d",
+        "b80b09c3-34c0-436d-bb5e-a3c2bb42984f"
+      ],
+      "relevant_count": 0,
+      "relevant_ids": [],
+      "recall@1": 0.0,
+      "precision@1": 0.0,
+      "ndcg@1": 0.0,
+      "recall@3": 0.0,
+      "precision@3": 0.0,
+      "ndcg@3": 0.0,
+      "recall@5": 0.0,
+      "precision@5": 0.0,
+      "ndcg@5": 0.0,
+      "mrr": 0.0,
+      "hit@1": 0.0
+    },
+    {
+      "query": "尿酸 痛风 运动 饮食",
+      "topics": [
+        "尿酸"
+      ],
+      "banks": [
+        "guideline",
+        "case",
+        "metric_catalog"
+      ],
+      "ranked_top": [
+        "d191c760-511f-4daa-bdcf-242a1d441a54",
+        "6cf3209e-b078-471e-8587-cdfc6f2f65ac",
+        "abb088e3-19b8-468b-878b-f26d5b054201",
+        "d1833e15-447f-450c-8b4f-4285123e7141",
+        "m_UA"
+      ],
+      "relevant_count": 6,
+      "relevant_ids": [
+        "6cf3209e-b078-471e-8587-cdfc6f2f65ac",
+        "abb088e3-19b8-468b-878b-f26d5b054201",
+        "cbeb6a07-5d23-4cad-9097-3f97aa856c86",
+        "d1833e15-447f-450c-8b4f-4285123e7141",
+        "d191c760-511f-4daa-bdcf-242a1d441a54",
+        "m_UA"
+      ],
+      "recall@1": 0.167,
+      "precision@1": 1.0,
+      "ndcg@1": 1.0,
+      "recall@3": 0.5,
+      "precision@3": 1.0,
+      "ndcg@3": 1.0,
+      "recall@5": 0.833,
+      "precision@5": 1.0,
+      "ndcg@5": 1.0,
+      "mrr": 1.0,
+      "hit@1": 1.0
+    },
+    {
+      "query": "他汀 运动 肌痛 注意事项",
+      "topics": [
+        "他汀"
+      ],
+      "banks": [
+        "guideline",
+        "case"
+      ],
+      "ranked_top": [
+        "24026fc6-f055-4beb-a3c7-ea4c71ea05c3",
+        "869d7eb1-37f4-40de-a7ce-b35c78439cc7",
+        "114aed45-6da3-4113-8782-c3464692bc14",
+        "15bff833-09d7-4b89-be14-fd201eb91df3",
+        "7e3bb103-3f09-4040-86d7-64800a03d6c0"
+      ],
+      "relevant_count": 1,
+      "relevant_ids": [
+        "24026fc6-f055-4beb-a3c7-ea4c71ea05c3"
+      ],
+      "recall@1": 1.0,
+      "precision@1": 1.0,
+      "ndcg@1": 1.0,
+      "recall@3": 1.0,
+      "precision@3": 0.333,
+      "ndcg@3": 1.0,
+      "recall@5": 1.0,
+      "precision@5": 0.2,
+      "ndcg@5": 1.0,
+      "mrr": 1.0,
+      "hit@1": 1.0
+    },
+    {
+      "query": "体重管理 运动处方 体脂",
+      "topics": [
+        "运动处方"
+      ],
+      "banks": [
+        "guideline",
+        "case"
+      ],
+      "ranked_top": [
+        "114aed45-6da3-4113-8782-c3464692bc14",
+        "15bff833-09d7-4b89-be14-fd201eb91df3",
+        "7e3bb103-3f09-4040-86d7-64800a03d6c0",
+        "e6188e45-cda5-4c51-98d6-ddea01140795",
+        "f6eaef17-d037-4fd7-963c-3e42da78afc9"
+      ],
+      "relevant_count": 6,
+      "relevant_ids": [
+        "114aed45-6da3-4113-8782-c3464692bc14",
+        "15bff833-09d7-4b89-be14-fd201eb91df3",
+        "26822a20-8fd6-4088-8363-cd5f706225c0",
+        "7e3bb103-3f09-4040-86d7-64800a03d6c0",
+        "929ca5f0-ee7c-4b6f-88d7-2133dd010bd7",
+        "e6188e45-cda5-4c51-98d6-ddea01140795"
+      ],
+      "recall@1": 0.167,
+      "precision@1": 1.0,
+      "ndcg@1": 1.0,
+      "recall@3": 0.5,
+      "precision@3": 1.0,
+      "ndcg@3": 1.0,
+      "recall@5": 0.667,
+      "precision@5": 0.8,
+      "ndcg@5": 0.869,
+      "mrr": 1.0,
+      "hit@1": 1.0
+    }
+  ],
+  "timestamp": "2026-09-15T18:02:02"
+}

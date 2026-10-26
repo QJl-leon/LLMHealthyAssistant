@@ -1,0 +1,335 @@
+// ── research.proto ────────────────────────────────────────
+// 个人健康顾问助手：Go 业务后端 ↔ Python LangGraph 多 Agent 的 gRPC 契约。
+//
+// 输入：用户个人档案 + 体检报告（首页 / 化验单 / 其他资料）
+// 输出：体检指标解读、指标趋势、运动与生活方式建议
+//      （双库 RAG：健康论文库 + 病历案例库）
+
+syntax = "proto3";
+
+package research.v1;
+
+option go_package = "llm-healthy-assistant/go-backend/internal/aiclient/research/v1;researchv1";
+
+// ── ResearchService ───────────────────────────────────────
+// Go 业务后端调用 Python AI 服务的唯一入口
+service ResearchService {
+  // 提交健康咨询任务（幂等，task_id 由 Go 生成）
+  rpc SubmitTask(SubmitTaskRequest) returns (SubmitTaskResponse);
+  // 服务端流式：任务事件流；Go 网关转为 SSE 给前端
+  rpc StreamTask(StreamTaskRequest) returns (stream TaskEvent);
+  // HITL 恢复：补图完成 / 记忆确认 / 发布确认后调用
+  rpc ResumeTask(ResumeTaskRequest) returns (ResumeTaskResponse);
+  rpc CancelTask(CancelTaskRequest) returns (CancelTaskResponse);
+  // B6b：单任务 token 成本查询（成本可见）
+  rpc GetTaskCost(GetTaskCostRequest) returns (GetTaskCostResponse);
+  // 对话式健康问答（agent 拆分：意图 → 记忆 → 检索 → 生成）
+  rpc Chat(ChatRequest) returns (ChatResponse);
+}
+
+// ── Chat（对话式健康问答）─────────────────────────────────
+
+message ChatHistoryItem {
+  string role = 1;                         // user | assistant
+  string content = 2;                      // 消息正文
+}
+
+message ChatRequest {
+  string user_id = 1;
+  string query = 2;
+  string trace_id = 3;
+  repeated ChatHistoryItem history = 4;    // 最近对话（多轮上下文；服务端截断最近 8 条）
+}
+
+message ChatResponse {
+  bool refused = 1;                      // 是否拒答（非健康话题）
+  string answer = 2;                     // 回答正文（医生口吻，带 [n] 引用）
+  repeated EvidenceFound evidence = 3;   // 引用的证据
+}
+
+// ── GetTaskCost（B6b 成本可见）──────────────────────────────
+
+message GetTaskCostRequest {
+  string task_id = 1;
+  string user_id = 2;           // 权限校验用（只能查自己的任务）
+}
+
+message CostItem {
+  string call_type = 1;         // llm / embedding / rerank / vlm
+  string model = 2;
+  int32 calls = 3;              // 调用次数
+  int64 tokens = 4;             // token 总量
+  int64 prompt_tokens = 5;
+  int64 completion_tokens = 6;
+  int32 avg_latency_ms = 7;
+}
+
+message GetTaskCostResponse {
+  string task_id = 1;
+  int64 total_tokens = 2;
+  int32 call_count = 3;
+  repeated CostItem items = 4;
+}
+
+// ── SubmitTask ────────────────────────────────────────────
+
+message SubmitTaskRequest {
+  string task_id = 1;           // Go 生成，同时是 LangGraph thread_id
+  string tenant_id = 2;
+  string user_id = 3;
+  string client_task_id = 4;    // 幂等键
+  repeated ImageAsset images = 5;
+  string report_date = 6;       // 体检报告日期（YYYY-MM-DD）
+  string institution = 7;       // 体检机构
+}
+
+message ImageAsset {
+  string key = 1;               // MinIO object key
+  string position = 2;          // front / exam_report / lab_sheet / other
+  string presigned_url = 3;     // 预签名下载 URL
+}
+
+message SubmitTaskResponse {
+  string task_id = 1;
+  string status = 2;            // intake
+}
+
+// ── StreamTask ────────────────────────────────────────────
+
+message StreamTaskRequest {
+  string task_id = 1;
+  string trace_id = 2;
+}
+
+message TaskEvent {
+  string task_id = 1;
+  string trace_id = 2;
+  int64 seq = 3;                // 事件序号，SSE 断线重连用 Last-Event-ID
+
+  oneof payload {
+    StageChange stage_change = 4;
+    Observation observation = 5;
+    EvidenceFound evidence_found = 6;
+    ReportDelta report_delta = 7;
+    MissingInfo missing_info = 8;
+    MemoryProposal memory_proposal = 9;
+    TaskResult result = 10;
+    Error error = 11;
+  }
+}
+
+message StageChange {
+  string previous = 1;
+  string to = 2;
+  string message = 3;
+}
+
+message Observation {
+  string image_key = 1;
+  string region = 2;            // 绑定原图区域的 JSON
+  string text = 3;              // 报告文字识别结果
+  float confidence = 4;
+}
+
+message EvidenceFound {
+  string evidence_id = 1;
+  string source_name = 2;
+  int32 source_level = 3;
+  string quote = 4;
+  int32 page = 5;
+  string knowledge_version = 6;
+  string source_url = 7;        // 可点击核验的来源 URL（指南/论文公开页）
+}
+
+message ReportDelta {
+  string section = 1;           // observation | fact | inference | conflict | unknown |
+                                // metric_reading | metric_trend | exercise_advice |
+                                // lifestyle_advice | followup_advice
+  string content = 2;           // Markdown 增量
+  repeated MetricItem metrics = 3;              // 结构化体检指标
+  repeated MetricTrendItem metric_trends = 4;   // 指标趋势
+}
+
+// ── 体检指标（SSE 增量给前端）──────────────────────────────
+
+message MetricItem {
+  string metric_code = 1;       // 指标编码，如 ALT
+  string metric_name = 2;       // 指标中文名，如 谷丙转氨酶
+  string category = 3;          // 分类，如 肝功能
+  double value_num = 4;         // 数值型结果
+  string value_text = 5;        // 文本型结果（如 阴性）
+  string unit = 6;
+  double ref_low = 7;           // 参考区间下限
+  double ref_high = 8;          // 参考区间上限
+  string ref_text = 9;          // 参考区间原文
+  string flag = 10;             // normal | high | low | unknown
+  string measured_at = 11;      // 采样 / 报告日期
+}
+
+message MetricPoint {
+  string date = 1;
+  double value = 2;
+  string flag = 3;
+}
+
+message MetricTrendItem {
+  string metric_code = 1;
+  string metric_name = 2;
+  string unit = 3;
+  repeated MetricPoint points = 4;
+  double first_value = 5;
+  double last_value = 6;
+  double delta = 7;
+  string direction = 8;         // up | down | flat
+}
+
+message MissingInfo {
+  repeated string items = 1;    // 最多三项补图请求
+  string guidance = 2;          // 具体拍摄指导
+}
+
+message MemoryProposal {
+  string candidate_id = 1;
+  string kind = 2;              // basic | condition | medication | allergy | goal | exercise
+  string content = 3;
+  string source = 4;            // inferred
+  float confidence = 5;
+}
+
+message TaskResult {
+  string report_version = 1;
+  string status = 2;            // published | refused
+  string reason = 3;            // 拒答原因（refused 时）
+  repeated MetricItem metrics = 4;              // 结构化体检指标
+  repeated MetricTrendItem metric_trends = 5;   // 指标趋势
+}
+
+message Error {
+  string error_code = 1;
+  string message = 2;
+  bool retryable = 3;
+}
+
+// ── ResumeTask ────────────────────────────────────────────
+
+message ResumeTaskRequest {
+  string task_id = 1;
+  string trace_id = 2;
+  string action = 3;            // add_images | confirm_memory | confirm_publish
+  repeated ImageAsset new_images = 4;
+  string candidate_id = 5;      // 确认记忆时
+  bool confirmed = 6;           // 确认记忆时
+}
+
+message ResumeTaskResponse {
+  string task_id = 1;
+  string status = 2;
+}
+
+// ── CancelTask ────────────────────────────────────────────
+
+message CancelTaskRequest {
+  string task_id = 1;
+  string reason = 2;
+}
+
+message CancelTaskResponse {
+  string task_id = 1;
+  string status = 2;            // cancelled
+}
+
+// ── MemoryService ─────────────────────────────────────────
+// 健康档案记忆管理（B6a：双栈统一 —— Go profiles API 桥接到本服务，
+// Python memory_items 表为唯一真相：AES-256-GCM 加密 + 版本链 + 审计）。
+//
+// 写入门禁（2026-09-20 需求方决策，参考 Claude Code 自动记忆）：
+//   inferred 候选完全自动入库，不再逐条人工确认；
+//   保留来源白名单（document/webpage/report 永不写入）与注入模式检测；
+//   用户救济 = 查看 / 编辑（版本链）/ 删除 / 衰减后确认。
+service MemoryService {
+  // 拉取用户全部活跃条目（含 version / pending_confirmation）
+  rpc ListMemory(ListMemoryRequest) returns (ListMemoryResponse);
+  // 新增条目（user_stated 直接生效；走写入门禁 + 去重）
+  rpc CreateMemory(CreateMemoryRequest) returns (MemoryItem);
+  // 版本链更新：旧行 superseded_at + 新行 version+1
+  rpc UpdateMemory(UpdateMemoryRequest) returns (MemoryItem);
+  // 软删除（写审计）
+  rpc DeleteMemory(DeleteMemoryRequest) returns (DeleteMemoryResponse);
+  // 全量软删除（写审计）
+  rpc DeleteAllMemory(DeleteAllMemoryRequest) returns (DeleteMemoryResponse);
+  // 衰减后进待确认队列的条目，用户重新确认（confidence 重置 1.0）
+  rpc ConfirmMemory(ConfirmMemoryRequest) returns (MemoryItem);
+  // 审计记录查询
+  rpc ListMemoryAudit(ListMemoryAuditRequest) returns (ListMemoryAuditResponse);
+}
+
+message MemoryItem {
+  string id = 1;
+  string kind = 2;              // basic | condition | medication | allergy | goal | exercise
+  string content = 3;           // 明文（服务端解密后返回；落库为 AES-256-GCM 密文）
+  repeated string metric_codes = 4;
+  string source = 5;            // user_stated | inferred
+  float confidence = 6;
+  int32 version = 7;
+  bool pending_confirmation = 8;  // 置信度衰减后转入待确认队列
+  string created_at = 9;
+}
+
+message ListMemoryRequest {
+  string user_id = 1;
+}
+
+message ListMemoryResponse {
+  repeated MemoryItem items = 1;
+}
+
+message CreateMemoryRequest {
+  string user_id = 1;
+  string kind = 2;
+  string content = 3;
+  repeated string metric_codes = 4;
+  string source = 5;            // 默认 user_stated
+}
+
+message UpdateMemoryRequest {
+  string user_id = 1;
+  string entry_id = 2;
+  string new_content = 3;
+}
+
+message DeleteMemoryRequest {
+  string user_id = 1;
+  string entry_id = 2;
+}
+
+message DeleteAllMemoryRequest {
+  string user_id = 1;
+}
+
+message DeleteMemoryResponse {
+  bool ok = 1;
+  int32 deleted_count = 2;      // DeleteAllMemory 时有效
+}
+
+message ConfirmMemoryRequest {
+  string user_id = 1;
+  string entry_id = 2;
+}
+
+message ListMemoryAuditRequest {
+  string user_id = 1;
+  int32 limit = 2;
+}
+
+message MemoryAuditItem {
+  string id = 1;
+  string user_id = 2;
+  string action = 3;            // write | update | delete | delete_all | decay | confirm
+  string target_id = 4;
+  string detail = 5;
+  string created_at = 6;
+}
+
+message ListMemoryAuditResponse {
+  repeated MemoryAuditItem items = 1;
+}

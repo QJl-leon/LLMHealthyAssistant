@@ -1,0 +1,17 @@
+[Unit]
+Description=LHA test resource observer (local metrics)
+After=network.target docker.service lha-local-go.service lha-local-python.service
+
+[Service]
+Type=simple
+WorkingDirectory=/home/ubuntu/RAG-job/LLMHealthyAssistant
+ExecStart=/home/ubuntu/RAG-job/LLMHealthyAssistant/python-ai/.venv/bin/python deploy/observability/collector.py
+Restart=on-failure
+RestartSec=5
+Group=ubuntu
+UMask=0027
+NoNewPrivileges=true
+PrivateTmp=true
+
+[Install]
+WantedBy=multi-user.target

@@ -1,0 +1,9 @@
+{
+  "mode":"closed", "environment":"isolated", "concurrency":1,
+  "duration_seconds":600, "max_tasks":1, "max_inflight":1,
+  "task_timeout_seconds":180, "max_total_tokens":20000,
+  "samples":"samples.json", "sse_reconnects":20,
+  "max_transitions":4, "auto_confirm_publish":true,
+  "max_publish_confirmations":1, "disconnect_after_events":2,
+  "slow_read_ms":0, "duplicate_create":false
+}

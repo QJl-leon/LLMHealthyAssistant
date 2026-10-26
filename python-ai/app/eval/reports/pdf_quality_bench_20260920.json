@@ -1,0 +1,80 @@
+{
+  "benchmark": "pdf_quality_before_after",
+  "object": "体检报告表格结构还原（合并单元格 / 跨页延续 / 名称延续）",
+  "sample_kind": "仓库合成夹具（由 tests/fixtures/make_exam_pdf.py 生成）",
+  "samples": [
+    {
+      "pdf": "exam_report_multipage.pdf",
+      "before_no_structure_restore": {
+        "total_rows": 36,
+        "empty_name_rows": 1,
+        "empty_name_rate": 0.0278,
+        "aligned_rows": 34,
+        "column_alignment_rate": 0.9444,
+        "bleed_rows": 4,
+        "column_bleed_rate": 0.1111,
+        "unique_items": 24
+      },
+      "after_with_structure_restore": {
+        "total_rows": 19,
+        "empty_name_rows": 0,
+        "empty_name_rate": 0.0,
+        "aligned_rows": 19,
+        "column_alignment_rate": 1.0,
+        "bleed_rows": 0,
+        "column_bleed_rate": 0.0,
+        "unique_items": 19
+      },
+      "channel_consistency_after": {
+        "common_items": 14,
+        "consistent_items": 14,
+        "consistency_rate": 1.0
+      }
+    },
+    {
+      "pdf": "exam_report_borderless.pdf",
+      "before_no_structure_restore": {
+        "total_rows": 6,
+        "empty_name_rows": 0,
+        "empty_name_rate": 0.0,
+        "aligned_rows": 6,
+        "column_alignment_rate": 1.0,
+        "bleed_rows": 3,
+        "column_bleed_rate": 0.5,
+        "unique_items": 6
+      },
+      "after_with_structure_restore": {
+        "total_rows": 7,
+        "empty_name_rows": 0,
+        "empty_name_rate": 0.0,
+        "aligned_rows": 7,
+        "column_alignment_rate": 1.0,
+        "bleed_rows": 0,
+        "column_bleed_rate": 0.0,
+        "unique_items": 7
+      },
+      "channel_consistency_after": {
+        "common_items": 3,
+        "consistent_items": 3,
+        "consistency_rate": 1.0
+      }
+    }
+  ],
+  "aggregate": {
+    "before": {
+      "total_rows": 42,
+      "empty_name_rows": 1,
+      "unique_items": 30
+    },
+    "after": {
+      "total_rows": 26,
+      "empty_name_rows": 0,
+      "unique_items": 26
+    },
+    "before_empty_name_rate": 0.0238,
+    "after_empty_name_rate": 0.0
+  },
+  "insight": "表格结构治理前：合并单元格不还原导致名称为空（无法检索）、跨页不延续导致成片指标丢失、重复表头产生假指标；治理后空名率降为 0.00%，独特项目数 30 → 26。",
+  "timestamp": "2026-09-20T03:01:00",
+  "note": "默认样本为仓库合成夹具（确定性回归用）；真实报告请用 --pdf 指定，不同机构版式差异较大，需按样本调优解析规则。"
+}

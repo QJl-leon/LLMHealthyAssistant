@@ -1,0 +1,329 @@
+{
+  "_note": "病历案例库语料（medical_cases 表）。全部案例来自公开可核验的病例报告 / 病例系列（case report / case series），均已脱敏：不含真实姓名、证件号、就诊号等任何可识别信息。metrics 为关键指标快照，形如 {metric_code: {\"before\": 值, \"after\": 值}}，无基线的记为 {metric_code: {\"after\": 值}}。案例仅用于教学与检索演示，不构成任何诊疗建议。",
+  "_sources": [
+    {
+      "key": "case_nafld_12w",
+      "name": "Ramchandwani S, Pradhan SK, Mohapatra J, Patra KP. Effect of Exercise on Liver Fat and Lipid Profiles in Non-Alcoholic Fatty Liver Disease: A Hospital-Based Study. SSR Inst Int J Life Sci, 2025;11(1):6771-6776.",
+      "level": 2,
+      "url": "https://iijls.com/currentissue/Exercise_Liver_Fat_Lipid_Profiles_Non_Alcoholic_Fatty_Liver_Disease.pdf",
+      "license": "CC BY-NC 4.0"
+    },
+    {
+      "key": "case_liver_inactivity",
+      "name": "Kamimura H, Sano M, Tsujimura T, et al. Rapid Onset of Weight Gain and Liver Dysfunction Successfully Treated With Nutrition and Exercise. Cureus, 2021;13(7):e16530.",
+      "level": 2,
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC8378298/",
+      "license": "CC BY 4.0"
+    },
+    {
+      "key": "case_t2dm_remission_9y",
+      "name": "Sharma B, Tripathi P, Kadam NS, Ganla M. Sustained Type 2 Diabetes Remission and Metabolic Health Through Intensive Lifestyle Intervention: A Case Report With a Nine-Year Follow-Up. Cureus, 2026;18(6):e110884.",
+      "level": 2,
+      "url": "https://assets.cureus.com/uploads/case_report/pdf/500157/20260615-190869-v39d6l.pdf",
+      "license": "CC BY 4.0"
+    },
+    {
+      "key": "case_t2dm_caseseries",
+      "name": "Tripathi P, Kadam N, Vyawahare A, Kuppusamy M, Vijayakumar V. Long-term remission of type 2 diabetes through intense lifestyle modification program - A case series. J Family Med Prim Care, 2023;12(9):2168-2171.",
+      "level": 2,
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10657089/",
+      "license": "CC BY-NC-SA 4.0"
+    },
+    {
+      "key": "case_predm_omad",
+      "name": "Alfhaid F. Management of prediabetes and class III obesity in a 42-year-old male through One-Meal-a-Day. J Family Med Prim Care, 2025;14(11):4920-4923.",
+      "level": 2,
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12704998/",
+      "license": "CC BY-NC-SA 4.0"
+    },
+    {
+      "key": "case_t2dm_southasian",
+      "name": "Sethi K. Rapid Remission of Severe Type 2 Diabetes in a South Asian Male Using a Structured Lifestyle Approach: A Case Report. NHSJS Reports, 2026.",
+      "level": 3,
+      "url": "https://nhsjs.com/2026/rapid-remission-of-severe-type-2-diabetes-in-a-south-asian-male-using-a-structured-lifestyle-approach-a-case-report/",
+      "license": "public"
+    },
+    {
+      "key": "case_dyslipid_tg",
+      "name": "Patel J, Sharma T, Allan C, Curnew G. Use of Lifestyle Modifications for Management of a Patient with Severely High Total Cholesterol (> 14 mmol/L) and Triglycerides (> 40 mmol/L). J Lifestyle Med, 2021;11(1):43-46.",
+      "level": 2,
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC7957042/",
+      "license": "CC BY-NC 4.0"
+    },
+    {
+      "key": "case_hyperchol_lifestyle",
+      "name": "Janse Van Rensburg WJ. Lifestyle Change Alone Sufficient to Lower Cholesterol in Male Patient With Moderately Elevated Cholesterol: A Case Report. Am J Lifestyle Med, 2019;13(2):148-155.",
+      "level": 2,
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC6378490/",
+      "license": "CC BY-NC 4.0"
+    },
+    {
+      "key": "case_hyperchol_2m",
+      "name": "Lifestyle-First Management of Moderate Hypercholesterolemia in a Low-Risk Patient: A Case Report. American Journal of Internal Medicine, 2026;14(4).",
+      "level": 3,
+      "url": "https://article.sciencepublishinggroup.com/pdf/j.ajim.20261404.13",
+      "license": "CC BY 4.0"
+    },
+    {
+      "key": "case_keto_ldl",
+      "name": "Salas Noain J, Minupuri A, Kulkarni A, Zheng S. Significant Impact of the Ketogenic Diet on Low-Density Lipoprotein Cholesterol Levels. Cureus, 2020;12(7):e9418.",
+      "level": 2,
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC7449640/",
+      "license": "CC BY 4.0"
+    },
+    {
+      "key": "case_obesity_bmi90",
+      "name": "Al Ghareeb G, Abdoha D, Kofi M, Konswa AA. Lifestyle Interventions in a Patient Identified as Super-Super Obese With a Body Mass Index of 90.5. J Med Cases, 2024;15(2-3):55-59.",
+      "level": 2,
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11027765/",
+      "license": "CC BY-NC 4.0"
+    },
+    {
+      "key": "case_cad_extreme",
+      "name": "Laysandro R, Harijanto EA, Sie NA. Successful large caloric deficit with high protein modification diet and intensive aerobic and resistance training with progressive overload in adult patient with significant coronary artery disease: a case report. Front Cardiovasc Med, 2026;13:1737431.",
+      "level": 2,
+      "url": "https://www.frontiersin.org/journals/cardiovascular-medicine/articles/10.3389/fcvm.2026.1737431/full",
+      "license": "CC BY 4.0"
+    },
+    {
+      "key": "case_gout_lifestyle",
+      "name": "Cohen PR. An Autobiographical Report of Gout in a Patient Unable to Tolerate Conventional Therapy: The Unbearable Pain of Podagra. Cureus, 2025;17(2):e78343.",
+      "level": 2,
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11876711/",
+      "license": "CC BY 4.0"
+    }
+  ],
+  "cases": [
+    {
+      "source": "case_nafld_12w",
+      "case_code": "CASE_NAFLD_12W_EXERCISE",
+      "age_band": "30-39",
+      "sex": "M",
+      "chief_complaint": "体检发现脂肪肝与血脂异常，无特殊不适；既往无规律运动习惯。",
+      "findings": "31岁男性，超声提示非酒精性脂肪性肝病（NAFLD），肝脂肪浸润Ⅱ级；体脂率48.1%，腰臀比0.96；血脂示总胆固醇229 mg/dl、LDL 171 mg/dl、甘油三酯176 mg/dl、HDL 31 mg/dl。",
+      "metrics": {
+        "WEIGHT": {"before": 88.9, "after": 75.8},
+        "BMI": {"before": 30.01, "after": 26.03},
+        "TC": {"before": 229.0, "after": 204.0},
+        "LDL_C": {"before": 171.0, "after": 140.0},
+        "TG": {"before": 176.0, "after": 101.0},
+        "HDL_C": {"before": 31.0, "after": 45.0}
+      },
+      "diagnosis": "非酒精性脂肪性肝病（NAFLD）合并不良生活方式相关血脂异常",
+      "intervention": "12周有氧运动联合抗阻训练方案，运动强度循序渐进递增；全程未开展药物降脂干预。",
+      "outcome": "12周后体重由88.9 kg降至75.8 kg，BMI由30.01降至26.03 kg/m²，体脂率由48.1%降至24.2%，腰臀比由0.96降至0.85；甘油三酯由176 mg/dl降至101 mg/dl、HDL由31 mg/dl升至45 mg/dl；超声肝脂肪浸润由Ⅱ级降为Ⅰ级。",
+      "evidence_level": "C"
+    },
+    {
+      "source": "case_liver_inactivity",
+      "case_code": "CASE_NAFLD_INACTIVITY_REHAB",
+      "age_band": "10-19",
+      "sex": "M",
+      "chief_complaint": "活动量骤减后体重快速增加，伴肝功能异常。",
+      "findings": "17岁男性，因体力活动急剧下降出现严重肝脂肪浸润与肝功能障碍；影像评估肝脂肪沉积CAP值明显升高，AST、ALT升高。",
+      "metrics": {
+        "WEIGHT": {"after": 87.0},
+        "AST": {"after": 40.0},
+        "ALT": {"after": 40.0}
+      },
+      "diagnosis": "体力活动不足相关的非酒精性脂肪性肝病伴肝功能障碍",
+      "intervention": "由康复与营养团队联合制定运动与营养支持方案，持续运动治疗60天。",
+      "outcome": "继续康复训练后体重降至87 kg，体脂量降至26 kg；肝脂肪沉积CAP值降至320 dB/m，AST与ALT较前显著下降（具体数值见原文表格）。",
+      "evidence_level": "C"
+    },
+    {
+      "source": "case_t2dm_remission_9y",
+      "case_code": "CASE_T2DM_ILI_9Y",
+      "age_band": "60-69",
+      "sex": "M",
+      "chief_complaint": "新诊断2型糖尿病，伴肥胖、血脂异常与高血压。",
+      "findings": "61岁男性，新诊断2型糖尿病，亚洲人肥胖标准BMI 28.8 kg/m²，合并血脂异常与高血压；基线HbA1c 10.7%，LDL 141 mg/dl，TG 192 mg/dl，HDL 41 mg/dl；未使用降糖药物。",
+      "metrics": {
+        "HBA1C": {"before": 10.7, "after": 5.5},
+        "WEIGHT": {"before": 79.0, "after": 68.6},
+        "BMI": {"before": 28.8, "after": 25.0},
+        "LDL_C": {"before": 141.0, "after": 107.0},
+        "TG": {"before": 192.0, "after": 81.0},
+        "HDL_C": {"before": 41.0, "after": 52.0}
+      },
+      "diagnosis": "新诊断2型糖尿病（药物初治）伴肥胖、血脂异常与高血压",
+      "intervention": "为期3个月的强化生活方式干预：全食物植物性（纯素）饮食 + 每日结构化运动（有氧、抗阻与瑜伽）+ 冥想与书写等减压训练；全程未使用降糖药物。",
+      "outcome": "干预结束4个月时体重由79 kg降至68.6 kg、HbA1c由10.7%降至5.7%，未用降糖药物；8个月时HbA1c降至5.5%，达到2型糖尿病缓解标准；每年复查75 g口服葡萄糖耐量试验均正常，缓解维持9年。",
+      "evidence_level": "C"
+    },
+    {
+      "source": "case_t2dm_caseseries",
+      "case_code": "CASE_T2DM_REMISSION_SERIES",
+      "age_band": "成人（4例，原文未披露具体年龄）",
+      "sex": "M/F",
+      "chief_complaint": "2型糖尿病，寻求非药物的长期缓解方案。",
+      "findings": "4例2型糖尿病患者于2016—2018年间入组，基线均处于药物治疗状态；干预前HbA1c高于6.5%。",
+      "metrics": {
+        "HBA1C": {"after": 6.5}
+      },
+      "diagnosis": "2型糖尿病",
+      "intervention": "Holistic Transformation Program：纯素饮食 + 结构化运动 + 压力管理，干预周期12个月。",
+      "outcome": "4例患者HbA1c均降至6.5%以下且停用降糖药物，达到缓解标准；1年干预期间体重下降幅度为基线体重的9.4%~25.3%；口服葡萄糖耐量试验连续3年以上保持正常。",
+      "evidence_level": "C"
+    },
+    {
+      "source": "case_predm_omad",
+      "case_code": "CASE_PREDIABETES_OMAD_EXERCISE",
+      "age_band": "40-49",
+      "sex": "M",
+      "chief_complaint": "乏力、体重进行性增加。",
+      "findings": "42岁男性，Ⅲ度肥胖（BMI 40.1 kg/m²），血压约150/95 mmHg（2级高血压），HbA1c 6.2%（糖尿病前期），ALT约80 U/L（提示脂肪肝），LDL-C约130 mg/dl，符合代谢综合征；无用药，长期高热量饮食与久坐。",
+      "metrics": {
+        "HBA1C": {"before": 6.2, "after": 5.6},
+        "BMI": {"before": 40.1, "after": 36.5},
+        "WEIGHT": {"before": 130.0, "after": 117.0},
+        "ALT": {"before": 80.0, "after": 50.0},
+        "SBP": {"before": 150.0, "after": 135.0},
+        "DBP": {"before": 95.0, "after": 85.0}
+      },
+      "diagnosis": "糖尿病前期、Ⅲ度肥胖、2级高血压（代谢综合征）",
+      "intervention": "在医生督导下实施强化生活方式干预：一日一餐（OMAD）并遵循DASH膳食原则（蔬菜、瘦肉蛋白、全谷物、低钠）+ 规律运动（每日步行30~45分钟，每周游泳2~3次）；未启动降糖药物。",
+      "outcome": "3个月后体重下降约13 kg（约10%基线体重），BMI降至约36.5 kg/m²，HbA1c由6.2%降至5.6%，ALT由约80 U/L降至约50 U/L，血压改善至约135/85 mmHg；LDL-C出现反常升高，提示需持续医学监测。",
+      "evidence_level": "C"
+    },
+    {
+      "source": "case_t2dm_southasian",
+      "case_code": "CASE_T2DM_STRUCTURED_LIFESTYLE",
+      "age_band": "50-59",
+      "sex": "M",
+      "chief_complaint": "新诊断重度2型糖尿病，希望先行非药物治疗。",
+      "findings": "50岁南亚裔男性，基线HbA1c 12.0%，甘油三酯619 mg/dl，体重229磅；与医生沟通后决定先接受强化生活方式干预，若3个月内代谢指标无改善再启动药物治疗。",
+      "metrics": {
+        "HBA1C": {"before": 12.0, "after": 5.3},
+        "TG": {"before": 619.0, "after": 104.0},
+        "WEIGHT": {"before": 229.0, "after": 187.0}
+      },
+      "diagnosis": "重度2型糖尿病伴高甘油三酯血症",
+      "intervention": "结构化生活方式方案：去除添加糖、精制碳水与含麸质食物，优先摄入高纤维食物、蛋白质与不饱和脂肪，规律补水，纳入结构化身体活动，并维持每日16小时禁食；配合依从性教育与工具支持，全程未使用降糖药物。",
+      "outcome": "16周时HbA1c由12.0%降至5.3%，体重由229磅降至196磅（下降14%），甘油三酯由619 mg/dl降至135 mg/dl；44周时HbA1c维持5.3%，体重187磅，甘油三酯104 mg/dl，符合2型糖尿病缓解标准。",
+      "evidence_level": "C"
+    },
+    {
+      "source": "case_dyslipid_tg",
+      "case_code": "CASE_HYPERTG_LIFESTYLE",
+      "age_band": "30-39",
+      "sex": "M",
+      "chief_complaint": "因血脂显著异常被转诊至心脏科门诊；曾被怀疑家族性高胆固醇血症。",
+      "findings": "37岁男性，总胆固醇14.43 mmol/L，甘油三酯44.94 mmol/L（平均），LDL-C与HDL-C见原文；基线BMI与血脂谱见原文表格。",
+      "metrics": {
+        "TC": {"before": 14.43, "after": 5.2},
+        "TG": {"before": 44.94, "after": 3.28}
+      },
+      "diagnosis": "高甘油三酯血症相关的重度混合型血脂异常（TG ≥10 mmol/L）",
+      "intervention": "与患者共同制定以生活方式为主的方案：调整饮食结构、增加身体活动、降低BMI、戒酒，并每4个月随访血压、心率、BMI与血脂。",
+      "outcome": "随访1年内，仅通过生活方式改变，平均甘油三酯由44.94 mmol/L降至3.28 mmol/L；随访期间同时记录BMI与血脂谱变化（见原文表1）。",
+      "evidence_level": "C"
+    },
+    {
+      "source": "case_hyperchol_lifestyle",
+      "case_code": "CASE_HYPERCHOL_DIET_EXERCISE",
+      "age_band": "30-39",
+      "sex": "M",
+      "chief_complaint": "体检发现中度胆固醇升高，有心血管疾病家族史。",
+      "findings": "33岁男性，胆固醇轻中度升高并高于参考范围，有心血管疾病家族史；未使用降脂药物。",
+      "metrics": {
+        "TC": {"change": "-40.25%"},
+        "LDL_C": {"change": "-52.8%"}
+      },
+      "diagnosis": "中度高胆固醇血症（生活方式相关）",
+      "intervention": "采用改良的健康脂肪饮食并配合中等强度运动，持续6周，未加用任何降胆固醇药物。",
+      "outcome": "6周随访时总胆固醇下降40.25%、LDL胆固醇下降52.8%，均降至正常范围；6个月后复查胆固醇水平仍维持在正常范围。",
+      "evidence_level": "C"
+    },
+    {
+      "source": "case_hyperchol_2m",
+      "case_code": "CASE_HYPERCHOL_2M",
+      "age_band": "50-59",
+      "sex": "F",
+      "chief_complaint": "血脂异常持续2~3年，评估是否需要启动药物治疗。",
+      "findings": "53岁女性，无吸烟史、无早发ASCVD家族史，基线血压95/60 mmHg，BMI 26.6 kg/m²；血脂示总胆固醇6.4 mmol/L（247.5 mg/dl）、LDL-C 4.0 mmol/L（154.7 mg/dl）、HDL-C 1.65 mmol/L、甘油三酯1.12 mmol/L；颈动脉超声未见异常。",
+      "metrics": {
+        "TC": {"before": 6.4, "after": 5.3},
+        "LDL_C": {"before": 4.0, "after": 3.2},
+        "TG": {"before": 1.12, "after": 0.81},
+        "HDL_C": {"before": 1.65, "after": 1.63},
+        "BMI": {"before": 26.6, "after": 24.7}
+      },
+      "diagnosis": "中度高胆固醇血症（低危，未经药物治疗）",
+      "intervention": "结构化生活方式干预：限制饱和脂肪的饮食（强调水果、蔬菜、鱼类、禽肉与燕麦）+ 每周6天、每天1小时运动，2个月后复查。",
+      "outcome": "2个月后总胆固醇降至5.3 mmol/L（降幅17.5%）、LDL-C降至3.2 mmol/L（降幅20.0%）、甘油三酯降至0.81 mmol/L（降幅27.0%）并高于安慰剂反应水平；BMI由26.6降至24.7 kg/m²。",
+      "evidence_level": "C"
+    },
+    {
+      "source": "case_keto_ldl",
+      "case_code": "CASE_KETO_DIET_LDL",
+      "age_band": "50-59",
+      "sex": "F",
+      "chief_complaint": "因乏力就诊，既往高血压与纤维肌痛；近期严格生酮饮食并每日规律运动30~40天。",
+      "findings": "56岁女性，BMI 28 kg/m²，生酮饮食期间体重下降约6~7磅；空腹血脂示总胆固醇283 mg/dl、LDL-C 199 mg/dl、HDL-C 59 mg/dl、甘油三酯124 mg/dl。",
+      "metrics": {
+        "TC": {"before": 283.0, "after": 190.0},
+        "LDL_C": {"before": 199.0, "after": 106.0},
+        "HDL_C": {"before": 59.0, "after": null},
+        "TG": {"before": 124.0, "after": null}
+      },
+      "diagnosis": "生酮饮食相关的高胆固醇血症（LDL-C 升高）",
+      "intervention": "停用生酮饮食并调整为均衡饮食（提高碳水比例、降低脂肪），他汀因肌痛未规律使用；4周后复查血脂。",
+      "outcome": "4周后总胆固醇由283 mg/dl降至190 mg/dl、LDL-C由199 mg/dl降至106 mg/dl，血脂显著改善；后续复查LDL-C维持理想水平，他汀停用而BMI未见明显变化。",
+      "evidence_level": "C"
+    },
+    {
+      "source": "case_obesity_bmi90",
+      "case_code": "CASE_OBESITY_BMI90_LIFESTYLE",
+      "age_band": "30-39",
+      "sex": "F",
+      "chief_complaint": "因体重管理就诊，既往多次减重失败。",
+      "findings": "38岁女性，BMI 90.5 kg/m²（超级超级肥胖），合并糖尿病前期与阻塞性睡眠呼吸暂停。",
+      "metrics": {
+        "BMI": {"before": 90.5},
+        "WEIGHT": {"change": "-23 kg（-11.9%）"}
+      },
+      "diagnosis": "超级超级肥胖（BMI ≥60 kg/m²）伴糖尿病前期与阻塞性睡眠呼吸暂停",
+      "intervention": "多学科团队评估后实施强化生活方式干预：以植物性饮食为基础，配合逐步增加的身体活动；生活方式干预先行，随后才考虑加用药物。",
+      "outcome": "6个月内体重下降23 kg，减重幅度为基线体重的11.9%；后续在生活方式基础上加用利拉鲁肽再减5 kg，并推迟了手术干预需求。",
+      "evidence_level": "C"
+    },
+    {
+      "source": "case_cad_extreme",
+      "case_code": "CASE_CAD_INTENSIVE_LIFESTYLE",
+      "age_band": "40-49",
+      "sex": "M",
+      "chief_complaint": "因气促就诊，拒绝经皮冠状动脉介入治疗，选择结构化强化生活方式治疗。",
+      "findings": "43岁男性，Ⅲ度肥胖（BMI 43.8 kg/m²），血压185/100 mmHg（未控制的高血压），严重近段LAD狭窄（CAD-RADS 4）；腰围125 cm，内脏脂肪约40%，LDL 1.51 mmol/L，HDL 0.97 mmol/L，HbA1c 5.3%，运动负荷6.3 METs且无心肌缺血证据。",
+      "metrics": {
+        "BMI": {"before": 43.8, "after": 25.8},
+        "WAIST": {"before": 125.0, "after": 85.0},
+        "HDL_C": {"before": 0.97, "after": 1.63},
+        "LDL_C": {"before": 1.51, "after": 3.44},
+        "TC": {"before": 3.32, "after": 5.47},
+        "HBA1C": {"before": 5.3, "after": 4.9},
+        "SBP": {"before": 185.0, "after": 140.0},
+        "DBP": {"before": 100.0, "after": 85.0}
+      },
+      "diagnosis": "Ⅲ度肥胖合并不受控高血压与严重冠状动脉疾病",
+      "intervention": "在每周多学科（内科、心内科、营养、运动医学）监督下，实施渐进性热量限制 + 高蛋白饮食改造 + 高强度有氧与抗阻训练（渐进超负荷），持续10个月；同时继续规范心血管药物治疗。",
+      "outcome": "10个月减重50 kg（占基线体重41%），BMI降至25.8 kg/m²，腰围降至85 cm，内脏脂肪降至12%，运动能力由6.30 METs提升至11.5 METs，HDL由0.97升至1.63 mmol/L，HbA1c由5.3%降至4.9%，血压改善至140/85 mmHg；LDL与总胆固醇升高（与减脂期脂质动员相关）；全程无心律失常或缺血性心电图改变。",
+      "evidence_level": "C"
+    },
+    {
+      "source": "case_gout_lifestyle",
+      "case_code": "CASE_GOUT_DIET_LIFESTYLE",
+      "age_band": "60-69",
+      "sex": "M",
+      "chief_complaint": "急性痛风发作：左足第一跖趾关节红、肿、热、痛（podagra）明显。",
+      "findings": "65岁男性，急性痛风发作经短期口服泼尼松缓解；后续检查提示血尿酸轻度升高，双足X线可见痛风相关骨改变；患者不能耐受别嘌醇与秋水仙碱。",
+      "metrics": {
+        "UA": {"change": "基线轻度升高，原文未报告逐次数值"}
+      },
+      "diagnosis": "痛风（急性发作期，伴高尿酸血症）；对常规降尿酸药物不耐受",
+      "intervention": "急性期短期泼尼松控制症状后，采用替代与生活方式管理：以植物蛋白（大豆及豆制品）与低脂乳制品为主的饮食调整，限制高嘌呤动物蛋白与酒精，配合规律补水与体重管理，并每日补充维生素C 500~1000 mg。",
+      "outcome": "随访近1年未再发生急性痛风发作；原文未报告逐次血尿酸数值变化。",
+      "evidence_level": "C"
+    }
+  ]
+}

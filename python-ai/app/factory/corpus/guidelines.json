@@ -1,0 +1,679 @@
+{
+  "_note": "健康论文库语料（health_guidelines 表）。doc_type: guideline/consensus/systematic_review/rct/cohort；evidence_level: A=指南与系统评价 B=RCT/队列 C=综述/专家意见。content 为可直接引用的原文要点，不做二次评论。全部条目均来自公开可核验的权威来源，具体链接见各条 url。",
+  "_sources": [
+    {
+      "key": "who2020",
+      "name": "World Health Organization. WHO Guidelines on Physical Activity and Sedentary Behaviour. Geneva: WHO, 2020",
+      "level": 1,
+      "url": "https://www.who.int/publications/i/item/9789240015128",
+      "license": "CC BY-NC-SA 3.0 IGO"
+    },
+    {
+      "key": "cns2022",
+      "name": "中国营养学会《中国居民膳食指南（2022）》平衡膳食八准则",
+      "level": 1,
+      "url": "https://www.cnsoc.org/notice/442220200.html",
+      "license": "public"
+    },
+    {
+      "key": "cma_lipid2023",
+      "name": "《中国血脂管理指南（2023年）》（中国血脂管理指南修订联合专家委员会，临床心血管病杂志）",
+      "level": 2,
+      "url": "https://www.whuhzzs.com/article/doi/10.13201/j.issn.1001-1439.2023.07.001",
+      "license": "public"
+    },
+    {
+      "key": "cma_dm",
+      "name": "《中国2型糖尿病防治指南（2020年版）》与《中国2型糖尿病运动治疗指南（2024版）》（中华医学会糖尿病学分会等）",
+      "level": 1,
+      "url": "https://rs.yiigle.com/cmaid/1508094",
+      "license": "public"
+    },
+    {
+      "key": "cma_dm_prev2023",
+      "name": "《中国成人糖尿病前期干预的专家共识（2023版）》（中华医学会内分泌学分会等）",
+      "level": 1,
+      "url": "https://seleguide.yiigle.com/uploads/guide_html/5377.html",
+      "license": "public"
+    },
+    {
+      "key": "cma_bp2024",
+      "name": "《中国高血压防治指南（2024年修订版）》（中国高血压防治指南修订委员会）",
+      "level": 2,
+      "url": "https://cloud.kepuchina.cn/h5/detail?id=7453543318577410048",
+      "license": "public"
+    },
+    {
+      "key": "nhc_lifestyle",
+      "name": "《高血压营养和运动指导原则（2024年版）》（国家卫生健康委办公厅）",
+      "level": 1,
+      "url": "http://www.nhc.gov.cn/ylyjs/pqt/202406/0adffa948a2844f0befa8439178c1d9f/files/35d02ddbd7194c7dba3d2830a9c6843e.pdf",
+      "license": "public"
+    },
+    {
+      "key": "nhc_hyperglycemia",
+      "name": "《高血糖症营养和运动指导原则（2024年版）》（国家卫生健康委办公厅）",
+      "level": 1,
+      "url": "https://www.nhc.gov.cn/wjw/c100378/202407/70ee4ce0a89849b8b36f842060a6beda/files/1734003011997_53103.pdf",
+      "license": "public"
+    },
+    {
+      "key": "nhc_bp_day",
+      "name": "《2025年全国高血压日宣传要点》（国家卫生健康委办公厅，国卫办医急函〔2025〕385号）",
+      "level": 1,
+      "url": "http://www.nhc.gov.cn/ylyjs/gzdt/202509/2db90f506b274a95a25ac4ec701c3416.shtml",
+      "license": "public"
+    },
+    {
+      "key": "exercise_rx2023",
+      "name": "《运动处方中国专家共识（2023）》（国家体育总局运动医学研究所等）",
+      "level": 1,
+      "url": "https://www.sport.gov.cn/n20001280/n20001265/n20067664/c25517089/content.html",
+      "license": "public"
+    },
+    {
+      "key": "cma_hua",
+      "name": "《中国高尿酸血症与痛风诊疗指南（2019）》与《高尿酸血症相关疾病诊疗多学科专家共识》（中华医学会内分泌学分会等）",
+      "level": 1,
+      "url": "https://www.chinagout.org/a/ziliaoxiazai/2019/download/ytgs.pdf",
+      "license": "public"
+    },
+    {
+      "key": "cma_thyroid",
+      "name": "《成人甲状腺功能减退症诊治指南》与《甲状腺功能减退症基层诊疗指南（实践版·2019）》（中华医学会内分泌学分会等）",
+      "level": 1,
+      "url": "https://rs.yiigle.com/cmaid/944978",
+      "license": "public"
+    },
+    {
+      "key": "j_pmc",
+      "name": "同行评议期刊文献（PubMed Central 收录：Scientific Reports、J Clin Med、Syst Rev、Clin Transl Gastroenterol、Eur J Med Res 等）",
+      "level": 2,
+      "url": "https://pmc.ncbi.nlm.nih.gov/",
+      "license": "varies"
+    },
+    {
+      "key": "j_sportsmed",
+      "name": "Sports Medicine（Springer Nature）",
+      "level": 2,
+      "url": "https://link.springer.com/journal/40279",
+      "license": "varies"
+    },
+    {
+      "key": "j_bmcmed",
+      "name": "BMC Medicine / Cardiovascular Diabetology（BMC）",
+      "level": 2,
+      "url": "https://bmcmedicine.biomedcentral.com/",
+      "license": "CC BY 4.0"
+    },
+    {
+      "key": "j_mdpi",
+      "name": "MDPI 期刊（Life、Healthcare、IJERPH）",
+      "level": 2,
+      "url": "https://www.mdpi.com/",
+      "license": "CC BY 4.0"
+    },
+    {
+      "key": "j_bjsm",
+      "name": "British Journal of Sports Medicine（BMJ）",
+      "level": 2,
+      "url": "https://bjsm.bmj.com/",
+      "license": "varies"
+    },
+    {
+      "key": "j_jaha",
+      "name": "Journal of the American Heart Association（AHA）",
+      "level": 2,
+      "url": "https://www.ahajournals.org/journal/jaha",
+      "license": "CC BY-NC"
+    },
+    {
+      "key": "j_frontiers",
+      "name": "Frontiers 系列期刊（Frontiers in Endocrinology / Nutrition / Public Health）",
+      "level": 2,
+      "url": "https://www.frontiersin.org/",
+      "license": "CC BY 4.0"
+    }
+  ],
+  "guidelines": [
+    {
+      "source": "cns2022",
+      "doc_type": "guideline",
+      "evidence_level": "A",
+      "title": "中国居民膳食指南（2022）：准则一 食物多样，合理搭配",
+      "org": "中国营养学会",
+      "year": 2022,
+      "topic": "膳食,营养",
+      "content": "坚持谷类为主的平衡膳食模式。每天的膳食应包括谷薯类、蔬菜水果、畜禽鱼蛋奶和豆类食物。平均每天摄入12种以上食物，每周25种以上，合理搭配。每天摄入谷类食物200~300 g，其中包含全谷物和杂豆类50~150 g；薯类50~100 g。",
+      "url": "https://www.cnsoc.org/notice/442220200.html"
+    },
+    {
+      "source": "cns2022",
+      "doc_type": "guideline",
+      "evidence_level": "A",
+      "title": "中国居民膳食指南（2022）：准则二 吃动平衡，健康体重",
+      "org": "中国营养学会",
+      "year": 2022,
+      "topic": "运动,体重,膳食",
+      "content": "各年龄段人群都应天天进行身体活动，保持健康体重；食不过量，保持能量平衡。坚持日常身体活动，每周至少进行5天中等强度身体活动，累计150分钟以上；主动身体活动最好每天6000步。鼓励适当进行高强度有氧运动，加强抗阻运动，每周2~3天。减少久坐时间，每小时起来动一动。",
+      "url": "https://www.cnsoc.org/notice/442220200.html"
+    },
+    {
+      "source": "cns2022",
+      "doc_type": "guideline",
+      "evidence_level": "A",
+      "title": "中国居民膳食指南（2022）：准则三 多吃蔬果、奶类、全谷、大豆",
+      "org": "中国营养学会",
+      "year": 2022,
+      "topic": "膳食,营养",
+      "content": "蔬菜水果、全谷物和奶制品是平衡膳食的重要组成部分。餐餐有蔬菜，保证每天摄入不少于300 g的新鲜蔬菜，深色蔬菜应占1/2。天天吃水果，保证每天摄入200~350 g的新鲜水果，果汁不能代替鲜果。吃各种各样的奶制品，摄入量相当于每天300 ml以上液态奶。经常吃全谷物、大豆制品，适量吃坚果。",
+      "url": "https://www.cnsoc.org/notice/442220200.html"
+    },
+    {
+      "source": "cns2022",
+      "doc_type": "guideline",
+      "evidence_level": "A",
+      "title": "中国居民膳食指南（2022）：准则四 适量吃鱼、禽、蛋、瘦肉",
+      "org": "中国营养学会",
+      "year": 2022,
+      "topic": "膳食,蛋白质",
+      "content": "鱼、禽、蛋类和瘦肉摄入要适量，平均每天120~200 g。每周最好吃鱼2次或300~500 g，蛋类300~350 g，畜禽肉300~500 g。少吃深加工肉制品。鸡蛋营养丰富，吃鸡蛋不弃蛋黄。优先选择鱼，少吃肥肉、烟熏和腌制肉制品。",
+      "url": "https://www.cnsoc.org/notice/442220200.html"
+    },
+    {
+      "source": "cns2022",
+      "doc_type": "guideline",
+      "evidence_level": "A",
+      "title": "中国居民膳食指南（2022）：准则五 少盐少油，控糖限酒",
+      "org": "中国营养学会",
+      "year": 2022,
+      "topic": "膳食,血压,控糖",
+      "content": "培养清淡饮食习惯，少吃高盐和油炸食品。成年人每天摄入食盐不超过5 g，烹调油25~30 g。控制添加糖的摄入量，每天不超过50 g，最好控制在25 g以下。反式脂肪酸每天摄入量不超过2 g。不喝或少喝含糖饮料。儿童青少年、孕妇、乳母以及慢性病患者不应饮酒；成年人如饮酒，一天饮用的酒精量不超过15 g。",
+      "url": "https://www.cnsoc.org/notice/442220200.html"
+    },
+    {
+      "source": "cns2022",
+      "doc_type": "guideline",
+      "evidence_level": "A",
+      "title": "中国居民膳食指南（2022）：准则六 规律进餐，足量饮水",
+      "org": "中国营养学会",
+      "year": 2022,
+      "topic": "膳食,饮水",
+      "content": "合理安排一日三餐，定时定量，不漏餐，每天吃早餐。规律进餐、饮食适度，不暴饮暴食、不偏食挑食、不过度节食。足量饮水，少量多次。在温和气候条件下，低身体活动水平成年男性每天喝水1700 ml，成年女性每天喝水1500 ml。推荐喝白水或茶水，少喝或不喝含糖饮料，不用饮料代替白水。",
+      "url": "https://www.cnsoc.org/notice/442220200.html"
+    },
+    {
+      "source": "cma_lipid2023",
+      "doc_type": "guideline",
+      "evidence_level": "A",
+      "title": "中国血脂管理指南（2023年）：血脂检测项目与筛查频次",
+      "org": "中国血脂管理指南修订联合专家委员会",
+      "year": 2023,
+      "topic": "血脂,筛查",
+      "content": "<40岁成年人每2~5年进行1次血脂检测，包括TC、LDL-C、HDL-C和TG；≥40岁成年人每年至少应进行1次。血脂检测应至少包括1次Lp(a)的检测。在TC、TG、LDL-C、HDL-C基础上，新版指南将载脂蛋白A1（ApoA1）、载脂蛋白B（ApoB）、脂蛋白(a)列为血脂常规检测项目。动脉粥样硬化性心血管疾病（ASCVD）高危人群应根据个体化防治需求进行血脂检测。",
+      "url": "https://app.xinhuanet.com/news/article.html?articleId=0422d9ac-a158-4761-9465-b22729d1854e"
+    },
+    {
+      "source": "cma_lipid2023",
+      "doc_type": "guideline",
+      "evidence_level": "A",
+      "title": "中国血脂管理指南（2023年）：LDL-C 危险分层目标值",
+      "org": "中国血脂管理指南修订联合专家委员会",
+      "year": 2023,
+      "topic": "血脂,心血管,LDL-C",
+      "content": "指南重申LDL-C是ASCVD的首要干预靶点，非HDL-C为次要干预靶点，推荐根据个体的ASCVD风险确定相应的LDL-C及非HDL-C目标值。ASCVD低危人群LDL-C<3.4 mmol/L；中危、高危人群LDL-C<2.6 mmol/L；极高危人群LDL-C<1.8 mmol/L且较基线降幅>50%；超高危人群LDL-C<1.4 mmol/L且较基线降幅>50%。",
+      "url": "https://www.whuhzzs.com/article/doi/10.13201/j.issn.1001-1439.2023.07.001"
+    },
+    {
+      "source": "cma_lipid2023",
+      "doc_type": "guideline",
+      "evidence_level": "A",
+      "title": "中国血脂管理指南（2023年）：以生活方式为基础的降脂干预",
+      "org": "中国血脂管理指南修订联合专家委员会",
+      "year": 2023,
+      "topic": "血脂,运动,膳食",
+      "content": "强调健康的生活方式是降低LDL-C及非HDL-C的基础。生活方式干预包括合理膳食（限制饱和脂肪酸及反式脂肪摄入，增加水果、蔬菜、全谷薯类、膳食纤维及鱼类摄入）、身体活动、控制体重、戒烟和限制饮酒；对于ASCVD中高危人群和高胆固醇血症患者，应尽量减少饮食中胆固醇的摄入，每天膳食胆固醇摄入量应在300 mg以下。若仅采用非药物治疗，建议在开始3~6个月复查血脂以判断是否达标。",
+      "url": "https://www.whuhzzs.com/article/doi/10.13201/j.issn.1001-1439.2023.07.001"
+    },
+    {
+      "source": "cma_dm",
+      "doc_type": "guideline",
+      "evidence_level": "A",
+      "title": "中国2型糖尿病防治指南（2020年版）：运动治疗与规律运动",
+      "org": "中华医学会糖尿病学分会",
+      "year": 2020,
+      "topic": "血糖,运动",
+      "content": "规律运动可增加胰岛素敏感性、改善身体成分及生活质量，有助于控制血糖、减少心血管危险因素，而且对糖尿病高危人群的一级预防效果显著。运动应在专业人员指导下进行，运动前进行必要的健康评测和运动能力评估。成人2型糖尿病患者每周至少应进行150分钟中等强度有氧运动，包括健步走、太极拳、乒乓球、羽毛球等。",
+      "url": "http://www.hnjkjy.cn/subject/subject_show_resource_b0195453b7a84b818fafde8d067293ba_242.html"
+    },
+    {
+      "source": "cma_dm",
+      "doc_type": "guideline",
+      "evidence_level": "A",
+      "title": "中国2型糖尿病运动治疗指南（2024版）：FITT 运动处方与渐进强度",
+      "org": "国家老年医学中心、中华医学会糖尿病学分会、中国体育科学学会",
+      "year": 2024,
+      "topic": "血糖,运动,运动处方",
+      "content": "该指南共76条推荐意见，覆盖T2DM运动治疗的基本原则、急慢性并发症、共患疾病、常用药物、运动时机、运动中血糖监测、运动营养、运动损伤与依从性等。指南给出面向超重、基础血糖控制不佳的2型糖尿病患者的运动处方示例：利用公式（207-0.7×年龄）计算HRmax，并结合安静心率获得心率储备；训练第1~2周采用40%~50%心率储备，第3~8周采用45%~55%，第9~12周采用50%~60%，频率为每周运动3~5次。",
+      "url": "https://rs.yiigle.com/cmaid/1508094"
+    },
+    {
+      "source": "cma_dm_prev2023",
+      "doc_type": "consensus",
+      "evidence_level": "A",
+      "title": "中国成人糖尿病前期干预的专家共识（2023版）：运动干预",
+      "org": "中华医学会内分泌学分会、中华医学会糖尿病学分会、中国医师协会内分泌代谢科医师分会",
+      "year": 2023,
+      "topic": "血糖,运动,糖尿病前期",
+      "content": "本共识推荐有氧运动和抗阻运动的联合运动干预，多样的运动形式有利于增强个体对运动干预的依从性。推荐每周≥150 min的中等强度活动。此外，应增加静息运动，避免久坐的生活方式。有些糖尿病前期个体同时已伴有高血压、ASCVD等合并症或并发症，其运动干预应该在专业人员指导下采用个体化的运动处方。",
+      "url": "https://seleguide.yiigle.com/uploads/guide_html/5377.html"
+    },
+    {
+      "source": "cma_dm_prev2023",
+      "doc_type": "consensus",
+      "evidence_level": "A",
+      "title": "中国成人糖尿病前期干预的专家共识（2023版）：中国成人糖尿病前期诊断标准",
+      "org": "中华医学会内分泌学分会、中华医学会糖尿病学分会、中国医师协会内分泌代谢科医师分会",
+      "year": 2023,
+      "topic": "血糖,糖尿病前期,诊断",
+      "content": "糖尿病前期是糖尿病发病前的过渡阶段，包括空腹血糖受损（IFG）、糖耐量减低（IGT）以及两者的混合状态（IFG+IGT），是正常血糖与糖尿病之间的中间高血糖状态。IFG为空腹血糖≥6.1 mmol/L且<7.0 mmol/L，IGT为糖负荷后2 h血糖≥7.8 mmol/L且<11.1 mmol/L，和（或）HbA1c≥5.7%且<6.5%。在采用标准化检测方法且有严格质量控制的医疗机构，可以将HbA1c作为糖尿病前期诊断标准。",
+      "url": "https://seleguide.yiigle.com/uploads/guide_html/5377.html"
+    },
+    {
+      "source": "cma_bp2024",
+      "doc_type": "guideline",
+      "evidence_level": "A",
+      "title": "中国高血压防治指南（2024年修订版）：生活方式干预的地位与降压幅度",
+      "org": "中国高血压防治指南修订委员会",
+      "year": 2024,
+      "topic": "血压,运动,膳食",
+      "content": "所有高血压患者，无论是否服药，均需终身坚持生活方式干预。《中国高血压防治指南（2024年修订版）》明确，科学的生活方式干预可使收缩压下降4~14 mmHg，效果接近单药降压。生活方式干预包括减少钠盐摄入（每天不超过5克）、增加钾的摄入、控制体重（BMI维持在18.5~23.9）、适量运动（如每周至少150分钟中等强度有氧运动）、戒烟限酒以及保持心理平衡。",
+      "url": "https://cloud.kepuchina.cn/h5/detail?id=7453543318577410048"
+    },
+    {
+      "source": "nhc_lifestyle",
+      "doc_type": "guideline",
+      "evidence_level": "A",
+      "title": "高血压营养和运动指导原则（2024年版）：高血压患者运动处方",
+      "org": "国家卫生健康委办公厅",
+      "year": 2024,
+      "topic": "血压,运动,运动处方",
+      "content": "坚持有规律的运动，保持充足身体活动，减少久坐时间，以有氧运动为主，中等强度有氧运动每周至少150分钟，提倡结合多种形式的抗阻训练并辅以柔韧性训练。有氧运动每周5~7次、累计150~300分钟，中等强度可依据40%~59%储备心率或讲话测试（可正常节奏说话但不能唱歌）确定；抗阻训练每周2~3次、每次2~4组、每组8~12次，训练全身主要大肌群；柔韧性训练每周2~3次。若运动前收缩压和/或舒张压超过180 mmHg和/或110 mmHg，应控制血压后再进行运动。",
+      "url": "http://www.nhc.gov.cn/ylyjs/pqt/202406/0adffa948a2844f0befa8439178c1d9f/files/35d02ddbd7194c7dba3d2830a9c6843e.pdf"
+    },
+    {
+      "source": "nhc_lifestyle",
+      "doc_type": "guideline",
+      "evidence_level": "A",
+      "title": "高血压营养和运动指导原则（2024年版）：限钠与膳食原则",
+      "org": "国家卫生健康委办公厅",
+      "year": 2024,
+      "topic": "血压,膳食,控盐",
+      "content": "每人每日食盐摄入量逐步降至5 g以下，控制高钠食物摄入，增加富含钾的食物摄入，可以选择低钠盐（肾病、高钾血症除外）。每日蔬菜摄入不少于500 g，水果摄入200~350 g。减少饱和脂肪酸和胆固醇摄入，提高不饱和脂肪酸摄入比例，尽量避免反式脂肪酸摄入。限制饮酒或不饮酒：男性酒精摄入量每日不超过25 g、每周不超过140 g；女性每日不超过15 g、每周不超过80 g。",
+      "url": "http://www.nhc.gov.cn/ylyjs/pqt/202406/0adffa948a2844f0befa8439178c1d9f/files/35d02ddbd7194c7dba3d2830a9c6843e.pdf"
+    },
+    {
+      "source": "nhc_hyperglycemia",
+      "doc_type": "guideline",
+      "evidence_level": "A",
+      "title": "高血糖症营养和运动指导原则（2024年版）：高血糖症患者运动处方",
+      "org": "国家卫生健康委办公厅",
+      "year": 2024,
+      "topic": "血糖,运动,运动处方",
+      "content": "减少静坐时间，增加日常活动。减少每日静坐少动时间，连续静坐时间不超过60分钟。运动方案应该包含有氧运动、抗阻训练和柔韧性训练。有氧运动每周3~7天，每次持续或者累计运动30分钟以上；抗阻训练每周2~3次、每次2~4组、每组10~15次，训练到全身主要大肌群，同一肌肉部位训练至少间隔1天；柔韧性训练每周2~3次。建议餐后运动，用餐1小时后运动，避免低血糖的发生。",
+      "url": "https://www.nhc.gov.cn/wjw/c100378/202407/70ee4ce0a89849b8b36f842060a6beda/files/1734003011997_53103.pdf"
+    },
+    {
+      "source": "nhc_hyperglycemia",
+      "doc_type": "guideline",
+      "evidence_level": "A",
+      "title": "高血糖症营养和运动指导原则（2024年版）：营养与主食选择",
+      "org": "国家卫生健康委办公厅",
+      "year": 2024,
+      "topic": "血糖,膳食",
+      "content": "主食粗细搭配，限制高血糖生成指数（GI）食物。膳食碳水化合物供能比占总能量45%~60%，多选择较低GI的食物，提高主食全谷物和杂豆的摄入量，以占主食的一半为好。增加膳食纤维摄入，每日25~30 g为宜。每日新鲜蔬菜摄入量不少于500 g；限制精制糖摄入，不喝含糖饮料（包括果汁饮料）。控制脂肪总量，以脂肪摄入量占总能量20%~25%为宜。规律进餐，注意进餐顺序，可先吃蔬菜、再吃肉蛋和主食。",
+      "url": "https://www.nhc.gov.cn/wjw/c100378/202407/70ee4ce0a89849b8b36f842060a6beda/files/1734003011997_53103.pdf"
+    },
+    {
+      "source": "nhc_bp_day",
+      "doc_type": "guideline",
+      "evidence_level": "A",
+      "title": "2025年全国高血压日宣传要点：减盐减重与规律运动的量化降压效果",
+      "org": "国家卫生健康委办公厅",
+      "year": 2025,
+      "topic": "血压,运动,体重,控盐",
+      "content": "研究显示，每人每日摄盐量减少1 g，血压下降约1.2 mmHg，世界卫生组织推荐每人每日食盐摄入量不超过5 g。每减重10 kg，血压下降5~20 mmHg，建议将BMI控制在24 kg/m²以下，男性腰围<90 cm、女性腰围<85 cm。长期坚持中等强度运动可使血压下降5~7 mmHg，建议中等强度有氧运动每次至少30分钟、每周5~7次，并适当进行抗阻（肌肉力量）训练与柔韧性拉伸训练。健康的睡眠可使血压降低，建议成年人每晚睡眠7~9小时。",
+      "url": "http://www.nhc.gov.cn/ylyjs/gzdt/202509/2db90f506b274a95a25ac4ec701c3416.shtml"
+    },
+    {
+      "source": "exercise_rx2023",
+      "doc_type": "consensus",
+      "evidence_level": "A",
+      "title": "运动处方中国专家共识（2023）：FITT-VP 基本原则",
+      "org": "国家体育总局运动医学研究所等",
+      "year": 2023,
+      "topic": "运动,运动处方",
+      "content": "运动处方遵循FITT-VP的基本原则，6个英文字母分别代表运动频率（Frequency）、强度（Intensity）、方式（Type）、时间（Time）、总量（Volume）、运动进阶（Progression）六方面基本内容。其中运动方式是运动处方安全质量的关键；运动强度应设定出安全有效范围；运动时间应设定出最低有效推荐量；运动频率与运动总量以周为最小计量单位。根据处方对象的身体机能状态，分适应期（通常1至4周）、提高期（通常持续5至6个月，每4至6周评价运动效果）和稳定期三个阶段设计运动处方。",
+      "url": "https://www.sport.gov.cn/n20001280/n20001265/n20067664/c25517089/content.html"
+    },
+    {
+      "source": "exercise_rx2023",
+      "doc_type": "consensus",
+      "evidence_level": "A",
+      "title": "运动处方中国专家共识（2023）：步数目标与中等强度判定",
+      "org": "国家体育总局运动医学研究所等",
+      "year": 2023,
+      "topic": "运动,步数",
+      "content": "经常运动不仅有助于降低肥胖、糖尿病、高血压、心血管病、癌症、骨关节炎、骨质疏松等多种慢病的风险，还能舒缓神经紧张、改善睡眠质量、促进心理健康。专家明确：每天一万步常被作为运动的目标，建议每天最少走7000步，可获益的每天最低运动量是7000步至8000步；要达到中等强度运动，至少每分钟走100步（可理解为3000步快走）。",
+      "url": "https://www.sport.gov.cn/n20001280/n20001265/n20067664/c25517089/content.html"
+    },
+    {
+      "source": "cma_hua",
+      "doc_type": "guideline",
+      "evidence_level": "A",
+      "title": "中国高尿酸血症与痛风诊疗指南（2019）：生活方式与饮食管理",
+      "org": "中华医学会内分泌学分会",
+      "year": 2019,
+      "topic": "尿酸,膳食,生活方式",
+      "content": "高尿酸血症人群需调整膳食及生活方式，在均衡饮食的基础上做到4“多”、4“少”。运动锻炼多：建议运动强度以低、中强度的有氧运动为主，每周4~5次、每次30~60分钟，可选择慢跑、走路、骑自行车、太极拳、八段锦、游泳等。日常饮水多：在心、肾功能正常情况下，每天饮水2000~3000 ml。食物多样，每天食物品种不少于12种、每周不少于25种。减少高嘌呤食品、高果糖食品、酒类食品与生冷食品摄入，保持健康体重。",
+      "url": "https://wjw.hubei.gov.cn/bmdt/jkhb/spyy/202501/t20250121_5512192.shtml"
+    },
+    {
+      "source": "cma_hua",
+      "doc_type": "consensus",
+      "evidence_level": "A",
+      "title": "高尿酸血症相关疾病诊疗多学科专家共识：高尿酸血症诊断切点",
+      "org": "高尿酸血症相关疾病诊疗多学科共识专家组",
+      "year": 2019,
+      "topic": "尿酸,诊断",
+      "content": "因尿酸盐在血液中的饱和浓度为420 μmol/L（不分性别），超过此值可引起尿酸盐结晶析出，在关节腔和其他组织中沉积，因此本共识将血尿酸水平>420 μmol/L（7 mg/dl）定义为高尿酸血症。既往定义为正常嘌呤饮食下，非同日两次空腹血尿酸水平男性>420 μmol/L、女性>360 μmol/L。血尿酸升高除可引起痛风之外，还与肾脏、内分泌代谢、心脑血管等系统疾病的发生和发展有关。",
+      "url": "https://www.chinagout.org/a/ziliaoxiazai/2019/download/ytgs.pdf"
+    },
+    {
+      "source": "cma_thyroid",
+      "doc_type": "guideline",
+      "evidence_level": "A",
+      "title": "成人甲状腺功能减退症诊治指南：第一线诊断指标与治疗目标",
+      "org": "中华医学会内分泌学分会",
+      "year": 2017,
+      "topic": "甲状腺,甲减",
+      "content": "血清TSH和游离T4（FT4）、总T4（TT4）是诊断原发性甲减的第一线指标（推荐级别A）。原发性临床甲减的治疗目标为：甲减的症状和体征消失，血清TSH和TT4、FT4水平维持在正常范围（推荐级别A）。左甲状腺素（L-T4）是甲减的主要替代治疗药物（推荐级别A），其起始剂量和达到完全替代剂量所需的时间要根据病情、年龄、体重及心脏功能状态确定，需个体化。",
+      "url": "https://rs.yiigle.com/cmaid/944978"
+    },
+    {
+      "source": "who2020",
+      "doc_type": "guideline",
+      "evidence_level": "A",
+      "title": "WHO Guidelines on physical activity and sedentary behaviour (2020): adults 18-64 years aerobic activity",
+      "org": "World Health Organization",
+      "year": 2020,
+      "topic": "运动,有氧运动,WHO",
+      "content": "All adults should undertake 150-300 minutes of moderate-intensity aerobic physical activity, or 75-150 minutes of vigorous-intensity aerobic physical activity, or an equivalent combination of moderate- and vigorous-intensity activity throughout the week for substantial health benefits. Adults may increase moderate-intensity aerobic physical activity to more than 300 minutes, or do more than 150 minutes of vigorous-intensity aerobic physical activity, or an equivalent combination of moderate- and vigorous-intensity activity throughout the week for additional health benefits.",
+      "url": "https://www.who.int/publications/i/item/9789240015128"
+    },
+    {
+      "source": "who2020",
+      "doc_type": "guideline",
+      "evidence_level": "A",
+      "title": "WHO Guidelines on physical activity and sedentary behaviour (2020): adults muscle-strengthening activity",
+      "org": "World Health Organization",
+      "year": 2020,
+      "topic": "运动,抗阻训练,WHO",
+      "content": "Adults should also do muscle-strengthening activities at moderate or greater intensity that involve all major muscle groups on 2 or more days a week, as these provide additional health benefits. Doing some physical activity is better than doing none; if adults are not meeting these recommendations, doing some physical activity will bring benefits to health, and adults should start by doing small amounts of physical activity and gradually increase the frequency, intensity and duration over time.",
+      "url": "https://www.who.int/publications/i/item/9789240015128"
+    },
+    {
+      "source": "who2020",
+      "doc_type": "guideline",
+      "evidence_level": "A",
+      "title": "WHO Guidelines on physical activity and sedentary behaviour (2020): older adults (65 years and above)",
+      "org": "World Health Organization",
+      "year": 2020,
+      "topic": "运动,老年人,平衡训练,WHO",
+      "content": "Older adults should undertake the same amounts of aerobic and muscle-strengthening activity as adults (150-300 minutes of moderate-intensity aerobic activity, or 75-150 minutes of vigorous-intensity activity, plus muscle-strengthening activity on 2 or more days a week). As part of their weekly physical activity, older adults should do varied multicomponent physical activity that emphasizes functional balance and strength training at moderate or greater intensity on 3 or more days a week, to enhance functional capacity and prevent falls.",
+      "url": "https://www.who.int/publications/i/item/9789240015128"
+    },
+    {
+      "source": "who2020",
+      "doc_type": "guideline",
+      "evidence_level": "A",
+      "title": "WHO Guidelines on physical activity and sedentary behaviour (2020): children and adolescents (5-17 years)",
+      "org": "World Health Organization",
+      "year": 2020,
+      "topic": "运动,儿童青少年,WHO",
+      "content": "Children and adolescents should do at least an average of 60 minutes per day of moderate-to-vigorous intensity, mostly aerobic, physical activity, across the week. They should incorporate vigorous-intensity aerobic activities, as well as those that strengthen muscle and bone, at least 3 days a week. They should limit the amount of time spent being sedentary, particularly the amount of recreational screen time.",
+      "url": "https://www.who.int/publications/i/item/9789240015128"
+    },
+    {
+      "source": "who2020",
+      "doc_type": "guideline",
+      "evidence_level": "A",
+      "title": "WHO Guidelines on physical activity and sedentary behaviour (2020): sedentary behaviour and replacing sitting",
+      "org": "World Health Organization",
+      "year": 2020,
+      "topic": "运动,久坐行为,WHO",
+      "content": "Adults should limit the amount of time spent being sedentary; replacing sedentary time with physical activity of any intensity (including light intensity) provides health benefits. To help reduce the detrimental effects of high levels of sedentary behaviour on health, all adults and older adults should aim to do more than the recommended levels of moderate- to vigorous-intensity physical activity. Doing some physical activity is better than doing none, and even physical activity below the recommended levels brings health benefits.",
+      "url": "https://www.who.int/publications/i/item/9789240015128"
+    },
+    {
+      "source": "j_sportsmed",
+      "doc_type": "systematic_review",
+      "evidence_level": "A",
+      "title": "The Effect of Exercise Training on Blood Lipids: A Systematic Review and Meta-analysis",
+      "org": "Sports Medicine, 2024 (Smart NA, Downes D, van der Touw T, et al.)",
+      "year": 2024,
+      "topic": "血脂,运动,系统评价",
+      "content": "148 randomized controlled trials of exercise training with 227 intervention groups and 8673 participants were included. Total cholesterol MD -5.90 mg/dL (95% CI -8.14, -3.65), HDL 2.11 (95% CI 1.43, 2.79), LDL -7.22 (95% CI -9.08, -5.35), triglycerides -8.01 (95% CI -10.45, -5.58) and VLDL -3.85 (95% CI -5.49, -2.22) all showed significant but modest 3.5%-11.7% improvements following exercise training. Combined aerobic and resistance training was optimal for dyslipidemia management; meta-regression showed every extra weekly aerobic session reduced total cholesterol by 7.68 mg/dL and each minute of session time produced an additional 2.11 mg/dL HDL increase.",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11787149/"
+    },
+    {
+      "source": "j_bmcmed",
+      "doc_type": "systematic_review",
+      "evidence_level": "A",
+      "title": "Efficacy of aerobic exercise and a prudent diet for improving selected lipids and lipoproteins in adults: a meta-analysis of randomized controlled trials",
+      "org": "BMC Medicine, 2011 (Kelley GA, Kelley KS, Roberts S, Haskell W.)",
+      "year": 2011,
+      "topic": "血脂,运动,膳食,系统评价",
+      "content": "Six studies representing 16 groups (8 intervention, 8 control) and up to 559 men and women met the criteria for analysis. Statistically significant intervention minus control reductions were found for total cholesterol (-15.5 mg/dl, 95% CI -20.3 to -10.7), TC:HDL-C ratio (-0.4 mg/dl, 95% CI -0.7 to -0.2), LDL-C (-9.2 mg/dl, 95% CI -12.7 to -5.8) and triglycerides (-10.6 mg/dl, 95% CI -17.2 to -4.0), but not HDL-C. These changes were equivalent to reductions of 7.5%, 6.6%, 7.2% and 18.2% respectively. Aerobic exercise combined with a prudent diet is highly efficacious for improving TC, TC:HDL-C, LDL-C and TG in adults.",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3141539/"
+    },
+    {
+      "source": "j_bmcmed",
+      "doc_type": "systematic_review",
+      "evidence_level": "A",
+      "title": "Effects of Mediterranean diet, exercise, and their combination on body composition and liver outcomes in metabolic dysfunction-associated steatotic liver disease: a systematic review and meta-analysis of RCTs",
+      "org": "BMC Medicine, 2025 (Artola Arita V, Castro Cabezas M, et al.)",
+      "year": 2025,
+      "topic": "脂肪肝,运动,膳食,系统评价",
+      "content": "In patients with MASLD/MASH, aerobic exercise significantly decreased waist circumference (WMD -2.14, 95% CI -2.87 to -1.41), and resistance exercise reduced ALT (WMD -15.40 IU/L, 95% CI -28.60 to -2.20) compared with the control group. The combination of Mediterranean diet and aerobic exercise showed favorable effects on body composition and liver outcomes in this population.",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/40866968/"
+    },
+    {
+      "source": "j_bmcmed",
+      "doc_type": "systematic_review",
+      "evidence_level": "A",
+      "title": "The effect of exercise characteristics on HbA1c and other cardiovascular risk factors in adults with type 2 diabetes: a systematic review and meta-analysis of RCTs",
+      "org": "Cardiovascular Diabetology, 2025 (Michielsen M, Yagiz J, et al.)",
+      "year": 2025,
+      "topic": "血糖,运动,系统评价",
+      "content": "All exercise types significantly improved HbA1c, with the largest reductions observed for combined training (-0.74%, 95% CI -0.91 to -0.57, n=38) and high-intensity interval training (-0.71%, 95% CI -1.07 to -0.35, n=13), followed by continuous aerobic training. This systematic review and meta-analysis of randomized controlled trials evaluated the effect of exercise characteristics on HbA1c and other cardiovascular risk factors in adults with type 2 diabetes.",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/41457265/"
+    },
+    {
+      "source": "j_mdpi",
+      "doc_type": "systematic_review",
+      "evidence_level": "A",
+      "title": "Effects of Aerobic Exercise on Blood Lipids in People with Overweight or Obesity: A Systematic Review and Meta-Analysis of RCTs",
+      "org": "Life, 2025 (Chen Z, Zhou R, Liu X, et al.)",
+      "year": 2025,
+      "topic": "血脂,运动,超重肥胖,系统评价",
+      "content": "Nineteen studies met the inclusion criteria. Aerobic exercise significantly improved blood lipids in people with overweight or obesity (TG: SMD = -0.54, p < 0.00001; TC: SMD = -0.24, p = 0.003; HDL: SMD = 0.33, p = 0.003; LDL: SMD = -0.42, p = 0.0005). Both moderate-intensity and vigorous-intensity aerobic exercise demonstrated significant impacts in reducing TC, TG and LDL, whereas only moderate-intensity exercise significantly elevated HDL. A clear positive correlation emerged between the duration of the intervention and the decrease in LDL.",
+      "url": "https://doi.org/10.3390/life15020166"
+    },
+    {
+      "source": "j_mdpi",
+      "doc_type": "systematic_review",
+      "evidence_level": "A",
+      "title": "Effects of Exercise Interventions on Weight, Body Mass Index, Lean Body Mass and Accumulated Visceral Fat in Overweight and Obese Individuals",
+      "org": "International Journal of Environmental Research and Public Health, 2021 (Lee HS, Lee J.)",
+      "year": 2021,
+      "topic": "体重,运动,超重肥胖,系统评价",
+      "content": "Sixteen studies were included in this meta-analysis. Participation in exercise interventions reduced weight (d = -0.58, 95% CI -0.84 to -0.31, p < 0.001, k = 9), BMI (d = -0.50, 95% CI -0.78 to -0.21, p < 0.001, k = 7) and accumulated visceral fat (d = -1.08, 95% CI -1.60 to -0.57, p < 0.001, k = 5), but did not significantly increase lean body mass. The average exercise intervention for overweight and obese individuals was of moderate to vigorous intensity, 4 times per week, 50 min per session, and 22 weeks duration.",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/33807939/"
+    },
+    {
+      "source": "j_pmc",
+      "doc_type": "systematic_review",
+      "evidence_level": "A",
+      "title": "Effect of different exercise modalities on nonalcoholic fatty liver disease: a systematic review and network meta-analysis",
+      "org": "Scientific Reports, 2024 (Xue Y, Peng Y, Zhang L, et al.)",
+      "year": 2024,
+      "topic": "脂肪肝,运动,网状Meta",
+      "content": "A total of 43 studies and 2070 NAFLD patients were included: aerobic training (n=779), resistance training (n=159), high-intensity interval training (n=160), aerobic training + resistance training (n=96). Aerobic training + resistance training could significantly improve serum total cholesterol (SUCRA = 71.7), triglyceride (SUCRA = 96.8) and low-density lipoprotein cholesterol (SUCRA = 86.1) in patients with NAFLD. Aerobic training is the best mode to improve ALT (SUCRA = 83.9) and HDL-C (SUCRA = 72.3); resistance training is the best mode to improve AST (SUCRA = 81.7). Taking various benefits into account, the best modality of exercise for NAFLD patients is aerobic training + resistance training.",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10940706/"
+    },
+    {
+      "source": "j_pmc",
+      "doc_type": "systematic_review",
+      "evidence_level": "A",
+      "title": "Effect of Exercise on Liver Function and Insulin Resistance Markers in Patients with Non-Alcoholic Fatty Liver Disease: A Systematic Review and Meta-Analysis of RCTs",
+      "org": "Journal of Clinical Medicine, 2023 (Hejazi K, Hackett D.)",
+      "year": 2023,
+      "topic": "脂肪肝,运动,肝酶,系统评价",
+      "content": "A total of 26 studies met the inclusion criteria. Exercise training had a moderate effect on reducing ALT (SMD -0.59, p = 0.01) and small effects on reducing AST (SMD -0.40, p = 0.01) and insulin (SMD -0.43, p = 0.02). Significant reductions in ALT were found following aerobic training (SMD -0.63, p < 0.01) and resistance training (SMD -0.45, p < 0.001). Reductions in AST were found following resistance training (SMD -0.54, p = 0.001). Exercise interventions for <12 weeks were more effective in reducing fasting blood glucose and HOMA-IR, while interventions for ≥12 weeks were more effective in reducing ALT and AST levels.",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10143548/"
+    },
+    {
+      "source": "j_pmc",
+      "doc_type": "systematic_review",
+      "evidence_level": "A",
+      "title": "Metabolic benefits of changing sedentary lifestyles in nonalcoholic fatty liver disease: a meta-analysis of randomized controlled trials",
+      "org": "Therapeutic Advances in Endocrinology and Metabolism, 2022 (Ma Q, Ye J, Shao C, et al.)",
+      "year": 2022,
+      "topic": "脂肪肝,久坐行为,运动,系统评价",
+      "content": "Ten randomized controlled trials on changes in the sedentary lifestyle of patients with NAFLD were included, with a total of 455 participants. Changing a sedentary lifestyle can significantly improve ALT (MD = 4.35 U/L, 95% CI 0.53, 8.17), CHOL (MD = 0.31 mmol/L, 95% CI 0.19, 0.43) and TG (MD = 0.22 mmol/L, 95% CI 0.10, 0.34). This study supports lifestyle intervention targeted at reducing sedentary time in the management of NAFLD.",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC9486298/"
+    },
+    {
+      "source": "j_frontiers",
+      "doc_type": "systematic_review",
+      "evidence_level": "A",
+      "title": "The impact of long-term exercise on liver function, fatty liver progression, and related metabolic markers in NAFLD patients: a meta-analysis of randomized controlled trials",
+      "org": "Frontiers in Nutrition, 2026 (Guo Y, Xin X, Liu P.)",
+      "year": 2026,
+      "topic": "脂肪肝,运动,肝酶,系统评价",
+      "content": "18 studies published up to September 2025 were included. Long-term exercise significantly reduced alanine aminotransferase (ALT; SMD = -0.78, 95% CI -1.15 to -0.40), aspartate aminotransferase (AST; SMD = -0.65, 95% CI -1.07 to -0.23) and liver fat content (SMD = -0.68, 95% CI -0.98 to -0.38). Significant improvements were also observed in body weight, BMI, visceral adipose tissue and HOMA-IR, while no significant changes in liver stiffness and HbA1c were observed.",
+      "url": "https://www.frontiersin.org/journals/nutrition/articles/10.3389/fnut.2026.1731510/full"
+    },
+    {
+      "source": "j_pmc",
+      "doc_type": "rct",
+      "evidence_level": "B",
+      "title": "Moderate-Intensity Aerobic vs Resistance Exercise and Dietary Modification in Patients With Nonalcoholic Fatty Liver Disease: A Randomized Clinical Trial",
+      "org": "Clinical and Translational Gastroenterology, 2021 (Charatcharoenwitthaya P, et al.)",
+      "year": 2021,
+      "topic": "脂肪肝,运动,有氧运动,抗阻训练,RCT",
+      "content": "Patients with NAFLD were randomly assigned to a 12-week supervised training program of moderate-intensity aerobic or resistance exercise with dietary intervention. Hepatic fat content was similarly reduced in both groups (P < 0.001): mean relative reduction was -10.3% (95% CI -18.2 to -2.40) in the aerobic group and -12.6% (95% CI -20.5 to -4.69) in the resistance group. Liver steatosis (controlled attenuation parameter >248 dB/m) disappeared in 9 (50%) of the aerobic group and 9 (53%) of the resistance group. The number of exercise sessions per week was correlated with the absolute reduction in hepatic fat content (r = 0.52; P = 0.001).",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC7925136/"
+    },
+    {
+      "source": "j_pmc",
+      "doc_type": "rct",
+      "evidence_level": "B",
+      "title": "High-Intensity Aerobic Exercise Improves Both Hepatic Fat Content and Stiffness in Sedentary Obese Men with Nonalcoholic Fatty Liver Disease",
+      "org": "Scientific Reports, 2017 (Oh S, So R, Shida T, et al.)",
+      "year": 2017,
+      "topic": "脂肪肝,运动,高强度间歇训练,RCT",
+      "content": "The effects of 12-week programs of resistance training (RT), high-intensity interval aerobic training (HIAT) and moderate-intensity continuous aerobic training (MICT) were compared. Hepatic fat content decreased to a similar extent in the RT, HIAT and MICT groups (-14.3% vs -13.7% vs -14.3%) without significant changes in weight and visceral fat. Hepatic stiffness decreased only in the HIAT group (-16.8%), and the stiffness change was associated with restored Kupffer cell phagocytic function.",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC5320441/"
+    },
+    {
+      "source": "j_bjsm",
+      "doc_type": "systematic_review",
+      "evidence_level": "A",
+      "title": "Exercise training and resting blood pressure: a large-scale pairwise and network meta-analysis of randomised controlled trials",
+      "org": "British Journal of Sports Medicine, 2023 (Edwards JJ, Deenmamode AHP, et al.)",
+      "year": 2023,
+      "topic": "血压,运动,网状Meta",
+      "content": "270 randomized controlled trials were included in the final analysis, with a pooled sample size of 15,827 participants. Pairwise analyses demonstrated significant reductions in resting systolic and diastolic blood pressure following aerobic exercise training (-4.49/-2.53 mmHg, p<0.001), dynamic resistance training (-4.55/-3.04 mmHg, p<0.001), combined training (-6.04/-2.54 mmHg, p<0.001), high-intensity interval training (-4.08/-2.50 mmHg, p<0.001) and isometric exercise training (-8.24/-4.00 mmHg, p<0.001). Isometric exercise training ranked as the most effective mode for reducing both systolic and diastolic blood pressure.",
+      "url": "https://bjsm.bmj.com/content/57/20/1317"
+    },
+    {
+      "source": "j_jaha",
+      "doc_type": "systematic_review",
+      "evidence_level": "A",
+      "title": "Exercise Reduces Ambulatory Blood Pressure in Patients With Hypertension: A Systematic Review and Meta-Analysis of Randomized Controlled Trials",
+      "org": "Journal of the American Heart Association, 2020 (Saco-Ledo G, Valenzuela PL, et al.)",
+      "year": 2020,
+      "topic": "血压,运动,动态血压,系统评价",
+      "content": "Fifteen studies including 910 participants with hypertension met the inclusion criteria, with interventions lasting 8 to 24 weeks (3-5 sessions/week). Exercise significantly reduced 24-hour ambulatory blood pressure (systolic BP -5.4 mmHg, 95% CI -9.2 to -1.6; diastolic BP -3.0 mmHg, 95% CI -5.4 to -0.6), daytime BP (systolic -4.5 mmHg, 95% CI -6.6 to -2.3; diastolic -3.2 mmHg, 95% CI -4.8 to -1.5) and nighttime BP (systolic -4.7 mmHg, 95% CI -8.4 to -1.0; diastolic -3.1 mmHg, 95% CI -5.3 to -0.9).",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC7955398/"
+    },
+    {
+      "source": "j_pmc",
+      "doc_type": "systematic_review",
+      "evidence_level": "A",
+      "title": "Comparison between different types of exercise training in patients with type 2 diabetes mellitus: A systematic review and network metanalysis of randomized controlled trials",
+      "org": "Nutrition, Metabolism and Cardiovascular Diseases, 2021 (Mannucci E, Bonifazi A, Monami M.)",
+      "year": 2021,
+      "topic": "血糖,运动,网状Meta,系统评价",
+      "content": "25 trials fulfilling inclusion criteria were included. Physical exercise versus no exercise produced a small but significant improvement of HbA1c, body fat and systolic blood pressure at endpoint (-0.3%, -1.44% and -5.6 mmHg, respectively). Combined and supervised aerobic and resistance exercise were associated with a significantly greater reduction of HbA1c (SDM -0.4, -0.2 and -0.2%, respectively) compared with no exercise. Combined aerobic/resistance training seems to be superior to aerobic training alone, but differences are small.",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/33965297/"
+    },
+    {
+      "source": "j_frontiers",
+      "doc_type": "systematic_review",
+      "evidence_level": "A",
+      "title": "Comparative effects of different intensities of aerobic and resistance exercise on glycemic control and cardiorespiratory fitness in middle-aged and older patients with type 2 diabetes: a network meta-analysis",
+      "org": "Frontiers in Public Health, 2026 (Yu J, Li X, Yu H, Huang Y.)",
+      "year": 2026,
+      "topic": "血糖,运动,强度,网状Meta",
+      "content": "Twenty-nine randomized controlled trials comprising 1,301 participants and 10 exercise interventions were included. For HbA1c, moderate-certainty evidence indicated that high-intensity resistance training (MD -0.62%, 95% CI -0.93 to -0.30) and low-certainty evidence indicated that moderate-intensity aerobic training (MD -0.58%, 95% CI -1.10 to -0.05), HIAT-MIRT (MD -0.54%, 95% CI -1.02 to -0.06) and low-intensity resistance training (MD -0.54%, 95% CI -1.00 to -0.09) significantly reduced HbA1c compared with usual care, with high-intensity resistance training ranking highest.",
+      "url": "https://doi.org/10.3389/fpubh.2026.1818686"
+    },
+    {
+      "source": "j_frontiers",
+      "doc_type": "systematic_review",
+      "evidence_level": "A",
+      "title": "Comparative efficacy of exercise training modes on systemic metabolic health in adults with overweight and obesity: a network meta-analysis of randomized controlled trials",
+      "org": "Frontiers in Endocrinology, 2024 (Wang H, Cheng R, Xie L, Hu F.)",
+      "year": 2024,
+      "topic": "体重,血脂,血糖,超重肥胖,网状Meta",
+      "content": "A total of 28 studies with 1,620 patients were included. Aerobic exercise exerted the best effects on weight loss (-2.35 kg, 95% CI -4.05 to -0.64) and BMI (-0.9, 95% CI -1.38 to -0.42), while high-intensity interval training was most effective in reducing waist circumference (-5.93 cm), percentage body fat (-3.93%), serum triglycerides (-20.55 mg/dL), fasting blood glucose (-14.31 mg/dL) and improving VO2max. No significant benefit was observed in terms of total cholesterol and blood pressure.",
+      "url": "https://doi.org/10.3389/fendo.2023.1294362"
+    },
+    {
+      "source": "j_pmc",
+      "doc_type": "systematic_review",
+      "evidence_level": "A",
+      "title": "Impact of long-term lifestyle programmes on weight loss and cardiovascular risk factors in overweight/obese participants: a systematic review and network meta-analysis",
+      "org": "Systematic Reviews, 2014 (Schwingshackl L, Dias S, Hoffmann G.)",
+      "year": 2014,
+      "topic": "体重,膳食,运动,生活方式,网状Meta",
+      "content": "Overall 22 trials met the inclusion criteria and 21 (including 3,521 participants) were included in the quantitative analysis, with a minimum intervention period including follow-up of ≥12 months. As compared with diet alone, diet plus exercise resulted in a significantly more pronounced reduction in body weight (MD -1.38 kg, 95% CI -1.98 to -0.79) and fat mass (MD -1.65 kg, 95% CI -2.81 to -0.49). Comparing diet plus exercise with exercise alone, the mean difference in body weight was -4.13 kg (95% CI -5.62 to -2.64) in favour of combined diet and exercise.",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC4227972/"
+    },
+    {
+      "source": "j_pmc",
+      "doc_type": "cohort",
+      "evidence_level": "B",
+      "title": "Effect of low-purine diet on the serum uric acid of gout patients in different clinical subtypes: a prospective cohort study",
+      "org": "European Journal of Medical Research, 2024 (Chen Z, Xue X, Ma L, et al.)",
+      "year": 2024,
+      "topic": "尿酸,膳食,队列研究",
+      "content": "The cohort included 626 gout patients classified by clinical subtype: 69 (11.0%) overproduction type, 428 (68.37%) underexcretion type and 129 (20.61%) combined type. Overall, there was a substantial decrease in serum uric acid after a 2-week low-purine diet (p < 0.001). In addition, systolic blood pressure, diastolic blood pressure and body mass index showed favorable changes with the dietary intervention.",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11370010/"
+    },
+    {
+      "source": "j_pmc",
+      "doc_type": "systematic_review",
+      "evidence_level": "C",
+      "title": "Nonpharmacological Management of Gout and Hyperuricemia: Hints for Better Lifestyle",
+      "org": "American Journal of Lifestyle Medicine, 2015 (Kakutani-Hatayama M, Kadoya M, et al.)",
+      "year": 2015,
+      "topic": "尿酸,痛风,生活方式,综述",
+      "content": "Since obesity increases uric acid and weight gain increases gout risk, weight reduction by daily exercise and limiting intake of excess calories is recommended. However, strenuous exercise, which causes adenine nucleotide degradation, starvation, which decreases uric acid excretion, and dehydration may raise the level of uric acid in serum and trigger gout. Increased intake of purine-rich foods such as meat and seafood raises serum uric acid and is associated with increased risk of gout, whereas dairy products, especially low-fat types, are associated with a lower risk of gout.",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC6125106/"
+    }
+  ]
+}

@@ -1,0 +1,13 @@
+[Unit]
+Description=LHA local python
+After=network.target docker.service
+
+[Service]
+Type=simple
+User=ubuntu
+WorkingDirectory=/home/ubuntu/RAG-job/LLMHealthyAssistant/python-ai
+ExecStart=/home/ubuntu/RAG-job/LLMHealthyAssistant/python-ai/.venv/bin/python -m app.server
+Restart=on-failure
+RestartSec=5
+StandardOutput=append:/home/ubuntu/RAG-job/LLMHealthyAssistant/.run/python-systemd.log
+StandardError=append:/home/ubuntu/RAG-job/LLMHealthyAssistant/.run/python-systemd.log

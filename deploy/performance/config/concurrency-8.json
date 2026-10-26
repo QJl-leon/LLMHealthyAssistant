@@ -1,0 +1,20 @@
+{
+  "mode": "bounded_concurrency",
+  "environment": "production",
+  "concurrency": 8,
+  "duration_seconds": 600,
+  "max_tasks": 8,
+  "task_timeout_seconds": 300,
+  "max_inflight": 8,
+  "samples": "single-report-samples.json",
+  "sample_sha256": "3ca172f041e1019ca8c34315ebeab2683c99b5b70f63933d9d1a9dfcab3fd774",
+  "sse_reconnects": 0,
+  "max_total_tokens": 240000,
+  "max_transitions": 4,
+  "auto_confirm_publish": true,
+  "max_publish_confirmations": 1,
+  "slow_read_ms": 0,
+  "disconnect_after_events": 0,
+  "duplicate_create": false,
+  "required_vlm_model": "qwen3-vl-plus"
+}
